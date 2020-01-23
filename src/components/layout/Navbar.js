@@ -29,13 +29,13 @@ export default class Navbar extends Component {
                 </Link>
               </li>
               <li className="nav-item dropdown">
-                <a
-                  href="#"
+                <Link
+                  to="#"
                   className="text-white nav-link dropdown-toggle"
                   data-toggle="dropdown"
                 >
                   Players
-                </a>
+                </Link>
                 <div className="dropdown-menu">
                   <Link to="#" className="dropdown-item">
                     Hitters
@@ -49,13 +49,13 @@ export default class Navbar extends Component {
                 </div>
               </li>
               <li className="nav-item dropdown">
-                <a
-                  href="#"
+                <Link
+                  to="#"
                   className="text-white nav-link dropdown-toggle"
                   data-toggle="dropdown"
                 >
                   Teams
-                </a>
+                </Link>
                 <div className="dropdown-menu">
                   <Link to="#" className="dropdown-item">
                     Hitting
