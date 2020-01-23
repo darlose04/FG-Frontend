@@ -19,24 +19,57 @@ export default class Navbar extends Component {
           <div id="navbarNav" className="collapse navbar-collapse">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link" to="#">
+                <Link className="text-white nav-link" to="#">
                   Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="#">
+                <Link className="text-white nav-link" to="#">
                   About
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="#">
+              <li className="nav-item dropdown">
+                <a
+                  href="#"
+                  className="text-white nav-link dropdown-toggle"
+                  data-toggle="dropdown"
+                >
                   Players
-                </Link>
+                </a>
+                <div className="dropdown-menu">
+                  <Link to="#" className="dropdown-item">
+                    Hitters
+                  </Link>
+                  <Link to="#" className="dropdown-item">
+                    Starters
+                  </Link>
+                  <Link to="#" className="dropdown-item">
+                    Relievers
+                  </Link>
+                </div>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="#">
+              <li className="nav-item dropdown">
+                <a
+                  href="#"
+                  className="text-white nav-link dropdown-toggle"
+                  data-toggle="dropdown"
+                >
                   Teams
-                </Link>
+                </a>
+                <div className="dropdown-menu">
+                  <Link to="#" className="dropdown-item">
+                    Hitting
+                  </Link>
+                  <Link to="#" className="dropdown-item">
+                    Pitching
+                  </Link>
+                  <Link to="#" className="dropdown-item">
+                    Starting
+                  </Link>
+                  <Link to="#" className="dropdown-item">
+                    Relievers
+                  </Link>
+                </div>
               </li>
             </ul>
 
