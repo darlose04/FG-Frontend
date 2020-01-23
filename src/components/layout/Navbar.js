@@ -19,7 +19,7 @@ export default class Navbar extends Component {
           <div id="navbarNav" className="collapse navbar-collapse">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="text-white nav-link" to="#">
+                <Link className="text-white nav-link" to="/">
                   Home
                 </Link>
               </li>
