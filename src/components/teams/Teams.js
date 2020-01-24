@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { logos } from "../../logos";
+import axios from "axios";
 
 export default class Teams extends Component {
   constructor(props) {
@@ -7,6 +8,14 @@ export default class Teams extends Component {
     this.state = {
       season: 2019
     };
+  }
+
+  async componentDidMount() {
+    let teamBatting = await axios.get(
+      `https://www.fgbaseballapi.com/api/teambatting/${this.state.season}`
+    );
+
+    console.log(teamBatting.data);
   }
 
   render() {
