@@ -50,28 +50,10 @@ export default class Navbar extends Component {
                   </Link>
                 </div>
               </li>
-              <li className="nav-item dropdown">
-                <Link
-                  to="#"
-                  className="text-white nav-link dropdown-toggle"
-                  data-toggle="dropdown"
-                >
+              <li className="nav-item">
+                <Link to="/teams" className="text-white nav-link">
                   Teams
                 </Link>
-                <div className="dropdown-menu">
-                  <Link to="#" className="dropdown-item">
-                    Hitting
-                  </Link>
-                  <Link to="#" className="dropdown-item">
-                    Pitching
-                  </Link>
-                  <Link to="#" className="dropdown-item">
-                    Starting
-                  </Link>
-                  <Link to="#" className="dropdown-item">
-                    Relieving
-                  </Link>
-                </div>
               </li>
             </ul>
 
