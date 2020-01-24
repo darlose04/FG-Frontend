@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import NavSearch from "./NavSearch";
 import "../../styles/Navbar.css";
 
 export default class Navbar extends Component {
@@ -74,14 +75,7 @@ export default class Navbar extends Component {
               </li>
             </ul>
 
-            <form className="form-inline ml-auto">
-              <input
-                type="text"
-                className="form-control mr-2"
-                placeholder="Search Players"
-              />
-              <button className="btn btn-outline-light">Search</button>
-            </form>
+            <NavSearch />
           </div>
         </div>
       </nav>
