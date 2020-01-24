@@ -69,7 +69,7 @@ export default class Navbar extends Component {
                     Starting
                   </Link>
                   <Link to="#" className="dropdown-item">
-                    Relievers
+                    Relieving
                   </Link>
                 </div>
               </li>
