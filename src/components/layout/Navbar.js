@@ -30,25 +30,10 @@ export default class Navbar extends Component {
                   About
                 </Link>
               </li>
-              <li className="nav-item dropdown">
-                <Link
-                  to="#"
-                  className="text-white nav-link dropdown-toggle"
-                  data-toggle="dropdown"
-                >
+              <li className="nav-item">
+                <Link to="/players" className="text-white nav-link">
                   Players
                 </Link>
-                <div className="dropdown-menu">
-                  <Link to="#" className="dropdown-item">
-                    Hitters
-                  </Link>
-                  <Link to="#" className="dropdown-item">
-                    Starters
-                  </Link>
-                  <Link to="#" className="dropdown-item">
-                    Relievers
-                  </Link>
-                </div>
               </li>
               <li className="nav-item">
                 <Link to="/teams" className="text-white nav-link">
