@@ -77,7 +77,7 @@ export default class Navbar extends Component {
               <input
                 type="text"
                 className="form-control mr-2"
-                placeholder="Search"
+                placeholder="Search Players"
               />
               <button className="btn btn-outline-light">Search</button>
             </form>
