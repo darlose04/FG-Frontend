@@ -2,6 +2,13 @@ import React, { Component } from "react";
 import { logos } from "../../logos";
 
 export default class Teams extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      season: 2019
+    };
+  }
+
   render() {
     return (
       <div className="mt-5">
