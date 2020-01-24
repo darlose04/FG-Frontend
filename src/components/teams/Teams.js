@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import SeasonSelect from "./SeasonSelect";
+import TeamBattingTable from "./TeamBattingTable";
 import { logos } from "../../logos";
 import axios from "axios";
 
@@ -35,6 +36,7 @@ export default class Teams extends Component {
           </button>
         </div>
         <SeasonSelect />
+        <TeamBattingTable />
       </div>
     );
   }
