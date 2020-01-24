@@ -9,10 +9,12 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        <Switch>
-          <Route exact path="/" render={() => <Home />} />
-          <Route exact path="/about" render={() => <About />} />
-        </Switch>
+        <div className="container">
+          <Switch>
+            <Route exact path="/" render={() => <Home />} />
+            <Route exact path="/about" render={() => <About />} />
+          </Switch>
+        </div>
       </div>
     );
   }
