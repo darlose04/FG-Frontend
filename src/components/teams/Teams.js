@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { logos } from "../../logos";
 
 export default class Teams extends Component {
   render() {
