@@ -9,8 +9,11 @@ export default class Teams extends Component {
     super(props);
     this.state = {
       season: 2019,
-      teamBatting: []
+      teamBatting: [],
+      hittingTable: false,
+      pitchingTable: false
     };
+    this.showHitting = this.showHitting.bind(this);
   }
 
   async componentDidMount() {
@@ -23,6 +26,12 @@ export default class Teams extends Component {
     });
   }
 
+  showHitting() {
+    this.setState({
+      hittingTable: !this.state.hittingTable
+    });
+  }
+
   render() {
     return (
       <div className="mt-5">
@@ -31,15 +40,25 @@ export default class Teams extends Component {
           role="group"
           aria-label="Basic example"
         >
-          <button type="button" className="btn btn-outline-success">
+          <button
+            type="button"
+            className="btn btn-outline-success"
+            onClick={this.showHitting}
+          >
             Team Hitting
           </button>
           <button type="button" className="btn btn-outline-success">
             Team Pitching
           </button>
         </div>
-        <SeasonSelect />
-        <TeamBattingTable stats={this.state.teamBatting} />
+        {this.state.hittingTable ? (
+          <div>
+            <SeasonSelect />
+            <TeamBattingTable stats={this.state.teamBatting} />
+          </div>
+        ) : (
+          <h2>Select Hitting or Pitching</h2>
+        )}
       </div>
     );
   }
