@@ -51,7 +51,7 @@ export default class TeamBattingTable extends Component {
         </thead>
         <tbody>
           {stats.map(info => (
-            <tr>
+            <tr key={info.id}>
               <td>{info.team}</td>
               <td>{info.games}</td>
               <td>{info.plate_appearances}</td>
