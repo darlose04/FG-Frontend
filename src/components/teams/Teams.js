@@ -8,16 +8,19 @@ export default class Teams extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      season: 2019
+      season: 2019,
+      teamBatting: []
     };
   }
 
   async componentDidMount() {
-    let teamBatting = await axios.get(
+    let batting = await axios.get(
       `https://www.fgbaseballapi.com/api/teambatting/${this.state.season}`
     );
 
-    console.log(teamBatting.data);
+    this.setState({
+      teamBatting: batting.data
+    });
   }
 
   render() {
@@ -36,7 +39,7 @@ export default class Teams extends Component {
           </button>
         </div>
         <SeasonSelect />
-        <TeamBattingTable />
+        <TeamBattingTable stats={this.state.teamBatting.data} />
       </div>
     );
   }
