@@ -39,7 +39,7 @@ export default class Teams extends Component {
           </button>
         </div>
         <SeasonSelect />
-        <TeamBattingTable stats={this.state.teamBatting.data} />
+        <TeamBattingTable stats={this.state.teamBatting} />
       </div>
     );
   }
