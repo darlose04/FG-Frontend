@@ -60,7 +60,10 @@ export default class Teams extends Component {
         </div>
         {this.state.hittingTable ? (
           <div>
-            <SeasonSelect season={this.changeSeason} />
+            <SeasonSelect
+              season={this.state.season}
+              changeSeason={this.changeSeason}
+            />
             <TeamBattingTable stats={this.state.teamBatting} />
           </div>
         ) : (

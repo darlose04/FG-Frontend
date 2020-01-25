@@ -4,7 +4,7 @@ export default class SeasonSelect extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      season: "2019"
+      season: this.props.season
     };
     this.seasonChange = this.seasonChange.bind(this);
     this.seasonSubmit = this.seasonSubmit.bind(this);
@@ -18,7 +18,7 @@ export default class SeasonSelect extends Component {
 
   seasonSubmit(e) {
     e.preventDefault();
-    this.props.season(this.state.season);
+    this.props.changeSeason(this.state.season);
   }
 
   render() {
@@ -34,6 +34,9 @@ export default class SeasonSelect extends Component {
               id="inlineFormCustomSelect"
               onChange={this.seasonChange}
             >
+              <option defaultValue={this.props.season}>
+                {this.props.season}
+              </option>
               <option value="2019">2019</option>
               <option value="2018">2018</option>
               <option value="2017">2017</option>
