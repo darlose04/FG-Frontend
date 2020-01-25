@@ -14,9 +14,10 @@ export default class Teams extends Component {
       pitchingTable: false
     };
     this.showHitting = this.showHitting.bind(this);
+    this.changeSeason = this.changeSeason.bind(this);
   }
 
-  async componentDidMount() {
+  async componentDidUpdate() {
     let batting = await axios.get(
       `https://www.fgbaseballapi.com/api/teambatting/${this.state.season}`
     );
@@ -29,6 +30,12 @@ export default class Teams extends Component {
   showHitting() {
     this.setState({
       hittingTable: !this.state.hittingTable
+    });
+  }
+
+  changeSeason(newSeason) {
+    this.setState({
+      season: newSeason
     });
   }
 
@@ -53,11 +60,11 @@ export default class Teams extends Component {
         </div>
         {this.state.hittingTable ? (
           <div>
-            <SeasonSelect />
+            <SeasonSelect season={this.changeSeason} />
             <TeamBattingTable stats={this.state.teamBatting} />
           </div>
         ) : (
-          <h2>Select Hitting or Pitching</h2>
+          <h2 className="text-center">Select Hitting or Pitching</h2>
         )}
       </div>
     );
