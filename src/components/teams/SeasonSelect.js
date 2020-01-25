@@ -1,9 +1,29 @@
 import React, { Component } from "react";
 
 export default class SeasonSelect extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      season: "2019"
+    };
+    this.seasonChange = this.seasonChange.bind(this);
+    this.seasonSubmit = this.seasonSubmit.bind(this);
+  }
+
+  seasonChange(e) {
+    this.setState({
+      season: e.target.value
+    });
+  }
+
+  seasonSubmit(e) {
+    e.preventDefault();
+    this.props.season(this.state.season);
+  }
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.seasonSubmit}>
         <div className="form-row align-items-center">
           <div className="col-4 my-3">
             <label className="mr-sm-2 sr-only" htmlFor="inlineFormCustomSelect">
@@ -12,8 +32,8 @@ export default class SeasonSelect extends Component {
             <select
               className="custom-select mr-sm-2"
               id="inlineFormCustomSelect"
+              onChange={this.seasonChange}
             >
-              <option defaultValue>Choose Season</option>
               <option value="2019">2019</option>
               <option value="2018">2018</option>
               <option value="2017">2017</option>
