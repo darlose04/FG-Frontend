@@ -1,5 +1,6 @@
 import React from "react";
 import { shallow, mount } from "../enzyme";
+import sinon from "sinon";
 import axios from "axios";
 
 import Teams from "../components/teams/Teams";
@@ -28,5 +29,14 @@ describe("<Teams />", () => {
     expect(wrapper.find("button")).toHaveLength(2);
     expect(wrapper.find(".teamHittingBtn")).toBeDefined();
     expect(wrapper.find(".teamPitchingBtn")).toBeDefined();
+  });
+});
+
+// Full rendering testing
+describe("Full testing", () => {
+  it("calls componentDidMount", () => {
+    sinon.spy(Teams.prototype, "componentDidMount");
+    const wrapper = mount(<Teams />);
+    expect(Teams.prototype.componentDidMount).toHaveProperty("callCount", 1);
   });
 });
