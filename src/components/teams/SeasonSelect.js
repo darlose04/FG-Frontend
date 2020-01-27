@@ -23,7 +23,7 @@ export default class SeasonSelect extends Component {
 
   render() {
     return (
-      <form onSubmit={this.seasonSubmit}>
+      <form className="seasonSelectForm" onSubmit={this.seasonSubmit}>
         <div className="form-row align-items-center">
           <div className="col-4 my-3">
             <label className="mr-sm-2 sr-only" htmlFor="seasonSelectHitting">
