@@ -26,12 +26,12 @@ export default class SeasonSelect extends Component {
       <form onSubmit={this.seasonSubmit}>
         <div className="form-row align-items-center">
           <div className="col-4 my-3">
-            <label className="mr-sm-2 sr-only" htmlFor="inlineFormCustomSelect">
+            <label className="mr-sm-2 sr-only" htmlFor="seasonSelectHitting">
               Preference
             </label>
             <select
               className="custom-select mr-sm-2"
-              id="inlineFormCustomSelect"
+              id="seasonSelectHitting"
               onChange={this.seasonChange}
             >
               <option defaultValue={this.props.season}>
