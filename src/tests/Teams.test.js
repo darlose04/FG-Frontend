@@ -37,6 +37,21 @@ describe("<Teams />", () => {
     wrapper.find(".teamHittingBtn").simulate("click");
     expect(wrapper.state().hittingTable).toEqual(true);
   });
+
+  it("teamBatting state is the correct length before and after call to API", async () => {
+    const wrapper = shallow(<Teams />);
+    expect(wrapper.state().teamBatting).toHaveLength(0);
+    let season = 2002;
+    let batting = await axios.get(
+      `https://www.fgbaseballapi.com/api/teambatting/${season}`
+    );
+
+    wrapper.setState({
+      teamBatting: batting.data
+    });
+
+    expect(wrapper.state().teamBatting).toHaveLength(30);
+  });
 });
 
 // Full rendering testing
