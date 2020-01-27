@@ -52,6 +52,21 @@ describe("<Teams />", () => {
 
     expect(wrapper.state().teamBatting).toHaveLength(30);
   });
+
+  it("shows the form and table when team hitting button is clicked, then changes state of season when form is submitted", () => {
+    const wrapper = shallow(<Teams />);
+    expect(wrapper.state().hittingTable).toEqual(false);
+    wrapper.find(".teamHittingBtn").simulate("click");
+    expect(wrapper.state().hittingTable).toEqual(true);
+
+    expect(wrapper.find(SeasonSelect)).toBeDefined();
+
+    expect(wrapper.state().season).toEqual(2019);
+    expect(wrapper.find(".seasonSelectForm")).toBeDefined();
+    // wrapper.find(".seasonSelectForm").simulate("submit", {
+    //   target: { defaultValue: "2002" }
+    // });
+  });
 });
 
 // Full rendering testing
