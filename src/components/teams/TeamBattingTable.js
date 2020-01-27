@@ -3,7 +3,6 @@ import React, { Component } from "react";
 export default class TeamBattingTable extends Component {
   render() {
     let { stats } = this.props;
-    console.log(stats);
     return (
       <table className="table">
         <thead>
