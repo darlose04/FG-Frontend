@@ -16,7 +16,7 @@ export default class Teams extends Component {
     this.changeSeason = this.changeSeason.bind(this);
   }
 
-  async componentDidUpdate() {
+  async componentDidMount() {
     let batting = await axios.get(
       `https://www.fgbaseballapi.com/api/teambatting/${this.state.season}`
     );
@@ -24,6 +24,18 @@ export default class Teams extends Component {
     this.setState({
       teamBatting: batting.data
     });
+  }
+
+  async componentDidUpdate(prevProps, prevState) {
+    if (prevState.season !== this.state.season) {
+      console.log("The season state is different");
+      let batting = await axios.get(
+        `https://www.fgbaseballapi.com/api/teambatting/${this.state.season}`
+      );
+      this.setState({
+        teamBatting: batting.data
+      });
+    }
   }
 
   showHitting() {
