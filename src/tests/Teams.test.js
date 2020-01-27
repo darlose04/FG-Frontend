@@ -30,6 +30,13 @@ describe("<Teams />", () => {
     expect(wrapper.find(".teamHittingBtn")).toBeDefined();
     expect(wrapper.find(".teamPitchingBtn")).toBeDefined();
   });
+
+  it("shows table and form after clicking team hitting button", () => {
+    const wrapper = shallow(<Teams />);
+    expect(wrapper.state().hittingTable).toEqual(false);
+    wrapper.find(".teamHittingBtn").simulate("click");
+    expect(wrapper.state().hittingTable).toEqual(true);
+  });
 });
 
 // Full rendering testing
