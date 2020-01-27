@@ -28,7 +28,6 @@ export default class Teams extends Component {
 
   async componentDidUpdate(prevProps, prevState) {
     if (prevState.season !== this.state.season) {
-      console.log("The season state is different");
       let batting = await axios.get(
         `https://www.fgbaseballapi.com/api/teambatting/${this.state.season}`
       );
@@ -56,12 +55,15 @@ export default class Teams extends Component {
         <div className="btn-group w-100" role="group">
           <button
             type="button"
-            className="btn btn-outline-success"
+            className=" teamHittingBtn btn btn-outline-success"
             onClick={this.showHitting}
           >
             Team Hitting
           </button>
-          <button type="button" className="btn btn-outline-success">
+          <button
+            type="button"
+            className="teamPitchingBtn btn btn-outline-success"
+          >
             Team Pitching
           </button>
         </div>
