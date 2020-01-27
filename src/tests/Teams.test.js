@@ -22,4 +22,11 @@ describe("<Teams />", () => {
     const wrapper = shallow(<Teams />);
     expect(wrapper.find(TeamBattingTable)).toBeDefined();
   });
+
+  it("renders buttons", () => {
+    const wrapper = shallow(<Teams />);
+    expect(wrapper.find("button")).toHaveLength(2);
+    expect(wrapper.find(".teamHittingBtn")).toBeDefined();
+    expect(wrapper.find(".teamPitchingBtn")).toBeDefined();
+  });
 });
