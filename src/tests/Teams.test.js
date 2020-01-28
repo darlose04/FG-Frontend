@@ -5,7 +5,8 @@ import axios from "axios";
 
 import Teams from "../components/teams/Teams";
 import SeasonSelect from "../components/teams/SeasonSelect";
-import TeamBattingTable from "../components/teams/TeamBattingTable";
+import TeamStandardBattingTable from "../components/teams/TeamStandardBattingTable";
+import TeamAdvancedBattingTable from "../components/teams/TeamAdvancedBattingTable";
 import TeamPageBtns from "../components/teams/TeamPageBtns";
 
 // Shallow testing
@@ -20,9 +21,14 @@ describe("<Teams />", () => {
     expect(wrapper.find(SeasonSelect)).toBeDefined();
   });
 
-  it("renders the TeamBattingTable component", () => {
+  it("renders the TeamStandardBattingTable component", () => {
     const wrapper = shallow(<Teams />);
-    expect(wrapper.find(TeamBattingTable)).toBeDefined();
+    expect(wrapper.find(TeamStandardBattingTable)).toBeDefined();
+  });
+
+  it("renders the TeamAdvancedBattingTable component", () => {
+    const wrapper = shallow(<Teams />);
+    expect(wrapper.find(TeamAdvancedBattingTable)).toBeDefined();
   });
 
   it("renders buttons", () => {
@@ -70,16 +76,22 @@ describe("Full testing", () => {
     expect(wrapper.props().season).toEqual(2019);
   });
 
-  it("allows props for the TeamBattingTable component", () => {
-    const wrapper = mount(<TeamBattingTable stats={[1, 2, 3]} />);
+  it("allows props for the TeamStandardBattingTable component", () => {
+    const wrapper = mount(<TeamStandardBattingTable stats={[1, 2, 3]} />);
+    expect(wrapper.props().stats).toHaveLength(3);
+    expect(wrapper.props().stats).toEqual([1, 2, 3]);
+  });
+
+  it("allows props for the TeamAdvancedBattingTable component", () => {
+    const wrapper = mount(<TeamAdvancedBattingTable stats={[1, 2, 3]} />);
     expect(wrapper.props().stats).toHaveLength(3);
     expect(wrapper.props().stats).toEqual([1, 2, 3]);
   });
 
   it("shows table and form after clicking team hitting button", () => {
     const wrapper = mount(<Teams />);
-    expect(wrapper.state().hittingTable).toEqual(false);
+    expect(wrapper.state().tableStats).toEqual("");
     wrapper.find(".teamHittingBtn").simulate("click");
-    expect(wrapper.state().hittingTable).toEqual(true);
+    expect(wrapper.state().tableStats).toEqual("standard");
   });
 });
