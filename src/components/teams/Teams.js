@@ -53,13 +53,24 @@ export default class Teams extends Component {
     return (
       <div className="mt-5">
         <div className="btn-group w-100" role="group">
-          <button
-            type="button"
-            className=" teamHittingBtn btn btn-outline-success"
-            onClick={this.showHitting}
-          >
-            Team Hitting
-          </button>
+          {this.state.hittingTable ? (
+            <button
+              type="button"
+              className=" teamHittingBtn btn btn-success"
+              onClick={this.showHitting}
+            >
+              Team Hitting
+            </button>
+          ) : (
+            <button
+              type="button"
+              className=" teamHittingBtn btn btn-outline-success"
+              onClick={this.showHitting}
+            >
+              Team Hitting
+            </button>
+          )}
+
           <button
             type="button"
             className="teamPitchingBtn btn btn-outline-success"
