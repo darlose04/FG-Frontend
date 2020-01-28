@@ -16,6 +16,8 @@ export default class Teams extends Component {
     };
     this.showHitting = this.showHitting.bind(this);
     this.changeSeason = this.changeSeason.bind(this);
+    this.showStdTable = this.showStdTable.bind(this);
+    this.showAdvTable = this.showAdvTable.bind(this);
   }
 
   async componentDidMount() {
@@ -60,6 +62,18 @@ export default class Teams extends Component {
     });
   }
 
+  showStdTable() {
+    this.setState({
+      tableStats: "standard"
+    });
+  }
+
+  showAdvTable() {
+    this.setState({
+      tableStats: "advanced"
+    });
+  }
+
   render() {
     return (
       <div className="mt-5">
@@ -73,6 +87,8 @@ export default class Teams extends Component {
               season={this.state.season}
               changeSeason={this.changeSeason}
               tableShown={this.state.tableStats}
+              stdTable={this.showStdTable}
+              advTable={this.showAdvTable}
             />
             {this.state.tableStats === "standard" ? (
               <TeamStandardBattingTable stats={this.state.teamBatting} />

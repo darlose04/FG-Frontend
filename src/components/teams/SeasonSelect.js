@@ -71,20 +71,36 @@ export default class SeasonSelect extends Component {
           aria-label="Basic example"
         >
           {this.props.tableShown === "standard" ? (
-            <button type="button" className="btn btn-success">
+            <button
+              onClick={this.props.stdTable}
+              type="button"
+              className="btn btn-success"
+            >
               Standard
             </button>
           ) : (
-            <button type="button" className="btn btn-outline-success">
+            <button
+              onClick={this.props.stdTable}
+              type="button"
+              className="btn btn-outline-success"
+            >
               Standard
             </button>
           )}
           {this.props.tableShown === "advanced" ? (
-            <button type="button" className="btn btn-success">
+            <button
+              onClick={this.props.advTable}
+              type="button"
+              className="btn btn-success"
+            >
               Advanced
             </button>
           ) : (
-            <button type="button" className="btn btn-outline-success">
+            <button
+              onClick={this.props.advTable}
+              type="button"
+              className="btn btn-outline-success"
+            >
               Advanced
             </button>
           )}
