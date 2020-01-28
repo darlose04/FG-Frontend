@@ -26,7 +26,7 @@ export default class SeasonSelect extends Component {
       <div>
         <form className="seasonSelectForm" onSubmit={this.seasonSubmit}>
           <div className="form-row align-items-center">
-            <div className="col-8 my-3">
+            <div className="col-6 my-3">
               <label className="mr-sm-2 sr-only" htmlFor="seasonSelectHitting">
                 Preference
               </label>
@@ -58,7 +58,7 @@ export default class SeasonSelect extends Component {
                 <option value="2002">2002</option>
               </select>
             </div>
-            <div className="col-4 my-1">
+            <div className="col-6 my-1">
               <button type="submit" className="btn btn-success w-100">
                 Submit
               </button>
