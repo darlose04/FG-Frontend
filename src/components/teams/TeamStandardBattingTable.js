@@ -5,7 +5,7 @@ export default class TeamBattingTable extends Component {
     let { stats } = this.props;
     return (
       <table
-        className="table table-sm table-striped table-bordered table-hover text-center"
+        className="table table-sm table-striped table-bordered table-hover text-center standard"
         style={{ fontSize: "0.8rem", padding: ".2rem", whiteSpace: "nowrap" }}
       >
         <thead>
