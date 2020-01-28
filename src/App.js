@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Players from "./components/players/Players";
 import Teams from "./components/teams/Teams";
+import Glossary from "./components/Glossary";
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
             <Route exact path="/about" render={() => <About />} />
             <Route exact path="/players" render={() => <Players />} />
             <Route exact path="/teams" render={() => <Teams />} />
+            <Route exact path="/glossary" render={() => <Glossary />} />
           </Switch>
         </div>
       </div>

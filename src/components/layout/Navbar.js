@@ -40,6 +40,11 @@ export default class Navbar extends Component {
                   Teams
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link to="/glossary" className="text-white nav-link">
+                  Glossary
+                </Link>
+              </li>
             </ul>
 
             <NavSearch />
