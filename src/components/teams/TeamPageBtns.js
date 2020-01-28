@@ -4,7 +4,7 @@ export default class TeamPageBtns extends Component {
   render() {
     return (
       <div className="btn-group w-100" role="group">
-        {this.props.hittingTrue ? (
+        {this.props.tableShown ? (
           <button
             type="button"
             className=" teamHittingBtn btn btn-success"

@@ -66,13 +66,20 @@ export default class SeasonSelect extends Component {
           </div>
         </form>
         <div
-          className="btn-group w-100"
+          className="btn-group w-100 mb-3"
           role="group"
           aria-label="Basic example"
         >
-          <button type="button" className="btn btn-outline-success">
-            Standard
-          </button>
+          {this.props.tableShown ? (
+            <button type="button" className="btn btn-success">
+              Standard
+            </button>
+          ) : (
+            <button type="button" className="btn btn-outline-success">
+              Standard
+            </button>
+          )}
+
           <button type="button" className="btn btn-outline-success">
             Advanced
           </button>

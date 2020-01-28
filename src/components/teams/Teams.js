@@ -65,13 +65,14 @@ export default class Teams extends Component {
       <div className="mt-5">
         <TeamPageBtns
           showHittingTable={this.showHitting}
-          hittingTrue={this.state.standardTable}
+          tableShown={this.state.standardTable}
         />
         {this.state.standardTable ? (
           <div>
             <SeasonSelect
               season={this.state.season}
               changeSeason={this.changeSeason}
+              tableShown={this.state.standardTable}
             />
             <TeamStandardBattingTable stats={this.state.teamBatting} />
           </div>
