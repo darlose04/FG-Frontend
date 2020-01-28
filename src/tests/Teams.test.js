@@ -70,4 +70,15 @@ describe("Full testing", () => {
     const wrapper = mount(<Teams />);
     expect(Teams.prototype.componentDidMount).toHaveProperty("callCount", 1);
   });
+
+  it("allows props for the SeasonSelect component", () => {
+    const wrapper = mount(<SeasonSelect season={2019} />);
+    expect(wrapper.props().season).toEqual(2019);
+  });
+
+  it("allows props for the TeamBattingTable component", () => {
+    const wrapper = mount(<TeamBattingTable stats={[1, 2, 3]} />);
+    expect(wrapper.props().stats).toHaveLength(3);
+    expect(wrapper.props().stats).toEqual([1, 2, 3]);
+  });
 });
