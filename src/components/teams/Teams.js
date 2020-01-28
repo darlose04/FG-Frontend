@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import TeamPageBtns from "./TeamPageBtns";
 import SeasonSelect from "./SeasonSelect";
-import TeamBattingTable from "./TeamBattingTable";
+import TeamStandardBattingTable from "./TeamStandardBattingTable";
 import axios from "axios";
 
 export default class Teams extends Component {
@@ -72,7 +72,7 @@ export default class Teams extends Component {
               season={this.state.season}
               changeSeason={this.changeSeason}
             />
-            <TeamBattingTable stats={this.state.teamBatting} />
+            <TeamStandardBattingTable stats={this.state.teamBatting} />
           </div>
         ) : (
           <h2 className="text-center">Select Hitting or Pitching</h2>
