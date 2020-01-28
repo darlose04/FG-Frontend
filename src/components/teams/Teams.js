@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import TeamPageBtns from "./TeamPageBtns";
 import SeasonSelect from "./SeasonSelect";
 import TeamStandardBattingTable from "./TeamStandardBattingTable";
+import TeamAdvancedBattingTable from "./TeamAdvancedBattingTable";
 import axios from "axios";
 
 export default class Teams extends Component {
@@ -10,8 +11,7 @@ export default class Teams extends Component {
     this.state = {
       season: 2019,
       teamBatting: [],
-      standardTable: false,
-      advancedTable: false,
+      tableStats: "",
       pitchingTable: false
     };
     this.showHitting = this.showHitting.bind(this);
@@ -50,7 +50,7 @@ export default class Teams extends Component {
 
   showHitting() {
     this.setState({
-      standardTable: !this.state.standardTable
+      tableStats: "standard"
     });
   }
 
@@ -65,16 +65,20 @@ export default class Teams extends Component {
       <div className="mt-5">
         <TeamPageBtns
           showHittingTable={this.showHitting}
-          tableShown={this.state.standardTable}
+          tableShown={this.state.tableStats}
         />
-        {this.state.standardTable ? (
+        {this.state.tableStats ? (
           <div>
             <SeasonSelect
               season={this.state.season}
               changeSeason={this.changeSeason}
-              tableShown={this.state.standardTable}
+              tableShown={this.state.tableStats}
             />
-            <TeamStandardBattingTable stats={this.state.teamBatting} />
+            {this.state.tableStats === "standard" ? (
+              <TeamStandardBattingTable stats={this.state.teamBatting} />
+            ) : (
+              <TeamAdvancedBattingTable stats={this.state.teamBatting} />
+            )}
           </div>
         ) : (
           <h2 className="text-center">Select Hitting or Pitching</h2>
