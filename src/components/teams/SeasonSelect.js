@@ -70,7 +70,7 @@ export default class SeasonSelect extends Component {
           role="group"
           aria-label="Basic example"
         >
-          {this.props.tableShown ? (
+          {this.props.tableShown === "standard" ? (
             <button type="button" className="btn btn-success">
               Standard
             </button>
@@ -79,10 +79,15 @@ export default class SeasonSelect extends Component {
               Standard
             </button>
           )}
-
-          <button type="button" className="btn btn-outline-success">
-            Advanced
-          </button>
+          {this.props.tableShown === "advanced" ? (
+            <button type="button" className="btn btn-success">
+              Advanced
+            </button>
+          ) : (
+            <button type="button" className="btn btn-outline-success">
+              Advanced
+            </button>
+          )}
         </div>
       </div>
     );
