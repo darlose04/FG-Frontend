@@ -22,8 +22,12 @@ export default class Teams extends Component {
       `https://www.fgbaseballapi.com/api/teambatting/${this.state.season}`
     );
 
+    let sortedData = batting.data.sort((a, b) => {
+      return b.war - a.war;
+    });
+
     this.setState({
-      teamBatting: batting.data
+      teamBatting: sortedData
     });
   }
 
@@ -32,8 +36,12 @@ export default class Teams extends Component {
       let batting = await axios.get(
         `https://www.fgbaseballapi.com/api/teambatting/${this.state.season}`
       );
+
+      let sortedData = batting.data.sort((a, b) => {
+        return b.war - a.war;
+      });
       this.setState({
-        teamBatting: batting.data
+        teamBatting: sortedData
       });
     }
   }
