@@ -6,6 +6,7 @@ import axios from "axios";
 import Teams from "../components/teams/Teams";
 import SeasonSelect from "../components/teams/SeasonSelect";
 import TeamBattingTable from "../components/teams/TeamBattingTable";
+import TeamPageBtns from "../components/teams/TeamPageBtns";
 
 // Shallow testing
 describe("<Teams />", () => {
@@ -25,17 +26,10 @@ describe("<Teams />", () => {
   });
 
   it("renders buttons", () => {
-    const wrapper = shallow(<Teams />);
+    const wrapper = shallow(<TeamPageBtns />);
     expect(wrapper.find("button")).toHaveLength(2);
     expect(wrapper.find(".teamHittingBtn")).toBeDefined();
     expect(wrapper.find(".teamPitchingBtn")).toBeDefined();
-  });
-
-  it("shows table and form after clicking team hitting button", () => {
-    const wrapper = shallow(<Teams />);
-    expect(wrapper.state().hittingTable).toEqual(false);
-    wrapper.find(".teamHittingBtn").simulate("click");
-    expect(wrapper.state().hittingTable).toEqual(true);
   });
 
   it("teamBatting state is the correct length before and after call to API", async () => {
@@ -80,5 +74,12 @@ describe("Full testing", () => {
     const wrapper = mount(<TeamBattingTable stats={[1, 2, 3]} />);
     expect(wrapper.props().stats).toHaveLength(3);
     expect(wrapper.props().stats).toEqual([1, 2, 3]);
+  });
+
+  it("shows table and form after clicking team hitting button", () => {
+    const wrapper = mount(<Teams />);
+    expect(wrapper.state().hittingTable).toEqual(false);
+    wrapper.find(".teamHittingBtn").simulate("click");
+    expect(wrapper.state().hittingTable).toEqual(true);
   });
 });
