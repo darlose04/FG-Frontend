@@ -40,6 +40,7 @@ export default class Teams extends Component {
       let sortedData = batting.data.sort((a, b) => {
         return b.war - a.war;
       });
+
       this.setState({
         teamBatting: sortedData
       });
