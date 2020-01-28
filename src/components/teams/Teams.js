@@ -10,7 +10,8 @@ export default class Teams extends Component {
     this.state = {
       season: 2019,
       teamBatting: [],
-      hittingTable: false,
+      standardTable: false,
+      advancedTable: false,
       pitchingTable: false
     };
     this.showHitting = this.showHitting.bind(this);
@@ -49,7 +50,7 @@ export default class Teams extends Component {
 
   showHitting() {
     this.setState({
-      hittingTable: !this.state.hittingTable
+      standardTable: !this.state.standardTable
     });
   }
 
@@ -64,9 +65,9 @@ export default class Teams extends Component {
       <div className="mt-5">
         <TeamPageBtns
           showHittingTable={this.showHitting}
-          hittingTrue={this.state.hittingTable}
+          hittingTrue={this.state.standardTable}
         />
-        {this.state.hittingTable ? (
+        {this.state.standardTable ? (
           <div>
             <SeasonSelect
               season={this.state.season}
