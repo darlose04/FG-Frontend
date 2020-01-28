@@ -4,9 +4,12 @@ export default class TeamBattingTable extends Component {
   render() {
     let { stats } = this.props;
     return (
-      <table className="table">
+      <table
+        className="table table-sm table-striped table-bordered table-hover text-center"
+        style={{ fontSize: "0.8rem", padding: ".2rem", whiteSpace: "nowrap" }}
+      >
         <thead>
-          <tr>
+          <tr className="bg-success text-white">
             <th scope="col">Team</th>
             <th scope="col">Games</th>
             <th scope="col">PA</th>
