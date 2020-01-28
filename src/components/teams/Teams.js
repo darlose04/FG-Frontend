@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import TeamPageBtns from "./TeamPageBtns";
 import SeasonSelect from "./SeasonSelect";
 import TeamBattingTable from "./TeamBattingTable";
 import axios from "axios";
@@ -52,32 +53,10 @@ export default class Teams extends Component {
   render() {
     return (
       <div className="mt-5">
-        <div className="btn-group w-100" role="group">
-          {this.state.hittingTable ? (
-            <button
-              type="button"
-              className=" teamHittingBtn btn btn-success"
-              onClick={this.showHitting}
-            >
-              Team Hitting
-            </button>
-          ) : (
-            <button
-              type="button"
-              className=" teamHittingBtn btn btn-outline-success"
-              onClick={this.showHitting}
-            >
-              Team Hitting
-            </button>
-          )}
-
-          <button
-            type="button"
-            className="teamPitchingBtn btn btn-outline-success"
-          >
-            Team Pitching
-          </button>
-        </div>
+        <TeamPageBtns
+          showHittingTable={this.showHitting}
+          hittingTrue={this.state.hittingTable}
+        />
         {this.state.hittingTable ? (
           <div>
             <SeasonSelect
