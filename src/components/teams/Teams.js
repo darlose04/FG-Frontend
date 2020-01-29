@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import TeamPageBtns from "./TeamPageBtns";
 import SeasonSelect from "./SeasonSelect";
-import TeamStandardBattingTable from "./TeamStandardBattingTable";
-import TeamAdvancedBattingTable from "./TeamAdvancedBattingTable";
+import TeamStandardBattingTable from "./batting/TeamStandardBattingTable";
+import TeamAdvancedBattingTable from "./batting/TeamAdvancedBattingTable";
 import axios from "axios";
 
 export default class Teams extends Component {
