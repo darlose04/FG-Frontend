@@ -159,12 +159,14 @@ export default class Teams extends Component {
               stdButtonClass={this.state.stdButtonClass}
               advButtonClass={this.state.advButtonClass}
             />
-            {this.state.battingStats === "standard" ? (
+            {this.state.battingStats === "standard" &&
+            this.state.pitchingStats === "" ? (
               <TeamStandardBattingTable stats={this.state.teamBatting} />
             ) : (
               <TeamAdvancedBattingTable stats={this.state.teamBatting} />
             )}
-            {this.state.pitchingStats === "standard" ? (
+            {this.state.pitchingStats === "standard" &&
+            this.state.battingStats === "" ? (
               <TeamStandardPitchingTable stats={this.state.teamPitching} />
             ) : (
               <TeamAdvancedPitchingTable stats={this.state.teamPitching} />
