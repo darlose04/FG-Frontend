@@ -51,15 +51,24 @@ export default class Teams extends Component {
   async componentDidUpdate(prevProps, prevState) {
     if (prevState.season !== this.state.season) {
       let batting = await axios.get(
-        `https://www.fgbaseballapi.com/api/teambatting/${this.state.season}`
+        `${baseUrl}/teambatting/${this.state.season}`
       );
 
       let sortedBatting = batting.data.sort((a, b) => {
         return b.war - a.war;
       });
 
+      let pitching = await axios.get(
+        `${baseUrl}/teampitching/${this.state.season}`
+      );
+
+      let sortedPitching = pitching.data.sort((a, b) => {
+        return b.war - a.war;
+      });
+
       this.setState({
-        teamBatting: sortedBatting
+        teamBatting: sortedBatting,
+        teamPitching: sortedPitching
       });
     }
   }
