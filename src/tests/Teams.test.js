@@ -5,8 +5,8 @@ import axios from "axios";
 
 import Teams from "../components/teams/Teams";
 import SeasonSelect from "../components/teams/SeasonSelect";
-import TeamStandardBattingTable from "../components/teams/TeamStandardBattingTable";
-import TeamAdvancedBattingTable from "../components/teams/TeamAdvancedBattingTable";
+import TeamStandardBattingTable from "../components/teams/batting/TeamStandardBattingTable";
+import TeamAdvancedBattingTable from "../components/teams/batting/TeamAdvancedBattingTable";
 import TeamPageBtns from "../components/teams/TeamPageBtns";
 
 // Shallow testing
