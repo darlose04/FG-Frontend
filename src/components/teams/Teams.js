@@ -26,6 +26,8 @@ export default class Teams extends Component {
     this.changeSeason = this.changeSeason.bind(this);
     this.showStdBattingTable = this.showStdBattingTable.bind(this);
     this.showAdvBattingTable = this.showAdvBattingTable.bind(this);
+    this.showStdPitchingTable = this.showStdPitchingTable.bind(this);
+    this.showAdvPitchingTable = this.showAdvPitchingTable.bind(this);
   }
 
   async componentDidMount() {
@@ -105,6 +107,18 @@ export default class Teams extends Component {
   showAdvBattingTable() {
     this.setState({
       battingStats: "advanced"
+    });
+  }
+
+  showStdPitchingTable() {
+    this.setState({
+      pitchingStats: "standard"
+    });
+  }
+
+  showAdvPitchingTable() {
+    this.setState({
+      pitchingStats: "advanced"
     });
   }
 
