@@ -124,13 +124,17 @@ export default class Teams extends Component {
 
   showStdPitchingTable() {
     this.setState({
-      pitchingStats: "standard"
+      pitchingStats: "standard",
+      stdButtonClass: "btn btn-success",
+      advButtonClass: "btn btn-outline-success"
     });
   }
 
   showAdvPitchingTable() {
     this.setState({
-      pitchingStats: "advanced"
+      pitchingStats: "advanced",
+      stdButtonClass: "btn btn-outline-success",
+      advButtonClass: "btn btn-success"
     });
   }
 
