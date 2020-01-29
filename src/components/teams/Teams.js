@@ -3,6 +3,7 @@ import TeamPageBtns from "./TeamPageBtns";
 import SeasonSelect from "./SeasonSelect";
 import TeamStandardBattingTable from "./batting/TeamStandardBattingTable";
 import TeamAdvancedBattingTable from "./batting/TeamAdvancedBattingTable";
+import PitchingButtons from "./pitching/PitchingButtons";
 import TeamStandardPitchingTable from "./pitching/TeamStandardPitchingTable";
 import TeamAdvancedPitchingTable from "./pitching/TeamAdvancedPitchingTable";
 import axios from "axios";
@@ -185,6 +186,7 @@ export default class Teams extends Component {
               stdButtonClass={this.state.stdButtonClass}
               advButtonClass={this.state.advButtonClass}
             />
+            <PitchingButtons />
 
             {this.state.pitchingStats === "standard" ? (
               <TeamStandardPitchingTable stats={this.state.teamPitching} />
