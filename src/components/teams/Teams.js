@@ -149,6 +149,25 @@ export default class Teams extends Component {
         ) : (
           <h2 className="text-center">Select Hitting or Pitching</h2>
         )}
+
+        {this.state.pitchingStats ? (
+          <div>
+            <SeasonSelect
+              season={this.state.season}
+              changeSeason={this.changeSeason}
+              tablePitchingShown={this.state.pitchingStats}
+              stdPitchingTable={this.showStdPitchingTable}
+              advPitchingTable={this.showAdvPitchingTable}
+            />
+            {this.state.battingStats === "standard" ? (
+              <TeamStandardPitchingTable stats={this.state.teamPitching} />
+            ) : (
+              <TeamAdvancedPitchingTable stats={this.state.teamPitching} />
+            )}
+          </div>
+        ) : (
+          <h2 className="text-center">Select Hitting or Pitching</h2>
+        )}
       </div>
     );
   }
