@@ -3,6 +3,8 @@ import TeamPageBtns from "./TeamPageBtns";
 import SeasonSelect from "./SeasonSelect";
 import TeamStandardBattingTable from "./batting/TeamStandardBattingTable";
 import TeamAdvancedBattingTable from "./batting/TeamAdvancedBattingTable";
+import TeamStandardPitchingTable from "./pitching/TeamStandardPitchingTable";
+import TeamAdvancedPitchingTable from "./pitching/TeamAdvancedPitchingTable";
 import axios from "axios";
 
 const baseUrl = "https://www.fgbaseballapi.com/api";
@@ -76,12 +78,14 @@ export default class Teams extends Component {
 
   showHitting() {
     this.setState({
-      battingStats: "standard"
+      battingStats: "standard",
+      pitchingStats: ""
     });
   }
 
   showPitching() {
     this.setState({
+      battingStats: "",
       pitchingStats: "standard"
     });
   }
