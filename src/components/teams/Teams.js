@@ -5,12 +5,17 @@ import TeamStandardBattingTable from "./batting/TeamStandardBattingTable";
 import TeamAdvancedBattingTable from "./batting/TeamAdvancedBattingTable";
 import axios from "axios";
 
+const baseUrl = "https://www.fgbaseballapi.com/api";
+
 export default class Teams extends Component {
   constructor(props) {
     super(props);
     this.state = {
       season: 2019,
       teamBatting: [],
+      teamPitching: [],
+      teamStarting: [],
+      teamRelieving: [],
       tableStats: "",
       pitchingTable: false
     };
@@ -22,15 +27,24 @@ export default class Teams extends Component {
 
   async componentDidMount() {
     let batting = await axios.get(
-      `https://www.fgbaseballapi.com/api/teambatting/${this.state.season}`
+      `${baseUrl}/teambatting/${this.state.season}`
     );
 
     let sortedBatting = batting.data.sort((a, b) => {
       return b.war - a.war;
     });
 
+    let pitching = await axios.get(
+      `${baseUrl}/teampitching/${this.state.season}`
+    );
+
+    let sortedPitching = pitching.data.sort((a, b) => {
+      return b.war - a.war;
+    });
+
     this.setState({
-      teamBatting: sortedBatting
+      teamBatting: sortedBatting,
+      teamPitching: sortedPitching
     });
   }
 
