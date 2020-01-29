@@ -90,8 +90,8 @@ describe("Full testing", () => {
 
   it("shows table and form after clicking team hitting button", () => {
     const wrapper = mount(<Teams />);
-    expect(wrapper.state().tableStats).toEqual("");
+    expect(wrapper.state().battingStats).toEqual("");
     wrapper.find(".teamHittingBtn").simulate("click");
-    expect(wrapper.state().tableStats).toEqual("standard");
+    expect(wrapper.state().battingStats).toEqual("standard");
   });
 });
