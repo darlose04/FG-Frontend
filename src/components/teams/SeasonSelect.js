@@ -74,26 +74,50 @@ export default class SeasonSelect extends Component {
             </div>
           </div>
         </form>
-        <div
-          className="btn-group w-100 mb-3"
-          role="group"
-          aria-label="Basic example"
-        >
-          <button
-            onClick={stdBattingTable}
-            type="button"
-            className={stdButtonClass}
+
+        {tableBattingShown ? (
+          <div
+            className="btn-group w-100 mb-3"
+            role="group"
+            aria-label="Basic example"
           >
-            Standard
-          </button>
-          <button
-            onClick={advBattingTable}
-            type="button"
-            className={advButtonClass}
+            <button
+              onClick={stdBattingTable}
+              type="button"
+              className={stdButtonClass}
+            >
+              Standard
+            </button>
+            <button
+              onClick={advBattingTable}
+              type="button"
+              className={advButtonClass}
+            >
+              Advanced
+            </button>
+          </div>
+        ) : (
+          <div
+            className="btn-group w-100 mb-3"
+            role="group"
+            aria-label="Basic example"
           >
-            Advanced
-          </button>
-        </div>
+            <button
+              onClick={stdPitchingTable}
+              type="button"
+              className={stdButtonClass}
+            >
+              Standard
+            </button>
+            <button
+              onClick={advPitchingTable}
+              type="button"
+              className={advButtonClass}
+            >
+              Advanced
+            </button>
+          </div>
+        )}
       </div>
     );
   }
