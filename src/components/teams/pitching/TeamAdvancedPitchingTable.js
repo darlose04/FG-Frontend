@@ -19,21 +19,6 @@ export default class TeamAdvancedPitchingTable extends Component {
             <th scope="col">IP</th>
             <th scope="col">Start IP</th>
             <th scope="col">Relief IP</th>
-            <th scope="col">H</th>
-            <th scope="col">Runs</th>
-            <th scope="col">ER</th>
-            <th scope="col">HR</th>
-            <th scope="col">BB</th>
-            <th scope="col">SO</th>
-            <th scope="col">IBB</th>
-            <th scope="col">HBP</th>
-            <th scope="col">WP</th>
-            <th scope="col">GB</th>
-            <th scope="col">FB</th>
-            <th scope="col">LD</th>
-            <th scope="col">Balls</th>
-            <th scope="col">Strikes</th>
-            <th scope="col">Pitches</th>
             <th scope="col">K/9</th>
             <th scope="col">BB/9</th>
             <th scope="col">HR/9</th>
@@ -63,21 +48,6 @@ export default class TeamAdvancedPitchingTable extends Component {
               <td>{info.ip}</td>
               <td>{info.startip}</td>
               <td>{info.reliefip}</td>
-              <td>{info.hits}</td>
-              <td>{info.runs}</td>
-              <td>{info.er}</td>
-              <td>{info.hr}</td>
-              <td>{info.bb}</td>
-              <td>{info.so}</td>
-              <td>{info.ibb}</td>
-              <td>{info.hbp}</td>
-              <td>{info.wp}</td>
-              <td>{info.gb}</td>
-              <td>{info.fb}</td>
-              <td>{info.ld}</td>
-              <td>{info.balls}</td>
-              <td>{info.strikes}</td>
-              <td>{info.pitches}</td>
               <td>{info.k_per_9}</td>
               <td>{info.bb_per_9}</td>
               <td>{info.hr_per_9}</td>

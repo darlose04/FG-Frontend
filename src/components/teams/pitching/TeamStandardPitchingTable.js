@@ -34,21 +34,8 @@ export default class TeamStandardPitchingTable extends Component {
             <th scope="col">Balls</th>
             <th scope="col">Strikes</th>
             <th scope="col">Pitches</th>
-            <th scope="col">K/9</th>
-            <th scope="col">BB/9</th>
-            <th scope="col">HR/9</th>
             <th scope="col">AVG</th>
-            <th scope="col">BABIP</th>
-            <th scope="col">LOB%</th>
-            <th scope="col">GB%</th>
-            <th scope="col">LD%</th>
-            <th scope="col">FB%</th>
-            <th scope="col">HR/FB</th>
             <th scope="col">ERA</th>
-            <th scope="col">WHIP</th>
-            <th scope="col">FIP</th>
-            <th scope="col">xFIP</th>
-            <th scope="col">WAR</th>
           </tr>
         </thead>
         <tbody>
@@ -78,21 +65,8 @@ export default class TeamStandardPitchingTable extends Component {
               <td>{info.balls}</td>
               <td>{info.strikes}</td>
               <td>{info.pitches}</td>
-              <td>{info.k_per_9}</td>
-              <td>{info.bb_per_9}</td>
-              <td>{info.hr_per_9}</td>
               <td>{info.avg}</td>
-              <td>{info.babip}</td>
-              <td>{info.lob_perc}</td>
-              <td>{info.gb_perc}</td>
-              <td>{info.ld_perc}</td>
-              <td>{info.fb_perc}</td>
-              <td>{info.hr_per_fb}</td>
               <td>{info.era}</td>
-              <td>{info.whip}</td>
-              <td>{info.fip}</td>
-              <td>{info.xfip}</td>
-              <td>{info.war}</td>
             </tr>
           ))}
         </tbody>
