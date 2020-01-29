@@ -20,10 +20,11 @@ export default class TeamStandardPitchingTable extends Component {
             <th scope="col">Start IP</th>
             <th scope="col">Relief IP</th>
             <th scope="col">H</th>
-            <th scope="col">Runs</th>
+            <th scope="col">R</th>
             <th scope="col">ER</th>
             <th scope="col">HR</th>
             <th scope="col">BB</th>
+            <th scope="col">SO</th>
             <th scope="col">IBB</th>
             <th scope="col">HBP</th>
             <th scope="col">WP</th>

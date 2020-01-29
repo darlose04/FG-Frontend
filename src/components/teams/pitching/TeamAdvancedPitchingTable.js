@@ -24,6 +24,7 @@ export default class TeamAdvancedPitchingTable extends Component {
             <th scope="col">ER</th>
             <th scope="col">HR</th>
             <th scope="col">BB</th>
+            <th scope="col">SO</th>
             <th scope="col">IBB</th>
             <th scope="col">HBP</th>
             <th scope="col">WP</th>
