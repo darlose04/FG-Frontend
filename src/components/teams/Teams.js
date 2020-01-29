@@ -131,7 +131,7 @@ export default class Teams extends Component {
           tableBattingShown={this.state.battingStats}
           tablePitchingShown={this.state.pitchingStats}
         />
-        {this.state.battingStats ? (
+        {this.state.battingStats || this.state.pitchingStats ? (
           <div>
             <SeasonSelect
               season={this.state.season}
@@ -139,27 +139,16 @@ export default class Teams extends Component {
               tableBattingShown={this.state.battingStats}
               stdBattingTable={this.showStdBattingTable}
               advBattingTable={this.showAdvBattingTable}
+              tablePitchingShown={this.state.pitchingStats}
+              stdPitchingTable={this.showStdPitchingTable}
+              advPitchingTable={this.showAdvPitchingTable}
             />
             {this.state.battingStats === "standard" ? (
               <TeamStandardBattingTable stats={this.state.teamBatting} />
             ) : (
               <TeamAdvancedBattingTable stats={this.state.teamBatting} />
             )}
-          </div>
-        ) : (
-          <h2 className="text-center">Select Hitting or Pitching</h2>
-        )}
-
-        {this.state.pitchingStats ? (
-          <div>
-            <SeasonSelect
-              season={this.state.season}
-              changeSeason={this.changeSeason}
-              tablePitchingShown={this.state.pitchingStats}
-              stdPitchingTable={this.showStdPitchingTable}
-              advPitchingTable={this.showAdvPitchingTable}
-            />
-            {this.state.battingStats === "standard" ? (
+            {this.state.pitchingStats === "standard" ? (
               <TeamStandardPitchingTable stats={this.state.teamPitching} />
             ) : (
               <TeamAdvancedPitchingTable stats={this.state.teamPitching} />
