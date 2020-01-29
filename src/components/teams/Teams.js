@@ -16,13 +16,14 @@ export default class Teams extends Component {
       teamPitching: [],
       teamStarting: [],
       teamRelieving: [],
-      tableStats: "",
-      pitchingTable: false
+      battingStats: "",
+      pitchingStats: ""
     };
     this.showHitting = this.showHitting.bind(this);
+    this.showPitching = this.showPitching.bind(this);
     this.changeSeason = this.changeSeason.bind(this);
-    this.showStdTable = this.showStdTable.bind(this);
-    this.showAdvTable = this.showAdvTable.bind(this);
+    this.showStdBattingTable = this.showStdBattingTable.bind(this);
+    this.showAdvBattingTable = this.showAdvBattingTable.bind(this);
   }
 
   async componentDidMount() {
@@ -75,7 +76,13 @@ export default class Teams extends Component {
 
   showHitting() {
     this.setState({
-      tableStats: "standard"
+      battingStats: "standard"
+    });
+  }
+
+  showPitching() {
+    this.setState({
+      pitchingStats: "standard"
     });
   }
 
@@ -85,15 +92,15 @@ export default class Teams extends Component {
     });
   }
 
-  showStdTable() {
+  showStdBattingTable() {
     this.setState({
-      tableStats: "standard"
+      battingStats: "standard"
     });
   }
 
-  showAdvTable() {
+  showAdvBattingTable() {
     this.setState({
-      tableStats: "advanced"
+      battingStats: "advanced"
     });
   }
 
@@ -102,18 +109,20 @@ export default class Teams extends Component {
       <div className="mt-5">
         <TeamPageBtns
           showHittingTable={this.showHitting}
-          tableShown={this.state.tableStats}
+          showPitchingTable={this.showPitching}
+          tableBattingShown={this.state.battingStats}
+          tablePitchingShown={this.state.pitchingStats}
         />
-        {this.state.tableStats ? (
+        {this.state.battingStats ? (
           <div>
             <SeasonSelect
               season={this.state.season}
               changeSeason={this.changeSeason}
-              tableShown={this.state.tableStats}
-              stdTable={this.showStdTable}
-              advTable={this.showAdvTable}
+              tableBattingShown={this.state.battingStats}
+              stdBattingTable={this.showStdBattingTable}
+              advBattingTable={this.showAdvBattingTable}
             />
-            {this.state.tableStats === "standard" ? (
+            {this.state.battingStats === "standard" ? (
               <TeamStandardBattingTable stats={this.state.teamBatting} />
             ) : (
               <TeamAdvancedBattingTable stats={this.state.teamBatting} />

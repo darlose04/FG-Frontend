@@ -70,9 +70,9 @@ export default class SeasonSelect extends Component {
           role="group"
           aria-label="Basic example"
         >
-          {this.props.tableShown === "standard" ? (
+          {this.props.tableBattingShown === "standard" ? (
             <button
-              onClick={this.props.stdTable}
+              onClick={this.props.stdBattingTable}
               type="button"
               className="btn btn-success"
             >
@@ -80,16 +80,16 @@ export default class SeasonSelect extends Component {
             </button>
           ) : (
             <button
-              onClick={this.props.stdTable}
+              onClick={this.props.stdBattingTable}
               type="button"
               className="btn btn-outline-success"
             >
               Standard
             </button>
           )}
-          {this.props.tableShown === "advanced" ? (
+          {this.props.tableBattingShown === "advanced" ? (
             <button
-              onClick={this.props.advTable}
+              onClick={this.props.advBattingTable}
               type="button"
               className="btn btn-success"
             >
@@ -97,7 +97,7 @@ export default class SeasonSelect extends Component {
             </button>
           ) : (
             <button
-              onClick={this.props.advTable}
+              onClick={this.props.advBattingTable}
               type="button"
               className="btn btn-outline-success"
             >
