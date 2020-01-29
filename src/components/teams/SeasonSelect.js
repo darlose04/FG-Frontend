@@ -42,7 +42,7 @@ export default class SeasonSelect extends Component {
                 Preference
               </label>
               <select
-                className="custom-select mr-sm-2"
+                className="custom-select mr-sm-2 text-center"
                 id="seasonSelectHitting"
                 onChange={this.seasonChange}
               >
