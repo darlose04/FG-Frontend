@@ -13,12 +13,9 @@ export default class TeamAdvStartingTable extends Component {
             <th scope="col">Team</th>
             <th scope="col">W</th>
             <th scope="col">L</th>
-            <th scope="col">SV</th>
             <th scope="col">G</th>
             <th scope="col">GS</th>
             <th scope="col">IP</th>
-            <th scope="col">Start IP</th>
-            <th scope="col">Relief IP</th>
             <th scope="col">K/9</th>
             <th scope="col">BB/9</th>
             <th scope="col">HR/9</th>
@@ -42,12 +39,9 @@ export default class TeamAdvStartingTable extends Component {
               <td>{info.team}</td>
               <td>{info.wins}</td>
               <td>{info.losses}</td>
-              <td>{info.saves}</td>
               <td>{info.games}</td>
               <td>{info.gs}</td>
               <td>{info.ip}</td>
-              <td>{info.startip}</td>
-              <td>{info.reliefip}</td>
               <td>{info.k_per_9}</td>
               <td>{info.bb_per_9}</td>
               <td>{info.hr_per_9}</td>

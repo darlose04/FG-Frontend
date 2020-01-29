@@ -13,12 +13,9 @@ export default class TeamStdStartingTable extends Component {
             <th scope="col">Team</th>
             <th scope="col">W</th>
             <th scope="col">L</th>
-            <th scope="col">SV</th>
             <th scope="col">G</th>
             <th scope="col">GS</th>
             <th scope="col">IP</th>
-            <th scope="col">Start IP</th>
-            <th scope="col">Relief IP</th>
             <th scope="col">H</th>
             <th scope="col">R</th>
             <th scope="col">ER</th>
@@ -44,12 +41,9 @@ export default class TeamStdStartingTable extends Component {
               <td>{info.team}</td>
               <td>{info.wins}</td>
               <td>{info.losses}</td>
-              <td>{info.saves}</td>
               <td>{info.games}</td>
               <td>{info.gs}</td>
               <td>{info.ip}</td>
-              <td>{info.startip}</td>
-              <td>{info.reliefip}</td>
               <td>{info.hits}</td>
               <td>{info.runs}</td>
               <td>{info.er}</td>
