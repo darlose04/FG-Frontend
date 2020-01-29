@@ -19,7 +19,9 @@ export default class Teams extends Component {
       teamStarting: [],
       teamRelieving: [],
       battingStats: "",
-      pitchingStats: ""
+      pitchingStats: "",
+      hittingButtonClass: "btn btn-outline-success",
+      pitchingButtonClass: "btn btn-outline-success"
     };
     this.showHitting = this.showHitting.bind(this);
     this.showPitching = this.showPitching.bind(this);
@@ -81,14 +83,18 @@ export default class Teams extends Component {
   showHitting() {
     this.setState({
       battingStats: "standard",
-      pitchingStats: ""
+      pitchingStats: "",
+      hittingButtonClass: "btn btn-success",
+      pitchingButtonClass: "btn btn-outline-success"
     });
   }
 
   showPitching() {
     this.setState({
       battingStats: "",
-      pitchingStats: "standard"
+      pitchingStats: "standard",
+      hittingButtonClass: "btn btn-outline-success",
+      pitchingButtonClass: "btn btn-success"
     });
   }
 
@@ -128,6 +134,8 @@ export default class Teams extends Component {
         <TeamPageBtns
           showHittingTable={this.showHitting}
           showPitchingTable={this.showPitching}
+          hittingButtonClass={this.state.hittingButtonClass}
+          pitchingButtonClass={this.state.pitchingButtonClass}
           tableBattingShown={this.state.battingStats}
           tablePitchingShown={this.state.pitchingStats}
         />
