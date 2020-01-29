@@ -87,7 +87,9 @@ export default class Teams extends Component {
       battingStats: "standard",
       pitchingStats: "",
       hittingButtonClass: "btn btn-success",
-      pitchingButtonClass: "btn btn-outline-success"
+      pitchingButtonClass: "btn btn-outline-success",
+      stdButtonClass: "btn btn-success",
+      advButtonClass: "btn btn-outline-success"
     });
   }
 
@@ -96,7 +98,9 @@ export default class Teams extends Component {
       battingStats: "",
       pitchingStats: "standard",
       hittingButtonClass: "btn btn-outline-success",
-      pitchingButtonClass: "btn btn-success"
+      pitchingButtonClass: "btn btn-success",
+      stdButtonClass: "btn btn-success",
+      advButtonClass: "btn btn-outline-success"
     });
   }
 
