@@ -11,10 +11,10 @@ export default class TeamAdvancedPitchingTable extends Component {
         <thead>
           <tr className="bg-success text-white">
             <th scope="col">Team</th>
-            <th scope="col">Wins</th>
-            <th scope="col">Losses</th>
-            <th scope="col">Saves</th>
-            <th scope="col">Games</th>
+            <th scope="col">W</th>
+            <th scope="col">L</th>
+            <th scope="col">SV</th>
+            <th scope="col">G</th>
             <th scope="col">GS</th>
             <th scope="col">IP</th>
             <th scope="col">Start IP</th>
