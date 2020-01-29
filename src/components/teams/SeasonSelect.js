@@ -29,7 +29,9 @@ export default class SeasonSelect extends Component {
       advBattingTable,
       tablePitchingShown,
       stdPitchingTable,
-      advPitchingTable
+      advPitchingTable,
+      stdButtonClass,
+      advButtonClass
     } = this.props;
     return (
       <div>
@@ -77,40 +79,20 @@ export default class SeasonSelect extends Component {
           role="group"
           aria-label="Basic example"
         >
-          {tableBattingShown === "standard" ? (
-            <button
-              onClick={stdBattingTable}
-              type="button"
-              className="btn btn-success"
-            >
-              Standard
-            </button>
-          ) : (
-            <button
-              onClick={stdBattingTable}
-              type="button"
-              className="btn btn-outline-success"
-            >
-              Standard
-            </button>
-          )}
-          {tableBattingShown === "advanced" ? (
-            <button
-              onClick={advBattingTable}
-              type="button"
-              className="btn btn-success"
-            >
-              Advanced
-            </button>
-          ) : (
-            <button
-              onClick={advBattingTable}
-              type="button"
-              className="btn btn-outline-success"
-            >
-              Advanced
-            </button>
-          )}
+          <button
+            onClick={stdBattingTable}
+            type="button"
+            className={stdButtonClass}
+          >
+            Standard
+          </button>
+          <button
+            onClick={advBattingTable}
+            type="button"
+            className={advButtonClass}
+          >
+            Advanced
+          </button>
         </div>
       </div>
     );

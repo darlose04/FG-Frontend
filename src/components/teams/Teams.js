@@ -21,7 +21,9 @@ export default class Teams extends Component {
       battingStats: "",
       pitchingStats: "",
       hittingButtonClass: "btn btn-outline-success",
-      pitchingButtonClass: "btn btn-outline-success"
+      pitchingButtonClass: "btn btn-outline-success",
+      stdButtonClass: "btn btn-success",
+      advButtonClass: "btn btn-outline-success"
     };
     this.showHitting = this.showHitting.bind(this);
     this.showPitching = this.showPitching.bind(this);
@@ -106,13 +108,17 @@ export default class Teams extends Component {
 
   showStdBattingTable() {
     this.setState({
-      battingStats: "standard"
+      battingStats: "standard",
+      stdButtonClass: "btn btn-success",
+      advButtonClass: "btn btn-outline-success"
     });
   }
 
   showAdvBattingTable() {
     this.setState({
-      battingStats: "advanced"
+      battingStats: "advanced",
+      stdButtonClass: "btn btn-outline-success",
+      advButtonClass: "btn btn-success"
     });
   }
 
@@ -150,6 +156,8 @@ export default class Teams extends Component {
               tablePitchingShown={this.state.pitchingStats}
               stdPitchingTable={this.showStdPitchingTable}
               advPitchingTable={this.showAdvPitchingTable}
+              stdButtonClass={this.state.stdButtonClass}
+              advButtonClass={this.state.advButtonClass}
             />
             {this.state.battingStats === "standard" ? (
               <TeamStandardBattingTable stats={this.state.teamBatting} />
