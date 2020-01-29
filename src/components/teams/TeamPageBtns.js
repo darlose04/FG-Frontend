@@ -2,13 +2,19 @@ import React, { Component } from "react";
 
 export default class TeamPageBtns extends Component {
   render() {
+    let {
+      showHittingTable,
+      showPitchingTable,
+      tableBattingShown,
+      tablePitchingShown
+    } = this.props;
     return (
       <div className="btn-group w-100" role="group">
-        {this.props.tableBattingShown ? (
+        {tableBattingShown ? (
           <button
             type="button"
             className=" teamHittingBtn btn btn-success"
-            onClick={this.props.showHittingTable}
+            onClick={showHittingTable}
           >
             Team Hitting
           </button>
@@ -16,17 +22,17 @@ export default class TeamPageBtns extends Component {
           <button
             type="button"
             className=" teamHittingBtn btn btn-outline-success"
-            onClick={this.props.showHittingTable}
+            onClick={showHittingTable}
           >
             Team Hitting
           </button>
         )}
 
-        {this.props.tablePitchingShown ? (
+        {tablePitchingShown ? (
           <button
             type="button"
             className=" teamPitchingBtn btn btn-success"
-            onClick={this.props.showPitchingTable}
+            onClick={showPitchingTable}
           >
             Team Pitching
           </button>
@@ -34,7 +40,7 @@ export default class TeamPageBtns extends Component {
           <button
             type="button"
             className=" teamPitchingBtn btn btn-outline-success"
-            onClick={this.props.showPitchingTable}
+            onClick={showPitchingTable}
           >
             Team Pitching
           </button>
