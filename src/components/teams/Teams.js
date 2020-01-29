@@ -94,9 +94,27 @@ export default class Teams extends Component {
         return b.war - a.war;
       });
 
+      let starting = await axios.get(
+        `${baseUrl}/teamstarting/${this.state.season}`
+      );
+
+      let sortedStarting = starting.data.sort((a, b) => {
+        return b.war - a.war;
+      });
+
+      let relieving = await axios.get(
+        `${baseUrl}/teamrelieving/${this.state.season}`
+      );
+
+      let sortedRelieving = relieving.data.sort((a, b) => {
+        return b.war - a.war;
+      });
+
       this.setState({
         teamBatting: sortedBatting,
-        teamPitching: sortedPitching
+        teamPitching: sortedPitching,
+        teamStarting: sortedStarting,
+        teamRelieving: sortedRelieving
       });
     }
   }
