@@ -22,6 +22,15 @@ export default class SeasonSelect extends Component {
   }
 
   render() {
+    let {
+      season,
+      tableBattingShown,
+      stdBattingTable,
+      advBattingTable,
+      tablePitchingShown,
+      stdPitchingTable,
+      advPitchingTable
+    } = this.props;
     return (
       <div>
         <form className="seasonSelectForm" onSubmit={this.seasonSubmit}>
@@ -35,9 +44,7 @@ export default class SeasonSelect extends Component {
                 id="seasonSelectHitting"
                 onChange={this.seasonChange}
               >
-                <option defaultValue={this.props.season}>
-                  {this.props.season}
-                </option>
+                <option defaultValue={season}>{season}</option>
                 <option value="2019">2019</option>
                 <option value="2018">2018</option>
                 <option value="2017">2017</option>
@@ -70,9 +77,9 @@ export default class SeasonSelect extends Component {
           role="group"
           aria-label="Basic example"
         >
-          {this.props.tableBattingShown === "standard" ? (
+          {tableBattingShown === "standard" ? (
             <button
-              onClick={this.props.stdBattingTable}
+              onClick={stdBattingTable}
               type="button"
               className="btn btn-success"
             >
@@ -80,16 +87,16 @@ export default class SeasonSelect extends Component {
             </button>
           ) : (
             <button
-              onClick={this.props.stdBattingTable}
+              onClick={stdBattingTable}
               type="button"
               className="btn btn-outline-success"
             >
               Standard
             </button>
           )}
-          {this.props.tableBattingShown === "advanced" ? (
+          {tableBattingShown === "advanced" ? (
             <button
-              onClick={this.props.advBattingTable}
+              onClick={advBattingTable}
               type="button"
               className="btn btn-success"
             >
@@ -97,7 +104,7 @@ export default class SeasonSelect extends Component {
             </button>
           ) : (
             <button
-              onClick={this.props.advBattingTable}
+              onClick={advBattingTable}
               type="button"
               className="btn btn-outline-success"
             >
