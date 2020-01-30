@@ -142,7 +142,6 @@ export default class Teams extends Component {
   }
 
   showPitching() {
-    console.log("Clicked on the Pitching button");
     this.setState({
       battingStats: "",
       pitchingStats: "standard",
@@ -154,7 +153,6 @@ export default class Teams extends Component {
   }
 
   showTotals() {
-    console.log("Clicked on the Totals button");
     this.setState({
       pitchingTableShown: "totals",
       totalsBtnClass: "btn btn-success",
@@ -164,7 +162,6 @@ export default class Teams extends Component {
   }
 
   showStarting() {
-    console.log("Clicked on the Starting button");
     this.setState({
       pitchingTableShown: "starting",
       totalsBtnClass: "btn btn-outline-success",
@@ -174,7 +171,6 @@ export default class Teams extends Component {
   }
 
   showRelieving() {
-    console.log("Clicked on the Relieving button");
     this.setState({
       pitchingTableShown: "relieving",
       totalsBtnClass: "btn btn-outline-success",
