@@ -241,7 +241,17 @@ export default class Teams extends Component {
     };
 
     return (
-      <div className="mt-5">
+      <div className="mt-4">
+        <div className="jumbotron jumbotron-fluid">
+          <div className="container">
+            <h1 className="display-4 text-success text-center">
+              Team Statistics
+            </h1>
+            <p className="lead text-center">
+              Display team hitting or pitching statistics by season
+            </p>
+          </div>
+        </div>
         <TeamPageBtns
           showHittingTable={this.showHitting}
           showPitchingTable={this.showPitching}
