@@ -148,8 +148,7 @@ export default class Teams extends Component {
       hittingButtonClass: "btn btn-outline-success",
       pitchingButtonClass: "btn btn-success",
       stdButtonClass: "btn btn-success",
-      advButtonClass: "btn btn-outline-success",
-      totalsBtnClass: "btn btn-success"
+      advButtonClass: "btn btn-outline-success"
     });
   }
 
@@ -219,6 +218,15 @@ export default class Teams extends Component {
   }
 
   render() {
+    const pitchingData = () => {
+      if (this.state.pitchingTableShown === "totals") {
+        if (this.state.pitchingStats === "standard") {
+          return <TeamStandardPitchingTable stats={this.state.teamPitching} />;
+        } else if (this.state.pitchingStats === "advanced") {
+          return <TeamAdvancedPitchingTable stats={this.state.teamPitching} />;
+        }
+      }
+    };
     return (
       <div className="mt-5">
         <TeamPageBtns
@@ -269,12 +277,7 @@ export default class Teams extends Component {
               showStarting={this.state.showStarting}
               showRelieving={this.state.showRelieving}
             />
-
-            {this.state.pitchingStats === "standard" ? (
-              <TeamStandardPitchingTable stats={this.state.teamPitching} />
-            ) : (
-              <TeamAdvancedPitchingTable stats={this.state.teamPitching} />
-            )}
+            {pitchingData()}
           </div>
         ) : (
           <div></div>
