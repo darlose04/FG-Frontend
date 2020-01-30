@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow, mount } from "../../enzyme";
+import { shallow, mount } from "../../../enzyme";
 import sinon from "sinon";
 import axios from "axios";
 
@@ -13,3 +13,18 @@ import TeamStdStartingTable from "../../../components/teams/pitching/TeamStdStar
 import TeamAdvStartingTable from "../../../components/teams/pitching/TeamAdvStartingTable";
 import TeamStdRelievingTable from "../../../components/teams/pitching/TeamStdRelievingTable";
 import TeamAdvRelievingTable from "../../../components/teams/pitching/TeamAdvRelievingTable";
+
+describe("<Teams />", () => {
+  it("renders the TeamPageBtns component", () => {
+    const wrapper = shallow(<Teams />);
+    expect(wrapper.find(TeamPageBtns)).toBeDefined();
+  });
+
+  it("simulates clicking the pitching button which renders SeasonSelect and PitchingButtons", () => {
+    const wrapper = mount(<Teams />);
+    const pitchingBtn = wrapper.find("button.teamPitchingBtn");
+    expect(wrapper.find("button")).toHaveLength(2);
+    pitchingBtn.simulate("click");
+    expect(wrapper.find("button")).toHaveLength(8);
+  });
+});
