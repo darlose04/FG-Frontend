@@ -35,6 +35,9 @@ export default class Teams extends Component {
     };
     this.showHitting = this.showHitting.bind(this);
     this.showPitching = this.showPitching.bind(this);
+    this.showTotals = this.showTotals.bind(this);
+    this.showStarting = this.showStarting.bind(this);
+    this.showRelieving = this.showRelieving.bind(this);
     this.changeSeason = this.changeSeason.bind(this);
     this.showStdBattingTable = this.showStdBattingTable.bind(this);
     this.showAdvBattingTable = this.showAdvBattingTable.bind(this);
@@ -243,6 +246,9 @@ export default class Teams extends Component {
               totalsClass={this.state.totalsBtnClass}
               startersClass={this.state.startersBtnClass}
               relieversClass={this.state.relieversBtnClass}
+              showTotals={this.state.showTotals}
+              showStarting={this.state.showStarting}
+              showRelieving={this.state.showRelieving}
             />
 
             {this.state.pitchingStats === "standard" ? (
