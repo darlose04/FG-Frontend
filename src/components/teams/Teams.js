@@ -148,6 +148,16 @@ export default class Teams extends Component {
     });
   }
 
+  showTotals() {
+    this.setState({});
+  }
+
+  showStarting() {
+    this.setState({});
+  }
+
+  showRelieving() {}
+
   changeSeason(newSeason) {
     this.setState({
       season: newSeason
@@ -229,7 +239,11 @@ export default class Teams extends Component {
               stdButtonClass={this.state.stdButtonClass}
               advButtonClass={this.state.advButtonClass}
             />
-            <PitchingButtons />
+            <PitchingButtons
+              totalsClass={this.state.totalsBtnClass}
+              startersClass={this.state.startersBtnClass}
+              relieversClass={this.state.relieversBtnClass}
+            />
 
             {this.state.pitchingStats === "standard" ? (
               <TeamStandardPitchingTable stats={this.state.teamPitching} />
