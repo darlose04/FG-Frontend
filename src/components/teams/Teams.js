@@ -30,8 +30,8 @@ export default class Teams extends Component {
       stdButtonClass: "btn btn-success",
       advButtonClass: "btn btn-outline-success",
       totalsBtnClass: "btn btn-success",
-      startersBtnClass: "btn btn-outline-success",
-      relieversBtnClass: "btn btn-outline-success",
+      startingBtnClass: "btn btn-outline-success",
+      relievingBtnClass: "btn btn-outline-success",
       pitchingTableShown: "totals"
     };
     this.showHitting = this.showHitting.bind(this);
@@ -156,26 +156,26 @@ export default class Teams extends Component {
     this.setState({
       pitchingTableShown: "totals",
       totalsBtnClass: "btn btn-success",
-      startersBtnClass: "btn btn-outline-success",
-      relieversBtnClass: "btn btn-outline-success"
+      startingBtnClass: "btn btn-outline-success",
+      relievingBtnClass: "btn btn-outline-success"
     });
   }
 
   showStarting() {
     this.setState({
-      pitchingTableShown: "starters",
+      pitchingTableShown: "starting",
       totalsBtnClass: "btn btn-outline-success",
-      startersBtnClass: "btn btn-success",
-      relieversBtnClass: "btn btn-outline-success"
+      startingBtnClass: "btn btn-success",
+      relievingBtnClass: "btn btn-outline-success"
     });
   }
 
   showRelieving() {
     this.setState({
-      pitchingTableShown: "relievers",
+      pitchingTableShown: "relieving",
       totalsBtnClass: "btn btn-outline-success",
-      startersBtnClass: "btn btn-outline-success",
-      relieversBtnClass: "btn btn-success"
+      startingBtnClass: "btn btn-outline-success",
+      relievingBtnClass: "btn btn-success"
     });
   }
 
@@ -225,6 +225,13 @@ export default class Teams extends Component {
         } else if (this.state.pitchingStats === "advanced") {
           return <TeamAdvancedPitchingTable stats={this.state.teamPitching} />;
         }
+      } else if (this.state.pitchingTableShown === "starting") {
+        if (this.state.pitchingStats === "standard") {
+          return <TeamStdStartingTable stats={this.state.teamStarting} />;
+        } else if (this.state.pitchingStats === "advanced") {
+          return <TeamAdvStartingTable stats={this.state.teamStarting} />;
+        }
+      } else if (this.state.pitchingTableShown === "relieving") {
       }
     };
     return (
@@ -271,8 +278,8 @@ export default class Teams extends Component {
             />
             <PitchingButtons
               totalsClass={this.state.totalsBtnClass}
-              startersClass={this.state.startersBtnClass}
-              relieversClass={this.state.relieversBtnClass}
+              startingClass={this.state.startingBtnClass}
+              relievingClass={this.state.relievingBtnClass}
               showTotals={this.state.showTotals}
               showStarting={this.state.showStarting}
               showRelieving={this.state.showRelieving}
