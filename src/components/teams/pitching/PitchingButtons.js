@@ -16,14 +16,14 @@ export default class PitchingButtons extends Component {
           Totals
         </button>
         <button type="button" className={startersClass} onClick={showStarting}>
-          Starters
+          Starting
         </button>
         <button
           type="button"
           className={relieversClass}
           onClick={showRelieving}
         >
-          Relievers
+          Relieving
         </button>
       </div>
     );
