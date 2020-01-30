@@ -27,7 +27,6 @@ export default class SeasonSelect extends Component {
       tableBattingShown,
       stdBattingTable,
       advBattingTable,
-      tablePitchingShown,
       stdPitchingTable,
       advPitchingTable,
       stdButtonClass,
