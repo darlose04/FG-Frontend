@@ -14,7 +14,7 @@ import TeamAdvStartingTable from "../../../components/teams/pitching/TeamAdvStar
 import TeamStdRelievingTable from "../../../components/teams/pitching/TeamStdRelievingTable";
 import TeamAdvRelievingTable from "../../../components/teams/pitching/TeamAdvRelievingTable";
 
-describe("<Teams />", () => {
+describe("Team page pitching components", () => {
   it("renders the TeamPageBtns component", () => {
     const wrapper = shallow(<Teams />);
     expect(wrapper.find(TeamPageBtns)).toBeDefined();
