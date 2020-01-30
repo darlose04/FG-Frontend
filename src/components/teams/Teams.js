@@ -31,7 +31,7 @@ export default class Teams extends Component {
       advButtonClass: "btn btn-outline-success",
       totalsBtnClass: "btn btn-success",
       startersBtnClass: "btn btn-outline-success",
-      relieversBtnClass: "btn btn-outline-class"
+      relieversBtnClass: "btn btn-outline-success"
     };
     this.showHitting = this.showHitting.bind(this);
     this.showPitching = this.showPitching.bind(this);
