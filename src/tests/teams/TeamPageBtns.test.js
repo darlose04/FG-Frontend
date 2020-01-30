@@ -21,16 +21,6 @@ describe("<TeamPageBtns />", () => {
     expect(wrapper.find(".teamHittingBtn")).toBeDefined();
   });
 
-  it("simulates click events", () => {
-    const onButtonClick = sinon.spy();
-    const wrapper = shallow(<TeamPageBtns onButtonClick={onButtonClick} />);
-    wrapper
-      .find("button")
-      .at(0)
-      .simulate("click");
-    expect(onButtonClick).toHaveProperty("callCount", 1);
-  });
-
   it("renders the team pitching button", () => {
     const wrapper = shallow(<TeamPageBtns />);
     expect(wrapper.find(".teamPitchingBtn")).toBeDefined();
