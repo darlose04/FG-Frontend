@@ -163,11 +163,21 @@ export default class Teams extends Component {
   }
 
   showStarting() {
-    this.setState({});
+    this.setState({
+      pitchingTableShown: "starters",
+      totalsBtnClass: "btn btn-outline-success",
+      startersBtnClass: "btn btn-success",
+      relieversBtnClass: "btn btn-outline-success"
+    });
   }
 
   showRelieving() {
-    this.setState({});
+    this.setState({
+      pitchingTableShown: "relievers",
+      totalsBtnClass: "btn btn-outline-success",
+      startersBtnClass: "btn btn-outline-success",
+      relieversBtnClass: "btn btn-success"
+    });
   }
 
   changeSeason(newSeason) {
