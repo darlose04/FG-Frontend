@@ -232,6 +232,11 @@ export default class Teams extends Component {
           return <TeamAdvStartingTable stats={this.state.teamStarting} />;
         }
       } else if (this.state.pitchingTableShown === "relieving") {
+        if (this.state.pitchingStats === "standard") {
+          return <TeamStdRelievingTable stats={this.state.teamRelieving} />;
+        } else if (this.state.pitchingStats === "advanced") {
+          return <TeamAdvRelievingTable stats={this.state.teamRelieving} />;
+        }
       }
     };
     return (
