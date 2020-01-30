@@ -31,7 +31,8 @@ export default class Teams extends Component {
       advButtonClass: "btn btn-outline-success",
       totalsBtnClass: "btn btn-success",
       startersBtnClass: "btn btn-outline-success",
-      relieversBtnClass: "btn btn-outline-success"
+      relieversBtnClass: "btn btn-outline-success",
+      pitchingTableShown: "totals"
     };
     this.showHitting = this.showHitting.bind(this);
     this.showPitching = this.showPitching.bind(this);
@@ -147,19 +148,27 @@ export default class Teams extends Component {
       hittingButtonClass: "btn btn-outline-success",
       pitchingButtonClass: "btn btn-success",
       stdButtonClass: "btn btn-success",
-      advButtonClass: "btn btn-outline-success"
+      advButtonClass: "btn btn-outline-success",
+      totalsBtnClass: "btn btn-success"
     });
   }
 
   showTotals() {
-    this.setState({});
+    this.setState({
+      pitchingTableShown: "totals",
+      totalsBtnClass: "btn btn-success",
+      startersBtnClass: "btn btn-outline-success",
+      relieversBtnClass: "btn btn-outline-success"
+    });
   }
 
   showStarting() {
     this.setState({});
   }
 
-  showRelieving() {}
+  showRelieving() {
+    this.setState({});
+  }
 
   changeSeason(newSeason) {
     this.setState({
