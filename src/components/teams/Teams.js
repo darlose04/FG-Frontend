@@ -134,8 +134,8 @@ export default class Teams extends Component {
     this.setState({
       battingStats: "standard",
       pitchingStats: "",
-      hittingButtonClass: "btn btn-success",
-      pitchingButtonClass: "btn btn-outline-success",
+      hittingButtonClass: "btn btn-success teamHittingBtn",
+      pitchingButtonClass: "btn btn-outline-success teamPitchingBtn",
       stdButtonClass: "btn btn-success",
       advButtonClass: "btn btn-outline-success"
     });
@@ -145,8 +145,8 @@ export default class Teams extends Component {
     this.setState({
       battingStats: "",
       pitchingStats: "standard",
-      hittingButtonClass: "btn btn-outline-success",
-      pitchingButtonClass: "btn btn-success",
+      hittingButtonClass: "btn btn-outline-success teamHittingBtn",
+      pitchingButtonClass: "btn btn-success teamPitchingBtn",
       stdButtonClass: "btn btn-success",
       advButtonClass: "btn btn-outline-success"
     });
@@ -241,7 +241,7 @@ export default class Teams extends Component {
     };
 
     return (
-      <div className="mt-4">
+      <div className="mt-4 divReturn">
         <div className="jumbotron jumbotron-fluid">
           <div className="container">
             <h1 className="display-4 text-success text-center">
