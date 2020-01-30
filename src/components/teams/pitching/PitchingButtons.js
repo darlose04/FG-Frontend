@@ -15,12 +15,12 @@ export default class PitchingButtons extends Component {
         <button type="button" className={totalsClass} onClick={showTotals}>
           Totals
         </button>
-        <button type="button" className={startersClass} onClick={showStarting}>
+        <button type="button" className={startingClass} onClick={showStarting}>
           Starting
         </button>
         <button
           type="button"
-          className={relieversClass}
+          className={relievingClass}
           onClick={showRelieving}
         >
           Relieving
