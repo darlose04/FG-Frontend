@@ -1,13 +1,13 @@
 import React from "react";
-import { shallow, mount } from "../enzyme";
+import { shallow, mount } from "../../enzyme";
 import sinon from "sinon";
 import axios from "axios";
 
-import Teams from "../components/teams/Teams";
-import SeasonSelect from "../components/teams/SeasonSelect";
-import TeamStandardBattingTable from "../components/teams/batting/TeamStandardBattingTable";
-import TeamAdvancedBattingTable from "../components/teams/batting/TeamAdvancedBattingTable";
-import TeamPageBtns from "../components/teams/TeamPageBtns";
+import Teams from "../../components/teams/Teams";
+import SeasonSelect from "../../components/teams/SeasonSelect";
+import TeamStandardBattingTable from "../../components/teams/batting/TeamStandardBattingTable";
+import TeamAdvancedBattingTable from "../../components/teams/batting/TeamAdvancedBattingTable";
+import TeamPageBtns from "../../components/teams/TeamPageBtns";
 
 // Shallow testing
 describe("<Teams />", () => {
