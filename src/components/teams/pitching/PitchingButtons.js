@@ -4,8 +4,8 @@ export default class PitchingButtons extends Component {
   render() {
     let {
       totalsClass,
-      startersClass,
-      relieversClass,
+      startingClass,
+      relievingClass,
       showTotals,
       showStarting,
       showRelieving
