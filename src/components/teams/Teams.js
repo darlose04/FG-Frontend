@@ -241,7 +241,7 @@ export default class Teams extends Component {
     };
 
     return (
-      <div className="mt-4 divReturn">
+      <div className="mt-4">
         <div className="jumbotron jumbotron-fluid">
           <div className="container">
             <h1 className="display-4 text-success text-center">
