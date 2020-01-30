@@ -6,6 +6,10 @@ import TeamAdvancedBattingTable from "./batting/TeamAdvancedBattingTable";
 import PitchingButtons from "./pitching/PitchingButtons";
 import TeamStandardPitchingTable from "./pitching/TeamStandardPitchingTable";
 import TeamAdvancedPitchingTable from "./pitching/TeamAdvancedPitchingTable";
+import TeamStdStartingTable from "./pitching/TeamStdStartingTable";
+import TeamAdvStartingTable from "./pitching/TeamAdvStartingTable";
+import TeamStdRelievingTable from "./pitching/TeamStdRelievingTable";
+import TeamAdvRelievingTable from "./pitching/TeamAdvRelievingTable";
 import axios from "axios";
 
 const baseUrl = "https://www.fgbaseballapi.com/api";
@@ -24,7 +28,10 @@ export default class Teams extends Component {
       hittingButtonClass: "btn btn-outline-success",
       pitchingButtonClass: "btn btn-outline-success",
       stdButtonClass: "btn btn-success",
-      advButtonClass: "btn btn-outline-success"
+      advButtonClass: "btn btn-outline-success",
+      totalsBtnClass: "btn btn-success",
+      startersBtnClass: "btn btn-outline-success",
+      relieversBtnClass: "btn btn-outline-class"
     };
     this.showHitting = this.showHitting.bind(this);
     this.showPitching = this.showPitching.bind(this);
