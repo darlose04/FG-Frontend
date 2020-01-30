@@ -5,8 +5,6 @@ export default class TeamPageBtns extends Component {
     let {
       showHittingTable,
       showPitchingTable,
-      tableBattingShown,
-      tablePitchingShown,
       hittingButtonClass,
       pitchingButtonClass
     } = this.props;
