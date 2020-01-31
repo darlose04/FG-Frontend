@@ -37,4 +37,16 @@ describe("Team page pitching components", () => {
     expect(wrapper.find("tbody")).toHaveLength(1);
     expect(wrapper.find("th")).toHaveLength(26);
   });
+
+  it("renders the advanced team pitching table when the Advanced button is clicked", () => {
+    const wrapper = mount(<Teams />);
+    const pitchingBtn = wrapper.find("button.teamPitchingBtn");
+    pitchingBtn.simulate("click");
+    const advBtn = wrapper.find(".adv");
+    advBtn.simulate("click");
+    expect(wrapper.find("table")).toHaveLength(1);
+    expect(wrapper.find("thead")).toHaveLength(1);
+    expect(wrapper.find("tbody")).toHaveLength(1);
+    expect(wrapper.find("th")).toHaveLength(24);
+  });
 });
