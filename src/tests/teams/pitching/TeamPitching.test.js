@@ -43,10 +43,24 @@ describe("Team page pitching components", () => {
     const pitchingBtn = wrapper.find("button.teamPitchingBtn");
     pitchingBtn.simulate("click");
     const advBtn = wrapper.find(".adv");
+    expect(advBtn).toHaveLength(1);
     advBtn.simulate("click");
     expect(wrapper.find("table")).toHaveLength(1);
     expect(wrapper.find("thead")).toHaveLength(1);
     expect(wrapper.find("tbody")).toHaveLength(1);
     expect(wrapper.find("th")).toHaveLength(24);
+  });
+
+  it("renders the standard starting table when the starting button is clicked", () => {
+    const wrapper = mount(<Teams />);
+    const pitchingBtn = wrapper.find("button.teamPitchingBtn");
+    pitchingBtn.simulate("click");
+    const startingBtn = wrapper.find(".starts");
+    expect(startingBtn).toHaveLength(1);
+    startingBtn.simulate("click");
+    expect(wrapper.find("table")).toHaveLength(1);
+    expect(wrapper.find("thead")).toHaveLength(1);
+    expect(wrapper.find("tbody")).toHaveLength(1);
+    expect(wrapper.find("th")).toHaveLength(23);
   });
 });
