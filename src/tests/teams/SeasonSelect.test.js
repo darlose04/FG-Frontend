@@ -15,5 +15,8 @@ describe("elements in SeasonSelect are rendered", () => {
     expect(wrapper.find("option")).toHaveLength(19);
   });
 
-  it("renders the buttons", () => {});
+  it("renders the buttons", () => {
+    const wrapper = shallow(<SeasonSelect />);
+    expect(wrapper.find("button")).toHaveLength(3);
+  });
 });
