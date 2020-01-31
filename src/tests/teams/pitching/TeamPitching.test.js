@@ -79,4 +79,17 @@ describe("Team page pitching components", () => {
     expect(wrapper.find("tbody")).toHaveLength(1);
     expect(wrapper.find("th")).toHaveLength(21);
   });
+
+  it("renders the standard relieving table when the relieving button is clicked", () => {
+    const wrapper = mount(<Teams />);
+    const pitchingBtn = wrapper.find("button.teamPitchingBtn");
+    pitchingBtn.simulate("click");
+    const reliefBtn = wrapper.find(".reliefs");
+    expect(reliefBtn).toHaveLength(1);
+    reliefBtn.simulate("click");
+    expect(wrapper.find("table")).toHaveLength(1);
+    expect(wrapper.find("thead")).toHaveLength(1);
+    expect(wrapper.find("tbody")).toHaveLength(1);
+    expect(wrapper.find("th")).toHaveLength(23);
+  });
 });
