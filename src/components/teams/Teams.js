@@ -27,11 +27,11 @@ export default class Teams extends Component {
       pitchingStats: "",
       hittingButtonClass: "btn btn-outline-success teamHittingBtn",
       pitchingButtonClass: "btn btn-outline-success teamPitchingBtn",
-      stdButtonClass: "btn btn-success",
-      advButtonClass: "btn btn-outline-success",
-      totalsBtnClass: "btn btn-success",
-      startingBtnClass: "btn btn-outline-success",
-      relievingBtnClass: "btn btn-outline-success",
+      stdButtonClass: "btn btn-success std",
+      advButtonClass: "btn btn-outline-success adv",
+      totalsBtnClass: "btn btn-success totals",
+      startingBtnClass: "btn btn-outline-success starts",
+      relievingBtnClass: "btn btn-outline-success reliefs",
       pitchingTableShown: "totals"
     };
     this.showHitting = this.showHitting.bind(this);
@@ -136,8 +136,8 @@ export default class Teams extends Component {
       pitchingStats: "",
       hittingButtonClass: "btn btn-success teamHittingBtn",
       pitchingButtonClass: "btn btn-outline-success teamPitchingBtn",
-      stdButtonClass: "btn btn-success",
-      advButtonClass: "btn btn-outline-success"
+      stdButtonClass: "btn btn-success std",
+      advButtonClass: "btn btn-outline-success adv"
     });
   }
 
@@ -147,35 +147,35 @@ export default class Teams extends Component {
       pitchingStats: "standard",
       hittingButtonClass: "btn btn-outline-success teamHittingBtn",
       pitchingButtonClass: "btn btn-success teamPitchingBtn",
-      stdButtonClass: "btn btn-success",
-      advButtonClass: "btn btn-outline-success"
+      stdButtonClass: "btn btn-success std",
+      advButtonClass: "btn btn-outline-success adv"
     });
   }
 
   showTotals() {
     this.setState({
       pitchingTableShown: "totals",
-      totalsBtnClass: "btn btn-success",
-      startingBtnClass: "btn btn-outline-success",
-      relievingBtnClass: "btn btn-outline-success"
+      totalsBtnClass: "btn btn-success totals",
+      startingBtnClass: "btn btn-outline-success starts",
+      relievingBtnClass: "btn btn-outline-success reliefs"
     });
   }
 
   showStarting() {
     this.setState({
       pitchingTableShown: "starting",
-      totalsBtnClass: "btn btn-outline-success",
-      startingBtnClass: "btn btn-success",
-      relievingBtnClass: "btn btn-outline-success"
+      totalsBtnClass: "btn btn-outline-success totals",
+      startingBtnClass: "btn btn-success starts",
+      relievingBtnClass: "btn btn-outline-success reliefs"
     });
   }
 
   showRelieving() {
     this.setState({
       pitchingTableShown: "relieving",
-      totalsBtnClass: "btn btn-outline-success",
-      startingBtnClass: "btn btn-outline-success",
-      relievingBtnClass: "btn btn-success"
+      totalsBtnClass: "btn btn-outline-success totals",
+      startingBtnClass: "btn btn-outline-success starts",
+      relievingBtnClass: "btn btn-success reliefs"
     });
   }
 
@@ -188,32 +188,32 @@ export default class Teams extends Component {
   showStdBattingTable() {
     this.setState({
       battingStats: "standard",
-      stdButtonClass: "btn btn-success",
-      advButtonClass: "btn btn-outline-success"
+      stdButtonClass: "btn btn-success std",
+      advButtonClass: "btn btn-outline-success adv"
     });
   }
 
   showAdvBattingTable() {
     this.setState({
       battingStats: "advanced",
-      stdButtonClass: "btn btn-outline-success",
-      advButtonClass: "btn btn-success"
+      stdButtonClass: "btn btn-outline-success std",
+      advButtonClass: "btn btn-success adv"
     });
   }
 
   showStdPitchingTable() {
     this.setState({
       pitchingStats: "standard",
-      stdButtonClass: "btn btn-success",
-      advButtonClass: "btn btn-outline-success"
+      stdButtonClass: "btn btn-success std",
+      advButtonClass: "btn btn-outline-success adv"
     });
   }
 
   showAdvPitchingTable() {
     this.setState({
       pitchingStats: "advanced",
-      stdButtonClass: "btn btn-outline-success",
-      advButtonClass: "btn btn-success"
+      stdButtonClass: "btn btn-outline-success std",
+      advButtonClass: "btn btn-success adv"
     });
   }
 
