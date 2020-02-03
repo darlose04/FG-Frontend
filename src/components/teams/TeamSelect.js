@@ -5,10 +5,10 @@ export default class TeamSelect extends Component {
     const logos = this.props.logos.logos;
 
     const teamDisplay = () => {
-      // console.log(logos);
-      logos.map(division => {
-        console.log(division);
-      });
+      for (let i = 0; i < logos.length; i++) {
+        console.log(Object.keys(logos[i])[0]);
+        console.log(Object.values(logos[i])[0][0].teamName);
+      }
     };
     teamDisplay();
     return (
