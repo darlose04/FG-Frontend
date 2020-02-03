@@ -51,7 +51,7 @@ export default class Navbar extends Component {
                     Team Select
                   </Link>
                   <Link
-                    to="/teams"
+                    to="/teamstats"
                     className="text-success nav-link dropdown-item"
                   >
                     Team Statistics
