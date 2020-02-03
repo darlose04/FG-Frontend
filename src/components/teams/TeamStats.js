@@ -14,7 +14,7 @@ import axios from "axios";
 
 const baseUrl = "https://www.fgbaseballapi.com/api";
 
-export default class Teams extends Component {
+export default class TeamStats extends Component {
   constructor(props) {
     super(props);
     this.state = {
