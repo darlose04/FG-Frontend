@@ -8,6 +8,8 @@ import TeamStats from "./components/teams/TeamStats";
 import TeamSelect from "./components/teams/TeamSelect";
 import Glossary from "./components/Glossary";
 
+import logos from "./logos";
+
 class App extends Component {
   render() {
     return (
@@ -19,7 +21,11 @@ class App extends Component {
             <Route exact path="/about" render={() => <About />} />
             <Route exact path="/players" render={() => <Players />} />
             <Route exact path="/teamstats" render={() => <TeamStats />} />
-            <Route exact path="/teamselect" render={() => <TeamSelect />} />
+            <Route
+              exact
+              path="/teamselect"
+              render={() => <TeamSelect logos={logos} />}
+            />
             <Route exact path="/glossary" render={() => <Glossary />} />
           </Switch>
         </div>

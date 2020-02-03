@@ -1,20 +1,33 @@
 import React, { Component } from "react";
-import sortedLogos from "../../logos";
 
 export default class TeamSelect extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      teamInfo: sortedLogos
-    };
-  }
-
   render() {
-    console.log(this.state.teamInfo);
-    const logos = this.state.teamInfo.sortedLogos;
+    const logos = this.props.logos.logos;
+
+    const teamDisplay = () => {
+      // console.log(logos);
+      logos.map(division => {
+        console.log(division);
+      });
+    };
+    teamDisplay();
     return (
       <div className="container mb-5">
+        {/* {logos.map(division => (
         <div className="row-hl d-flex justify-content-between mt-4">
+        <div className="p-2 item-hl">
+                <div className="card" style={{ width: "10rem" }}>
+                  <img
+                    src={team.src}
+                    className="card-img-top p-2"
+                    alt={team.teamName}
+                  ></img>
+                </div>
+              </div>
+        </div>
+      ))} */}
+
+        {/* <div className="row-hl d-flex justify-content-between mt-4">
           {logos.map(team =>
             team.division === "AL East" ? (
               <div className="p-2 item-hl">
@@ -115,7 +128,7 @@ export default class TeamSelect extends Component {
               <div></div>
             )
           )}
-        </div>
+        </div>*/}
       </div>
     );
   }
