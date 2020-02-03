@@ -14,8 +14,7 @@ export default class TeamSelect extends Component {
     const logos = this.state.teamInfo.sortedLogos;
     return (
       <div className="container mb-5">
-        <h2 className="mt-4">American League East</h2>
-        <div className="row-hl d-flex justify-content-between">
+        <div className="row-hl d-flex justify-content-between mt-4">
           {logos.map(team =>
             team.division === "AL East" ? (
               <div className="p-2 item-hl">
@@ -32,7 +31,6 @@ export default class TeamSelect extends Component {
             )
           )}
         </div>
-        <h2 className="mt-4">American League Central</h2>
         <div className="row-hl d-flex justify-content-between">
           {logos.map(team =>
             team.division === "AL Central" ? (
@@ -50,7 +48,6 @@ export default class TeamSelect extends Component {
             )
           )}
         </div>
-        <h2 className="mt-4">American League West</h2>
         <div className="row-hl d-flex justify-content-between">
           {logos.map(team =>
             team.division === "AL West" ? (
@@ -68,7 +65,6 @@ export default class TeamSelect extends Component {
             )
           )}
         </div>
-        <h2 className="mt-4">National League East</h2>
         <div className="row-hl d-flex justify-content-between">
           {logos.map(team =>
             team.division === "NL East" ? (
@@ -86,7 +82,6 @@ export default class TeamSelect extends Component {
             )
           )}
         </div>
-        <h2 className="mt-4">National League Central</h2>
         <div className="row-hl d-flex justify-content-between">
           {logos.map(team =>
             team.division === "NL Central" ? (
@@ -104,7 +99,6 @@ export default class TeamSelect extends Component {
             )
           )}
         </div>
-        <h2 className="mt-4">National League West</h2>
         <div className="row-hl d-flex justify-content-between">
           {logos.map(team =>
             team.division === "NL West" ? (
