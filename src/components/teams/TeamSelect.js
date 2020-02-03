@@ -13,7 +13,7 @@ export default class TeamSelect extends Component {
     console.log(this.state.teamInfo);
     const logos = this.state.teamInfo.sortedLogos;
     return (
-      <div className="container">
+      <div className="container mb-5">
         <h2 className="mt-4">American League East</h2>
         <div className="row-hl d-flex justify-content-between">
           {logos.map(team =>
@@ -22,12 +22,9 @@ export default class TeamSelect extends Component {
                 <div className="card" style={{ width: "10rem" }}>
                   <img
                     src={team.src}
-                    className="card-img-top mt-1"
+                    className="card-img-top p-2"
                     alt={team.teamName}
                   ></img>
-                  <div className="card-body pb-1">
-                    <h4 className="card-title text-center">{team.teamName}</h4>
-                  </div>
                 </div>
               </div>
             ) : (
@@ -43,12 +40,9 @@ export default class TeamSelect extends Component {
                 <div className="card" style={{ width: "10rem" }}>
                   <img
                     src={team.src}
-                    className="card-img-top mt-1"
+                    className="card-img-top p-2"
                     alt={team.teamName}
                   ></img>
-                  <div className="card-body pb-1">
-                    <h4 className="card-title text-center">{team.teamName}</h4>
-                  </div>
                 </div>
               </div>
             ) : (
@@ -64,12 +58,9 @@ export default class TeamSelect extends Component {
                 <div className="card" style={{ width: "10rem" }}>
                   <img
                     src={team.src}
-                    className="card-img-top mt-1"
+                    className="card-img-top p-2"
                     alt={team.teamName}
                   ></img>
-                  <div className="card-body pb-1">
-                    <h4 className="card-title text-center">{team.teamName}</h4>
-                  </div>
                 </div>
               </div>
             ) : (
@@ -85,12 +76,9 @@ export default class TeamSelect extends Component {
                 <div className="card" style={{ width: "10rem" }}>
                   <img
                     src={team.src}
-                    className="card-img-top mt-1"
+                    className="card-img-top p-2"
                     alt={team.teamName}
                   ></img>
-                  <div className="card-body pb-1">
-                    <h4 className="card-title text-center">{team.teamName}</h4>
-                  </div>
                 </div>
               </div>
             ) : (
@@ -106,12 +94,9 @@ export default class TeamSelect extends Component {
                 <div className="card" style={{ width: "10rem" }}>
                   <img
                     src={team.src}
-                    className="card-img-top mt-1"
+                    className="card-img-top p-2"
                     alt={team.teamName}
                   ></img>
-                  <div className="card-body pb-1">
-                    <h4 className="card-title text-center">{team.teamName}</h4>
-                  </div>
                 </div>
               </div>
             ) : (
@@ -127,12 +112,9 @@ export default class TeamSelect extends Component {
                 <div className="card" style={{ width: "10rem" }}>
                   <img
                     src={team.src}
-                    className="card-img-top mt-1"
+                    className="card-img-top p-2"
                     alt={team.teamName}
                   ></img>
-                  <div className="card-body pb-1">
-                    <h4 className="card-title text-center">{team.teamName}</h4>
-                  </div>
                 </div>
               </div>
             ) : (
