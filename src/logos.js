@@ -224,4 +224,4 @@ const logos = [
   }
 ];
 
-export { logos };
+export default { logos };
