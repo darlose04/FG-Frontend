@@ -20,7 +20,8 @@ const logos = [
         location: "Tampa Bay",
         teamName: "Rays",
         division: "AL East",
-        src: "http://content.sportslogos.net/logos/53/2535/thumbs/253594482019.gif"
+        src:
+          "http://content.sportslogos.net/logos/53/2535/thumbs/253594482019.gif"
       },
       {
         id: 2,
@@ -77,7 +78,7 @@ const logos = [
         division: "AL Central",
         src:
           "http://content.sportslogos.net/logos/53/55/thumbs/oxvkprv7v4inf5dgqdebp0yse.gif"
-      },
+      }
     ]
   },
   {
@@ -87,14 +88,16 @@ const logos = [
         location: "Los Angeles",
         teamName: "Angels",
         division: "AL West",
-        src: "http://content.sportslogos.net/logos/53/6521/thumbs/652143892016.gif"
+        src:
+          "http://content.sportslogos.net/logos/53/6521/thumbs/652143892016.gif"
       },
       {
         id: 6,
         location: "Houston",
         teamName: "Astros",
         division: "AL West",
-        src: "http://content.sportslogos.net/logos/53/4929/thumbs/492995032000.gif"
+        src:
+          "http://content.sportslogos.net/logos/53/4929/thumbs/492995032000.gif"
       },
       {
         id: 11,
@@ -118,7 +121,7 @@ const logos = [
         division: "AL West",
         src:
           "http://content.sportslogos.net/logos/53/77/thumbs/ajfeh4oqeealq37er15r3673h.gif"
-      },
+      }
     ]
   },
   {
@@ -135,7 +138,8 @@ const logos = [
         location: "Miami",
         teamName: "Marlins",
         division: "NL East",
-        src: "http://content.sportslogos.net/logos/54/3637/thumbs/363775442019.gif"
+        src:
+          "http://content.sportslogos.net/logos/54/3637/thumbs/363775442019.gif"
       },
       {
         id: 24,
@@ -152,14 +156,14 @@ const logos = [
         division: "NL East",
         src:
           "http://content.sportslogos.net/logos/54/578/thumbs/rcehah9k0kekjkgzm077fflws.gif"
-      }
+      },
       {
         id: 25,
         location: "Philadelphia",
         teamName: "Phillies",
         division: "NL East",
         src: "http://content.sportslogos.net/logos/54/70/thumbs/7075792019.gif"
-      },
+      }
     ]
   },
   {
@@ -201,7 +205,7 @@ const logos = [
         division: "NL Central",
         src:
           "http://content.sportslogos.net/logos/54/56/thumbs/z9e0rqit393ojiizsemd0t1hx.gif"
-      },
+      }
     ]
   },
   {
@@ -243,7 +247,7 @@ const logos = [
         teamName: "Rockies",
         division: "NL West",
         src: "http://content.sportslogos.net/logos/54/58/thumbs/5868712017.gif"
-      },
+      }
     ]
   }
 ];
