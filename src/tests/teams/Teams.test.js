@@ -3,31 +3,31 @@ import { shallow, mount } from "../../enzyme";
 import sinon from "sinon";
 import axios from "axios";
 
-import Teams from "../../components/teams/Teams";
+import TeamStats from "../../components/teams/TeamStats";
 import SeasonSelect from "../../components/teams/SeasonSelect";
 import TeamStandardBattingTable from "../../components/teams/batting/TeamStandardBattingTable";
 import TeamAdvancedBattingTable from "../../components/teams/batting/TeamAdvancedBattingTable";
 import TeamPageBtns from "../../components/teams/TeamPageBtns";
 
 // Shallow testing
-describe("<Teams />", () => {
-  it("renders Teams component", () => {
-    const wrapper = shallow(<Teams />);
-    expect(wrapper.find(Teams)).toBeDefined();
+describe("<TeamStats />", () => {
+  it("renders TeamStats component", () => {
+    const wrapper = shallow(<TeamStats />);
+    expect(wrapper.find(TeamStats)).toBeDefined();
   });
 
   it("renders the SeasonSelect component", () => {
-    const wrapper = shallow(<Teams />);
+    const wrapper = shallow(<TeamStats />);
     expect(wrapper.find(SeasonSelect)).toBeDefined();
   });
 
   it("renders the TeamStandardBattingTable component", () => {
-    const wrapper = shallow(<Teams />);
+    const wrapper = shallow(<TeamStats />);
     expect(wrapper.find(TeamStandardBattingTable)).toBeDefined();
   });
 
   it("renders the TeamAdvancedBattingTable component", () => {
-    const wrapper = shallow(<Teams />);
+    const wrapper = shallow(<TeamStats />);
     expect(wrapper.find(TeamAdvancedBattingTable)).toBeDefined();
   });
 
@@ -39,7 +39,7 @@ describe("<Teams />", () => {
   });
 
   it("teamBatting state is the correct length before and after call to API", async () => {
-    const wrapper = shallow(<Teams />);
+    const wrapper = shallow(<TeamStats />);
     expect(wrapper.state().teamBatting).toHaveLength(0);
     let season = 2002;
     let batting = await axios.get(
@@ -54,7 +54,7 @@ describe("<Teams />", () => {
   });
 
   it("season state can be changed", () => {
-    const wrapper = shallow(<Teams />);
+    const wrapper = shallow(<TeamStats />);
     expect(wrapper.state().season).toEqual(2019);
     wrapper.setState({
       season: 2015
@@ -66,9 +66,12 @@ describe("<Teams />", () => {
 // Full rendering testing
 describe("Full testing", () => {
   it("calls componentDidMount", () => {
-    sinon.spy(Teams.prototype, "componentDidMount");
-    const wrapper = mount(<Teams />);
-    expect(Teams.prototype.componentDidMount).toHaveProperty("callCount", 1);
+    sinon.spy(TeamStats.prototype, "componentDidMount");
+    const wrapper = mount(<TeamStats />);
+    expect(TeamStats.prototype.componentDidMount).toHaveProperty(
+      "callCount",
+      1
+    );
   });
 
   it("allows props for the SeasonSelect component", () => {
@@ -89,7 +92,7 @@ describe("Full testing", () => {
   });
 
   it("shows table and form after clicking team hitting button", () => {
-    const wrapper = mount(<Teams />);
+    const wrapper = mount(<TeamStats />);
     expect(wrapper.state().battingStats).toEqual("");
     wrapper.find(".teamHittingBtn").simulate("click");
     expect(wrapper.state().battingStats).toEqual("standard");
