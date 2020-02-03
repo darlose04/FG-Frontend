@@ -224,4 +224,8 @@ const logos = [
   }
 ];
 
-export default { logos };
+const sortedLogos = logos.sort((a, b) => {
+  return a.teamName > b.teamName ? 1 : b.teamName > a.teamName ? -1 : 0;
+});
+
+export default { sortedLogos };
