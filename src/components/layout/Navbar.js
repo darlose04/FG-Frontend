@@ -41,6 +41,11 @@ export default class Navbar extends Component {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link to="/teamselect" className="text-white nav-link">
+                  Team Select
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link to="/glossary" className="text-white nav-link">
                   Glossary
                 </Link>
