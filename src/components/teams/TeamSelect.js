@@ -17,7 +17,7 @@ export default class TeamSelect extends Component {
                   <div className="card" style={{ width: "10rem" }}>
                     <img
                       src={team.src}
-                      className="card-img-top p-2"
+                      className="card-img-top p-2 teamImg"
                       alt={team.teamName}
                     ></img>
                   </div>
