@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class TeamPageBtns extends Component {
+export default class TeamStatsPageBtns extends Component {
   render() {
     let {
       showHittingTable,

@@ -7,7 +7,7 @@ import TeamStats from "../../components/teams/TeamStats";
 import SeasonSelect from "../../components/teams/SeasonSelect";
 import TeamStandardBattingTable from "../../components/teams/batting/TeamStandardBattingTable";
 import TeamAdvancedBattingTable from "../../components/teams/batting/TeamAdvancedBattingTable";
-import TeamPageBtns from "../../components/teams/TeamPageBtns";
+import TeamStatsPageBtns from "../../components/teams/TeamStatsPageBtns";
 
 // Shallow testing
 describe("<TeamStats />", () => {
@@ -32,7 +32,7 @@ describe("<TeamStats />", () => {
   });
 
   it("renders buttons", () => {
-    const wrapper = shallow(<TeamPageBtns />);
+    const wrapper = shallow(<TeamStatsPageBtns />);
     expect(wrapper.find("button")).toHaveLength(2);
     expect(wrapper.find(".teamHittingBtn")).toBeDefined();
     expect(wrapper.find(".teamPitchingBtn")).toBeDefined();

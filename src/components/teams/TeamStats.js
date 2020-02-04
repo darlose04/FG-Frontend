@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TeamPageBtns from "./TeamPageBtns";
+import TeamStatsPageBtns from "./TeamStatsPageBtns";
 import SeasonSelect from "./SeasonSelect";
 import TeamStandardBattingTable from "./batting/TeamStandardBattingTable";
 import TeamAdvancedBattingTable from "./batting/TeamAdvancedBattingTable";
@@ -252,7 +252,7 @@ export default class TeamStats extends Component {
             </p>
           </div>
         </div>
-        <TeamPageBtns
+        <TeamStatsPageBtns
           showHittingTable={this.showHitting}
           showPitchingTable={this.showPitching}
           hittingButtonClass={this.state.hittingButtonClass}
