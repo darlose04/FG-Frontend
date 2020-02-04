@@ -12,7 +12,7 @@ export default class TeamPage extends Component {
     return (
       <div className="mt-4">
         <Link to="/teamselect">
-          <button type="button" className="btn btn-success">
+          <button type="button" className="btn btn-outline-success">
             Return to team selection
           </button>
         </Link>
