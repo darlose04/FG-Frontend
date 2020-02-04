@@ -19,6 +19,21 @@ export default class TeamPage extends Component {
     const teamName = this.props.match.params.team;
 
     let batting = await axios.get(`${baseUrl}/teambatting/teams/${teamName}`);
+
+    // The Rays used to be called the Devil Rays.
+    // The Nationals used to be the Expos.
+    // Therefore it is necessary to account for this change in name
+
+    if (teamName === "Rays") {
+      let oldName = await axios.get(`${baseUrl}/teambatting/teams/Devil Rays`);
+      for (let i = 0; i < oldName.data.length; i++)
+        batting.data.push(oldName.data[i]);
+    } else if (teamName === "Nationals") {
+      let oldName = await axios.get(`${baseUrl}/teambatting/teams/Expos`);
+    }
+
+    console.log(batting.data);
+
     let sortedBatting = batting.data.sort((a, b) => {
       return b.season - a.season;
     });
