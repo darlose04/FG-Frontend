@@ -30,7 +30,7 @@ class App extends Component {
             <Route
               exact
               path="/teamselect/:team"
-              render={props => <TeamPage {...props} />}
+              render={props => <TeamPage {...props} logos={logos} />}
             />
             <Route exact path="/glossary" render={() => <Glossary />} />
           </Switch>
