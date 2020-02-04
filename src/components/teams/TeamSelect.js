@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
 import "../../styles/TeamSelect.css";
 
 export default class TeamSelect extends Component {
