@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import TeamPageBtns from "./TeamPageBtns";
 import StdBattingTable from "./batting/StdBattingTable";
 import AdvBattingTable from "./batting/AdvBattingTable";
 
@@ -60,6 +61,7 @@ export default class TeamPage extends Component {
           </button>
         </Link>
         <h1>This is the team page for the {teamName}</h1>
+        <TeamPageBtns />
         <StdBattingTable stats={this.state.batting} />
         <AdvBattingTable stats={this.state.batting} />
       </div>
