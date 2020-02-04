@@ -6,6 +6,7 @@ import About from "./components/About";
 import Players from "./components/players/Players";
 import TeamStats from "./components/teams/TeamStats";
 import TeamSelect from "./components/teams/TeamSelect";
+import TeamPage from "./components/teams/singleTeam/TeamPage";
 import Glossary from "./components/Glossary";
 
 import logos from "./logos";
@@ -25,6 +26,11 @@ class App extends Component {
               exact
               path="/teamselect"
               render={() => <TeamSelect logos={logos} />}
+            />
+            <Route
+              exact
+              path="/teamselect/:team"
+              render={props => <TeamPage {...props} />}
             />
             <Route exact path="/glossary" render={() => <Glossary />} />
           </Switch>
