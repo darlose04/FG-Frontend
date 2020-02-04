@@ -26,13 +26,15 @@ export default class TeamPage extends Component {
 
     if (teamName === "Rays") {
       let oldName = await axios.get(`${baseUrl}/teambatting/teams/Devil Rays`);
-      for (let i = 0; i < oldName.data.length; i++)
+      for (let i = 0; i < oldName.data.length; i++) {
         batting.data.push(oldName.data[i]);
+      }
     } else if (teamName === "Nationals") {
       let oldName = await axios.get(`${baseUrl}/teambatting/teams/Expos`);
+      for (let i = 0; i < oldName.data.length; i++) {
+        batting.data.push(oldName.data[i]);
+      }
     }
-
-    console.log(batting.data);
 
     let sortedBatting = batting.data.sort((a, b) => {
       return b.season - a.season;
