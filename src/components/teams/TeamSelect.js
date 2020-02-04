@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../../styles/TeamSelect.css";
 
 export default class TeamSelect extends Component {
   render() {
