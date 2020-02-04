@@ -31,19 +31,21 @@ export default class TeamSelect extends Component {
           let divisionKey = Object.keys(logo)[0];
           // console.log(logo[divisionKey]);
 
-          return logo[divisionKey].map(team => (
+          return (
             <div className="row-hl d-flex justify-content-between mt-4">
-              <div className="p-2 item-hl" key={team.id}>
-                <div className="card" style={{ width: "10rem" }}>
-                  <img
-                    src={team.src}
-                    className="card-img-top p-2"
-                    alt={team.teamName}
-                  ></img>
+              {logo[divisionKey].map(team => (
+                <div className="p-2 item-hl" key={team.id}>
+                  <div className="card" style={{ width: "10rem" }}>
+                    <img
+                      src={team.src}
+                      className="card-img-top p-2"
+                      alt={team.teamName}
+                    ></img>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
-          ));
+          );
         })}
       </div>
     );
