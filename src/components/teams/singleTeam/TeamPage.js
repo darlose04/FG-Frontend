@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import StdBattingTable from "./batting/StdBattingTable";
+
 import axios from "axios";
 
 const baseUrl = "https://www.fgbaseballapi.com/api";
@@ -22,7 +24,7 @@ export default class TeamPage extends Component {
 
     // The Rays used to be called the Devil Rays.
     // The Nationals used to be the Expos.
-    // Therefore it is necessary to account for this change in name
+    // Therefore it is necessary to account for this change in name.
 
     if (teamName === "Rays") {
       let oldName = await axios.get(`${baseUrl}/teambatting/teams/Devil Rays`);
@@ -57,6 +59,7 @@ export default class TeamPage extends Component {
           </button>
         </Link>
         <h1>This is the team page for the {teamName}</h1>
+        <StdBattingTable stats={this.state.batting} />
       </div>
     );
   }
