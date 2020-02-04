@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import StdBattingTable from "./batting/StdBattingTable";
+import AdvBattingTable from "./batting/AdvBattingTable";
 
 import axios from "axios";
 
@@ -60,6 +61,7 @@ export default class TeamPage extends Component {
         </Link>
         <h1>This is the team page for the {teamName}</h1>
         <StdBattingTable stats={this.state.batting} />
+        <AdvBattingTable stats={this.state.batting} />
       </div>
     );
   }
