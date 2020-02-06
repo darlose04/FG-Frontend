@@ -4,7 +4,7 @@ import sinon from "sinon";
 import axios from "axios";
 
 import Teams from "../../../components/teams/Teams";
-import TeamPageBtns from "../../../components/teams/TeamPageBtns";
+import TeamStatsPageBtns from "../../../components/teams/TeamStatsPageBtns";
 import SeasonSelect from "../../../components/teams/SeasonSelect";
 import PitchingButtons from "../../../components/teams/pitching/PitchingButtons";
 import TeamStandardPitchingTable from "../../../components/teams/pitching/TeamStandardPitchingTable";
@@ -17,7 +17,7 @@ import TeamAdvRelievingTable from "../../../components/teams/pitching/TeamAdvRel
 describe("Team page pitching components", () => {
   it("renders the TeamPageBtns component", () => {
     const wrapper = shallow(<Teams />);
-    expect(wrapper.find(TeamPageBtns)).toBeDefined();
+    expect(wrapper.find(TeamStatsPageBtns)).toBeDefined();
   });
 
   it("simulates clicking the pitching button which renders SeasonSelect and PitchingButtons", () => {
