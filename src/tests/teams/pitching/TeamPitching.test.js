@@ -15,7 +15,7 @@ import TeamStdRelievingTable from "../../../components/teams/pitching/TeamStdRel
 import TeamAdvRelievingTable from "../../../components/teams/pitching/TeamAdvRelievingTable";
 
 describe("Team page pitching components", () => {
-  it("renders the TeamPageBtns component", () => {
+  it("renders the TeamStatsPageBtns component", () => {
     const wrapper = shallow(<Teams />);
     expect(wrapper.find(TeamStatsPageBtns)).toBeDefined();
   });
