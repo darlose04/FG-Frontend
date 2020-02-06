@@ -14,4 +14,9 @@ describe("TeamSelect component", () => {
     const wrapper = shallow(<TeamSelect logos={logos} />);
     expect(wrapper.find("img")).toHaveLength(30);
   });
+
+  it("renders the Link components", () => {
+    const wrapper = shallow(<TeamSelect logos={logos} />);
+    expect(wrapper.find("Link")).toHaveLength(30);
+  });
 });
