@@ -9,4 +9,9 @@ describe("TeamSelect component", () => {
     const wrapper = shallow(<TeamSelect logos={logos} />);
     expect(wrapper.find(TeamSelect)).toBeDefined();
   });
+
+  it("renders the correct number of logos", () => {
+    const wrapper = shallow(<TeamSelect logos={logos} />);
+    expect(wrapper.find("img")).toHaveLength(30);
+  });
 });
