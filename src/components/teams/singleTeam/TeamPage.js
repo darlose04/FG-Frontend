@@ -15,7 +15,11 @@ export default class TeamPage extends Component {
       batting: [],
       pitching: [],
       starting: [],
-      relieving: []
+      relieving: [],
+      standard: true,
+      advanced: false,
+      hittingTable: true,
+      pitchingTable: false
     };
   }
 
@@ -61,9 +65,10 @@ export default class TeamPage extends Component {
           </button>
         </Link>
         <h1>This is the team page for the {teamName}</h1>
-        <TeamPageBtns />
+        <h2 className="text-center">Hitting Statistics</h2>
         <StdBattingTable stats={this.state.batting} />
         <AdvBattingTable stats={this.state.batting} />
+        <h2 className="text-center">Pitching Statistics</h2>
       </div>
     );
   }
