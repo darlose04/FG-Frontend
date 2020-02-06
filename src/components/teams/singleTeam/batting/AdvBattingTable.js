@@ -10,7 +10,6 @@ export default class AdvBattingTable extends Component {
       >
         <thead>
           <tr className="bg-success text-white">
-            <th scope="col">Team</th>
             <th scope="col">Season</th>
             <th scope="col">PA</th>
             <th scope="col">BB%</th>
@@ -38,7 +37,6 @@ export default class AdvBattingTable extends Component {
         <tbody>
           {stats.map(info => (
             <tr key={info.id}>
-              <td>{info.team}</td>
               <td>{info.season}</td>
               <td>{info.plate_appearances}</td>
               <td>{info.bb_perc}</td>
