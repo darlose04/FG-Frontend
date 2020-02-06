@@ -4,4 +4,9 @@ import logos from "../../logos";
 
 import TeamSelect from "../../components/teams/TeamSelect";
 
-describe("TeamSelect component", () => {});
+describe("TeamSelect component", () => {
+  it("renders the TeamSelect component", () => {
+    const wrapper = shallow(<TeamSelect logos={logos} />);
+    expect(wrapper.find(TeamSelect)).toBeDefined();
+  });
+});
