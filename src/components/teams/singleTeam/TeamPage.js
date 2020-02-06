@@ -65,10 +65,9 @@ export default class TeamPage extends Component {
           </button>
         </Link>
         <h1>This is the team page for the {teamName}</h1>
-        <h2 className="text-center">Hitting Statistics</h2>
+        <TeamPageBtns />
         <StdBattingTable stats={this.state.batting} />
         <AdvBattingTable stats={this.state.batting} />
-        <h2 className="text-center">Pitching Statistics</h2>
       </div>
     );
   }
