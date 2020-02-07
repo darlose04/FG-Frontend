@@ -133,6 +133,11 @@ export default class TeamPage extends Component {
             <StdBattingTable stats={batting} />
             <AdvBattingTable stats={batting} />
           </div>
+        ) : pitchingTable ? (
+          <div>
+            <StdPitchingTable stats={pitching} />
+            <AdvPitchingTable stats={pitching} />
+          </div>
         ) : (
           <div></div>
         )}
