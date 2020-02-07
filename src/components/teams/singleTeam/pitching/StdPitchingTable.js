@@ -2,11 +2,14 @@ import React, { Component } from "react";
 
 export default class StdPitchingTable extends Component {
   render() {
-    let { stats, showStd, showAdv, stdClass, advClass } = this.props;
-
-    let clickStyle = {
-      cursor: "pointer"
-    };
+    let {
+      stats,
+      showStd,
+      showAdv,
+      stdClass,
+      advClass,
+      clickStyle
+    } = this.props;
 
     return (
       <table
