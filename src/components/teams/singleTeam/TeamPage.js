@@ -210,56 +210,73 @@ export default class TeamPage extends Component {
         ) : pitchingTable ? (
           <div>
             <h2>Totals</h2>
-            <StdPitchingTable
-              stats={pitching}
-              showStd={this.showStandard}
-              showAdv={this.showAdvanced}
-              stdClass={stdClass}
-              advClass={advClass}
-              clickStyle={clickStyle}
-            />
-            <AdvPitchingTable
-              stats={pitching}
-              showStd={this.showStandard}
-              showAdv={this.showAdvanced}
-              stdClass={stdClass}
-              advClass={advClass}
-              clickStyle={clickStyle}
-            />
+            {standard ? (
+              <StdPitchingTable
+                stats={pitching}
+                showStd={this.showStandard}
+                showAdv={this.showAdvanced}
+                stdClass={stdClass}
+                advClass={advClass}
+                clickStyle={clickStyle}
+              />
+            ) : advanced ? (
+              <AdvPitchingTable
+                stats={pitching}
+                showStd={this.showStandard}
+                showAdv={this.showAdvanced}
+                stdClass={stdClass}
+                advClass={advClass}
+                clickStyle={clickStyle}
+              />
+            ) : (
+              <div></div>
+            )}
+
             <h2>Starting</h2>
-            <StdStartingTable
-              stats={starting}
-              showStd={this.showStandard}
-              showAdv={this.showAdvanced}
-              stdClass={stdClass}
-              advClass={advClass}
-              clickStyle={clickStyle}
-            />
-            <AdvStartingTable
-              stats={starting}
-              showStd={this.showStandard}
-              showAdv={this.showAdvanced}
-              stdClass={stdClass}
-              advClass={advClass}
-              clickStyle={clickStyle}
-            />
+            {standard ? (
+              <StdStartingTable
+                stats={starting}
+                showStd={this.showStandard}
+                showAdv={this.showAdvanced}
+                stdClass={stdClass}
+                advClass={advClass}
+                clickStyle={clickStyle}
+              />
+            ) : advanced ? (
+              <AdvStartingTable
+                stats={starting}
+                showStd={this.showStandard}
+                showAdv={this.showAdvanced}
+                stdClass={stdClass}
+                advClass={advClass}
+                clickStyle={clickStyle}
+              />
+            ) : (
+              <div></div>
+            )}
+
             <h2>Relieving</h2>
-            <StdRelievingTable
-              stats={relieving}
-              showStd={this.showStandard}
-              showAdv={this.showAdvanced}
-              stdClass={stdClass}
-              advClass={advClass}
-              clickStyle={clickStyle}
-            />
-            <AdvRelievingTable
-              stats={relieving}
-              showStd={this.showStandard}
-              showAdv={this.showAdvanced}
-              stdClass={stdClass}
-              advClass={advClass}
-              clickStyle={clickStyle}
-            />
+            {standard ? (
+              <StdRelievingTable
+                stats={relieving}
+                showStd={this.showStandard}
+                showAdv={this.showAdvanced}
+                stdClass={stdClass}
+                advClass={advClass}
+                clickStyle={clickStyle}
+              />
+            ) : advanced ? (
+              <AdvRelievingTable
+                stats={relieving}
+                showStd={this.showStandard}
+                showAdv={this.showAdvanced}
+                stdClass={stdClass}
+                advClass={advClass}
+                clickStyle={clickStyle}
+              />
+            ) : (
+              <div></div>
+            )}
           </div>
         ) : (
           <div></div>
