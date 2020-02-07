@@ -10,6 +10,7 @@ export default class StdPitchingTable extends Component {
       >
         <thead>
           <th className="bg-success text-white">Standard</th>
+          <th className="bg-success text-white">Advanced</th>
         </thead>
         <thead>
           <tr className="bg-success text-white">
