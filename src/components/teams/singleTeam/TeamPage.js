@@ -19,7 +19,9 @@ export default class TeamPage extends Component {
       standard: true,
       advanced: false,
       hittingTable: true,
-      pitchingTable: false
+      pitchingTable: false,
+      hittingBtnClass: "btn btn-success hittingBtn",
+      pitchingBtnClass: "btn btn-success-outline pitchingBtn"
     };
   }
 
