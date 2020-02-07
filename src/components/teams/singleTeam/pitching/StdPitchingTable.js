@@ -3,14 +3,25 @@ import React, { Component } from "react";
 export default class StdPitchingTable extends Component {
   render() {
     let { stats, showStd, showAdv, stdClass, advClass } = this.props;
+
+    let clickStyle = {
+      cursor: "pointer"
+    };
+
     return (
       <table
         className="table table-sm table-striped table-bordered table-hover text-center standard"
         style={{ fontSize: "0.8rem", padding: ".2rem", whiteSpace: "nowrap" }}
       >
         <thead>
-          <th className="bg-success text-white">Standard</th>
-          <th className="bg-success text-white">Advanced</th>
+          <tr>
+            <th className={stdClass} onClick={showStd} style={clickStyle}>
+              Standard
+            </th>
+            <th className={advClass} onClick={showAdv} style={clickStyle}>
+              Advanced
+            </th>
+          </tr>
         </thead>
         <thead>
           <tr className="bg-success text-white">
