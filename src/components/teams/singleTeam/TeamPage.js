@@ -21,7 +21,7 @@ export default class TeamPage extends Component {
       hittingTable: true,
       pitchingTable: false,
       hittingBtnClass: "btn btn-success hittingBtn",
-      pitchingBtnClass: "btn btn-success-outline pitchingBtn"
+      pitchingBtnClass: "btn btn-outline-success pitchingBtn"
     };
   }
 
@@ -60,6 +60,7 @@ export default class TeamPage extends Component {
     const teamName = this.props.match.params.team;
 
     const {
+      team,
       batting,
       pitching,
       starting,
@@ -80,7 +81,10 @@ export default class TeamPage extends Component {
           </button>
         </Link>
         <h1>This is the team page for the {teamName}</h1>
-        <TeamPageBtns hittingBtnClass={hittingBtnClass} />
+        <TeamPageBtns
+          hittingBtnClass={hittingBtnClass}
+          pitchingBtnClass={pitchingBtnClass}
+        />
         <StdBattingTable stats={batting} />
         <AdvBattingTable stats={batting} />
       </div>
