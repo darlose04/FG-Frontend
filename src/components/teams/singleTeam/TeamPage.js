@@ -91,9 +91,7 @@ export default class TeamPage extends Component {
       hittingTable,
       pitchingTable,
       hittingBtnClass,
-      pitchingBtnClass,
-      showHitting,
-      showPitching
+      pitchingBtnClass
     } = this.state;
 
     return (
@@ -107,8 +105,8 @@ export default class TeamPage extends Component {
         <TeamPageBtns
           hittingBtnClass={hittingBtnClass}
           pitchingBtnClass={pitchingBtnClass}
-          showHitting={showHitting}
-          showPitching={showPitching}
+          showHitting={this.showHitting}
+          showPitching={this.showPitching}
         />
         <StdBattingTable stats={batting} />
         <AdvBattingTable stats={batting} />
