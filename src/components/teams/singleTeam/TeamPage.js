@@ -39,15 +39,21 @@ export default class TeamPage extends Component {
 
     let batting = await axios.get(`${baseUrl}/teambatting/teams/${teamName}`);
     let pitching = await axios.get(`${baseUrl}/teampitching/teams/${teamName}`);
+    let starting = await axios.get(`${baseUrl}/teamstarting/teams/${teamName}`);
+    let relieving = await axios.get(
+      `${baseUrl}/teamrelieving/teams/${teamName}`
+    );
 
     // The Rays used to be called the Devil Rays.
     // The Nationals used to be the Expos.
     // Therefore it is necessary to account for this change in name.
 
     if (teamName === "Rays") {
-      let oldName = await axios.get(`${baseUrl}/teambatting/teams/Devil Rays`);
-      for (let i = 0; i < oldName.data.length; i++) {
-        batting.data.push(oldName.data[i]);
+      let oldBatting = await axios.get(
+        `${baseUrl}/teambatting/teams/Devil Rays`
+      );
+      for (let i = 0; i < oldBatting.data.length; i++) {
+        batting.data.push(oldBatting.data[i]);
       }
 
       let oldPitching = await axios.get(
@@ -55,6 +61,20 @@ export default class TeamPage extends Component {
       );
       for (let i = 0; i < oldPitching.data.length; i++) {
         pitching.data.push(oldPitching.data[i]);
+      }
+
+      let oldStarting = await axios.get(
+        `${baseUrl}/teamstarting/teams/Devil Rays`
+      );
+      for (let i = 0; i < oldStarting.data.length; i++) {
+        starting.data.push(oldStarting.data[i]);
+      }
+
+      let oldRelieving = await axios.get(
+        `${baseUrl}/teamrelieving/teams/Devil Rays`
+      );
+      for (let i = 0; i < oldRelieving.data.length; i++) {
+        relieving.data.push(oldRelieving.data[i]);
       }
     } else if (teamName === "Nationals") {
       let oldName = await axios.get(`${baseUrl}/teambatting/teams/Expos`);
