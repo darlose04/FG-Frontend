@@ -56,6 +56,15 @@ export default class TeamPage extends Component {
     });
   }
 
+  showHitting() {
+    this.setState({
+      hittingTable: true,
+      pitchingTable: false,
+      hittingBtnClass: "btn btn-success hittingBtn",
+      pitchingBtnClass: "btn btn-outline-success pitchingBtn"
+    });
+  }
+
   render() {
     const teamName = this.props.match.params.team;
 
