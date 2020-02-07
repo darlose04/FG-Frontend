@@ -3,11 +3,7 @@ import { Link } from "react-router-dom";
 import TeamPageBtns from "./TeamPageBtns";
 import BattingComponent from "./batting/BattingComponent";
 import TotalPitchingComponent from "./pitching/TotalPitchingComponent";
-
-import StdPitchingTable from "./pitching/StdPitchingTable";
-import AdvPitchingTable from "./pitching/AdvPitchingTable";
-import StdStartingTable from "./pitching/StdStartingTable";
-import AdvStartingTable from "./pitching/AdvStartingTable";
+import StartingPitchingComponent from "./pitching/StartingPitchingComponent";
 import StdRelievingTable from "./pitching/StdRelievingTable";
 import AdvRelievingTable from "./pitching/AdvRelievingTable";
 
@@ -226,28 +222,16 @@ export default class TeamPage extends Component {
               clickStyle={clickStyle}
             />
 
-            <h2>Starting</h2>
-            {standard ? (
-              <StdStartingTable
-                stats={starting}
-                showStd={this.showStandard}
-                showAdv={this.showAdvanced}
-                stdClass={stdClass}
-                advClass={advClass}
-                clickStyle={clickStyle}
-              />
-            ) : advanced ? (
-              <AdvStartingTable
-                stats={starting}
-                showStd={this.showStandard}
-                showAdv={this.showAdvanced}
-                stdClass={stdClass}
-                advClass={advClass}
-                clickStyle={clickStyle}
-              />
-            ) : (
-              <div></div>
-            )}
+            <StartingPitchingComponent
+              std={standard}
+              adv={advanced}
+              data={pitching}
+              showStd={this.showStandard}
+              showAdv={this.showAdvanced}
+              stdClass={stdClass}
+              advClass={advClass}
+              clickStyle={clickStyle}
+            />
 
             <h2>Relieving</h2>
             {standard ? (
