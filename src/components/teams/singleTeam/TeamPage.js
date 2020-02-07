@@ -168,6 +168,10 @@ export default class TeamPage extends Component {
   render() {
     const teamName = this.props.match.params.team;
 
+    let clickStyle = {
+      cursor: "pointer"
+    };
+
     const {
       team,
       batting,
@@ -212,6 +216,7 @@ export default class TeamPage extends Component {
               showAdv={this.showAdvanced}
               stdClass={stdClass}
               advClass={advClass}
+              clickStyle={clickStyle}
             />
             <AdvPitchingTable
               stats={pitching}
@@ -219,6 +224,7 @@ export default class TeamPage extends Component {
               showAdv={this.showAdvanced}
               stdClass={stdClass}
               advClass={advClass}
+              clickStyle={clickStyle}
             />
             <h2>Starting</h2>
             <StdStartingTable
@@ -227,6 +233,7 @@ export default class TeamPage extends Component {
               showAdv={this.showAdvanced}
               stdClass={stdClass}
               advClass={advClass}
+              clickStyle={clickStyle}
             />
             <AdvStartingTable
               stats={starting}
@@ -234,6 +241,7 @@ export default class TeamPage extends Component {
               showAdv={this.showAdvanced}
               stdClass={stdClass}
               advClass={advClass}
+              clickStyle={clickStyle}
             />
             <h2>Relieving</h2>
             <StdRelievingTable
@@ -242,6 +250,7 @@ export default class TeamPage extends Component {
               showAdv={this.showAdvanced}
               stdClass={stdClass}
               advClass={advClass}
+              clickStyle={clickStyle}
             />
             <AdvRelievingTable
               stats={relieving}
@@ -249,6 +258,7 @@ export default class TeamPage extends Component {
               showAdv={this.showAdvanced}
               stdClass={stdClass}
               advClass={advClass}
+              clickStyle={clickStyle}
             />
           </div>
         ) : (
