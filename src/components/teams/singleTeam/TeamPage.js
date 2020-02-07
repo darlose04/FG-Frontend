@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import TeamPageBtns from "./TeamPageBtns";
 import StdBattingTable from "./batting/StdBattingTable";
 import AdvBattingTable from "./batting/AdvBattingTable";
+import StdPitchingTable from "./pitching/StdPitchingTable";
+import AdvPitchingTable from "./pitching/AdvPitchingTable";
 
 import axios from "axios";
 
