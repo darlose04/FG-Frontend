@@ -9,7 +9,9 @@ export default class StdBattingTable extends Component {
         style={{ fontSize: "0.8rem", padding: ".2rem", whiteSpace: "nowrap" }}
       >
         <thead>
-          <th className="bg-success text-white">Standard</th>
+          <tr>
+            <th className="bg-success text-white">Standard</th>
+          </tr>
         </thead>
         <thead>
           <tr className="bg-success text-white">

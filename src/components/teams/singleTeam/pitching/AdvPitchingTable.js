@@ -9,8 +9,10 @@ export default class AdvPitchingTable extends Component {
         style={{ fontSize: "0.8rem", padding: ".2rem", whiteSpace: "nowrap" }}
       >
         <thead>
-          <th className="bg-success text-white">Standard</th>
-          <th className="bg-success text-white">Advanced</th>
+          <tr>
+            <th className="bg-success text-white">Standard</th>
+            <th className="bg-success text-white">Advanced</th>
+          </tr>
         </thead>
         <thead>
           <tr className="bg-success text-white">
