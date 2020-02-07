@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class AdvPitchingTable extends Component {
   render() {
-    let { stats } = this.props;
+    let { stats, showStd, showAdv, stdClass, advClass } = this.props;
     return (
       <table
         className="table table-sm table-striped table-bordered table-hover text-center standard"
@@ -10,8 +10,12 @@ export default class AdvPitchingTable extends Component {
       >
         <thead>
           <tr>
-            <th className="bg-success text-white">Standard</th>
-            <th className="bg-success text-white">Advanced</th>
+            <th className={stdClass} onClick={showStd}>
+              Standard
+            </th>
+            <th className={advClass} onClick={showAdv}>
+              Advanced
+            </th>
           </tr>
         </thead>
         <thead>
