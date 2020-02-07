@@ -223,7 +223,7 @@ export default class TeamPage extends Component {
             <StartingPitchingComponent
               std={standard}
               adv={advanced}
-              data={pitching}
+              data={starting}
               showStd={this.showStandard}
               showAdv={this.showAdvanced}
               stdClass={stdClass}
@@ -233,7 +233,7 @@ export default class TeamPage extends Component {
             <ReliefPitchingComponent
               std={standard}
               adv={advanced}
-              data={pitching}
+              data={relieving}
               showStd={this.showStandard}
               showAdv={this.showAdvanced}
               stdClass={stdClass}
