@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import TeamPageBtns from "./TeamPageBtns";
+import BattingComponent from "./batting/BattingComponent";
 import StdBattingTable from "./batting/StdBattingTable";
 import AdvBattingTable from "./batting/AdvBattingTable";
 import StdPitchingTable from "./pitching/StdPitchingTable";
@@ -211,10 +212,7 @@ export default class TeamPage extends Component {
           showPitching={this.showPitching}
         />
         {hittingTable ? (
-          <div>
-            <StdBattingTable stats={batting} />
-            <AdvBattingTable stats={batting} />
-          </div>
+          <BattingComponent data={batting} />
         ) : pitchingTable ? (
           <div>
             <h2>Totals</h2>
