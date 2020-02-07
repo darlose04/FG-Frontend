@@ -5,6 +5,10 @@ import StdBattingTable from "./batting/StdBattingTable";
 import AdvBattingTable from "./batting/AdvBattingTable";
 import StdPitchingTable from "./pitching/StdPitchingTable";
 import AdvPitchingTable from "./pitching/AdvPitchingTable";
+import StdStartingTable from "./pitching/StdStartingTable";
+import AdvStartingTable from "./pitching/AdvStartingTable";
+import StdRelievingTable from "./pitching/StdRelievingTable";
+import AdvRelievingTable from "./pitching/AdvRelievingTable";
 
 import axios from "axios";
 
@@ -135,6 +139,7 @@ export default class TeamPage extends Component {
           </div>
         ) : pitchingTable ? (
           <div>
+            <h2>Totals</h2>
             <StdPitchingTable stats={pitching} />
             <AdvPitchingTable stats={pitching} />
           </div>
