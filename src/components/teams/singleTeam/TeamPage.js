@@ -4,8 +4,7 @@ import TeamPageBtns from "./TeamPageBtns";
 import BattingComponent from "./batting/BattingComponent";
 import TotalPitchingComponent from "./pitching/TotalPitchingComponent";
 import StartingPitchingComponent from "./pitching/StartingPitchingComponent";
-import StdRelievingTable from "./pitching/StdRelievingTable";
-import AdvRelievingTable from "./pitching/AdvRelievingTable";
+import ReliefPitchingComponent from "./pitching/ReliefPitchingComponent";
 
 import axios from "axios";
 
@@ -221,7 +220,6 @@ export default class TeamPage extends Component {
               advClass={advClass}
               clickStyle={clickStyle}
             />
-
             <StartingPitchingComponent
               std={standard}
               adv={advanced}
@@ -232,29 +230,16 @@ export default class TeamPage extends Component {
               advClass={advClass}
               clickStyle={clickStyle}
             />
-
-            <h2>Relieving</h2>
-            {standard ? (
-              <StdRelievingTable
-                stats={relieving}
-                showStd={this.showStandard}
-                showAdv={this.showAdvanced}
-                stdClass={stdClass}
-                advClass={advClass}
-                clickStyle={clickStyle}
-              />
-            ) : advanced ? (
-              <AdvRelievingTable
-                stats={relieving}
-                showStd={this.showStandard}
-                showAdv={this.showAdvanced}
-                stdClass={stdClass}
-                advClass={advClass}
-                clickStyle={clickStyle}
-              />
-            ) : (
-              <div></div>
-            )}
+            <ReliefPitchingComponent
+              std={standard}
+              adv={advanced}
+              data={pitching}
+              showStd={this.showStandard}
+              showAdv={this.showAdvanced}
+              stdClass={stdClass}
+              advClass={advClass}
+              clickStyle={clickStyle}
+            />
           </div>
         ) : (
           <div></div>
