@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class TeamAdvancedPitchingTable extends Component {
   render() {
@@ -39,7 +40,11 @@ export default class TeamAdvancedPitchingTable extends Component {
         <tbody>
           {stats.map(info => (
             <tr key={info.id}>
-              <td>{info.team}</td>
+              <td>
+                <Link className="text-dark" to={`/teamselect/${info.team}`}>
+                  {info.team}
+                </Link>
+              </td>
               <td>{info.wins}</td>
               <td>{info.losses}</td>
               <td>{info.saves}</td>
