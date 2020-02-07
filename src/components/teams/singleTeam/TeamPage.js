@@ -24,6 +24,8 @@ export default class TeamPage extends Component {
       relieving: [],
       standard: true,
       advanced: false,
+      stdClass: "bg-success text-white",
+      advClass: "text-success",
       hittingTable: true,
       pitchingTable: false,
       hittingBtnClass: "btn btn-success hittingBtn",
@@ -32,6 +34,8 @@ export default class TeamPage extends Component {
 
     this.showHitting = this.showHitting.bind(this);
     this.showPitching = this.showPitching.bind(this);
+    this.showStandard = this.showStandard.bind(this);
+    this.showAdvanced = this.showAdvanced.bind(this);
   }
 
   async componentDidMount() {
@@ -140,6 +144,24 @@ export default class TeamPage extends Component {
       pitchingTable: true,
       hittingBtnClass: "btn btn-outline-success hittingBtn",
       pitchingBtnClass: "btn btn-success pitchingBtn"
+    });
+  }
+
+  showStandard() {
+    this.setState({
+      standard: true,
+      advanced: false,
+      stdClass: "bg-success text-white",
+      advClass: "text-success"
+    });
+  }
+
+  showAdvanced() {
+    this.setState({
+      standard: false,
+      advanced: true,
+      stdClass: "text-success",
+      advClass: "bg-success text-white"
     });
   }
 
