@@ -108,8 +108,14 @@ export default class TeamPage extends Component {
           showHitting={this.showHitting}
           showPitching={this.showPitching}
         />
-        <StdBattingTable stats={batting} />
-        <AdvBattingTable stats={batting} />
+        {hittingTable ? (
+          <div>
+            <StdBattingTable stats={batting} />
+            <AdvBattingTable stats={batting} />
+          </div>
+        ) : (
+          <div></div>
+        )}
       </div>
     );
   }
