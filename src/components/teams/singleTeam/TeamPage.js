@@ -23,6 +23,9 @@ export default class TeamPage extends Component {
       hittingBtnClass: "btn btn-success hittingBtn",
       pitchingBtnClass: "btn btn-outline-success pitchingBtn"
     };
+
+    this.showHitting = this.showHitting.bind(this);
+    this.showPitching = this.showPitching.bind(this);
   }
 
   async componentDidMount() {
@@ -88,7 +91,9 @@ export default class TeamPage extends Component {
       hittingTable,
       pitchingTable,
       hittingBtnClass,
-      pitchingBtnClass
+      pitchingBtnClass,
+      showHitting,
+      showPitching
     } = this.state;
 
     return (
@@ -102,6 +107,8 @@ export default class TeamPage extends Component {
         <TeamPageBtns
           hittingBtnClass={hittingBtnClass}
           pitchingBtnClass={pitchingBtnClass}
+          showHitting={showHitting}
+          showPitching={showPitching}
         />
         <StdBattingTable stats={batting} />
         <AdvBattingTable stats={batting} />
