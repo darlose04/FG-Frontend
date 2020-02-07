@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class StdPitchingTable extends Component {
   render() {
-    let {
+    const {
       stats,
       showStd,
       showAdv,
