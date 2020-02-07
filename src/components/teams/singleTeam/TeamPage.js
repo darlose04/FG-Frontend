@@ -176,6 +176,8 @@ export default class TeamPage extends Component {
       relieving,
       standard,
       advanced,
+      stdClass,
+      advClass,
       hittingTable,
       pitchingTable,
       hittingBtnClass,
@@ -204,8 +206,20 @@ export default class TeamPage extends Component {
         ) : pitchingTable ? (
           <div>
             <h2>Totals</h2>
-            <StdPitchingTable stats={pitching} />
-            <AdvPitchingTable stats={pitching} />
+            <StdPitchingTable
+              stats={pitching}
+              showStd={this.showStandard}
+              showAdv={this.showAdvanced}
+              stdClass={stdClass}
+              advClass={advClass}
+            />
+            <AdvPitchingTable
+              stats={pitching}
+              showStd={this.showStandard}
+              showAdv={this.showAdvanced}
+              stdClass={stdClass}
+              advClass={advClass}
+            />
             <h2>Starting</h2>
             <StdStartingTable stats={starting} />
             <AdvStartingTable stats={starting} />
