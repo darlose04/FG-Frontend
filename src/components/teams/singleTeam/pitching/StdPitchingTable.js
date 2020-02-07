@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class StdPitchingTable extends Component {
   render() {
-    let { stats } = this.props;
+    let { stats, showStd, showAdv, stdClass, advClass } = this.props;
     return (
       <table
         className="table table-sm table-striped table-bordered table-hover text-center standard"
