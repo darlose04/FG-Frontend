@@ -77,14 +77,26 @@ export default class TeamPage extends Component {
         relieving.data.push(oldRelieving.data[i]);
       }
     } else if (teamName === "Nationals") {
-      let oldName = await axios.get(`${baseUrl}/teambatting/teams/Expos`);
-      for (let i = 0; i < oldName.data.length; i++) {
-        batting.data.push(oldName.data[i]);
+      let oldBatting = await axios.get(`${baseUrl}/teambatting/teams/Expos`);
+      for (let i = 0; i < oldBatting.data.length; i++) {
+        batting.data.push(oldBatting.data[i]);
       }
 
       let oldPitching = await axios.get(`${baseUrl}/teampitching/teams/Expos`);
       for (let i = 0; i < oldPitching.data.length; i++) {
         pitching.data.push(oldPitching.data[i]);
+      }
+
+      let oldStarting = await axios.get(`${baseUrl}/teamstarting/teams/Expos`);
+      for (let i = 0; i < oldStarting.data.length; i++) {
+        starting.data.push(oldStarting.data[i]);
+      }
+
+      let oldRelieving = await axios.get(
+        `${baseUrl}/teamrelieving/teams/Expos`
+      );
+      for (let i = 0; i < oldRelieving.data.length; i++) {
+        relieving.data.push(oldRelieving.data[i]);
       }
     }
 
@@ -96,10 +108,20 @@ export default class TeamPage extends Component {
       return b.season - a.season;
     });
 
+    let sortedStarting = starting.data.sort((a, b) => {
+      return b.season - a.season;
+    });
+
+    let sortedRelieving = relieving.data.sort((a, b) => {
+      return b.season - a.season;
+    });
+
     this.setState({
       team: teamName,
       batting: sortedBatting,
-      pitching: sortedPitching
+      pitching: sortedPitching,
+      starting: sortedStarting,
+      relieving: sortedRelieving
     });
   }
 
