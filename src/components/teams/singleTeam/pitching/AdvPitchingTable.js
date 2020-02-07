@@ -8,6 +8,7 @@ export default class AdvPitchingTable extends Component {
         className="table table-sm table-striped table-bordered table-hover text-center standard"
         style={{ fontSize: "0.8rem", padding: ".2rem", whiteSpace: "nowrap" }}
       >
+        <thead className="bg-success text-white">Advanced</thead>
         <thead>
           <tr className="bg-success text-white">
             <th scope="col">Season</th>
