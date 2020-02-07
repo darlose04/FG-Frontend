@@ -59,6 +59,19 @@ export default class TeamPage extends Component {
   render() {
     const teamName = this.props.match.params.team;
 
+    const {
+      batting,
+      pitching,
+      starting,
+      relieving,
+      standard,
+      advanced,
+      hittingTable,
+      pitchingTable,
+      hittingBtnClass,
+      pitchingBtnClass
+    } = this.state;
+
     return (
       <div className="mt-4">
         <Link to="/teamselect">
@@ -67,9 +80,9 @@ export default class TeamPage extends Component {
           </button>
         </Link>
         <h1>This is the team page for the {teamName}</h1>
-        <TeamPageBtns />
-        <StdBattingTable stats={this.state.batting} />
-        <AdvBattingTable stats={this.state.batting} />
+        <TeamPageBtns hittingBtnClass={hittingBtnClass} />
+        <StdBattingTable stats={batting} />
+        <AdvBattingTable stats={batting} />
       </div>
     );
   }
