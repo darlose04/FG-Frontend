@@ -221,11 +221,35 @@ export default class TeamPage extends Component {
               advClass={advClass}
             />
             <h2>Starting</h2>
-            <StdStartingTable stats={starting} />
-            <AdvStartingTable stats={starting} />
+            <StdStartingTable
+              stats={starting}
+              showStd={this.showStandard}
+              showAdv={this.showAdvanced}
+              stdClass={stdClass}
+              advClass={advClass}
+            />
+            <AdvStartingTable
+              stats={starting}
+              showStd={this.showStandard}
+              showAdv={this.showAdvanced}
+              stdClass={stdClass}
+              advClass={advClass}
+            />
             <h2>Relieving</h2>
-            <StdRelievingTable stats={relieving} />
-            <AdvRelievingTable stats={relieving} />
+            <StdRelievingTable
+              stats={relieving}
+              showStd={this.showStandard}
+              showAdv={this.showAdvanced}
+              stdClass={stdClass}
+              advClass={advClass}
+            />
+            <AdvRelievingTable
+              stats={relieving}
+              showStd={this.showStandard}
+              showAdv={this.showAdvanced}
+              stdClass={stdClass}
+              advClass={advClass}
+            />
           </div>
         ) : (
           <div></div>
