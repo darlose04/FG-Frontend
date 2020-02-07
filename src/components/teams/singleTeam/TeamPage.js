@@ -142,6 +142,9 @@ export default class TeamPage extends Component {
             <h2>Totals</h2>
             <StdPitchingTable stats={pitching} />
             <AdvPitchingTable stats={pitching} />
+            <h2>Starting</h2>
+
+            <h2>Relieving</h2>
           </div>
         ) : (
           <div></div>
