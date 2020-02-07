@@ -134,7 +134,11 @@ export default class TeamPage extends Component {
       hittingTable: true,
       pitchingTable: false,
       hittingBtnClass: "btn btn-success hittingBtn",
-      pitchingBtnClass: "btn btn-outline-success pitchingBtn"
+      pitchingBtnClass: "btn btn-outline-success pitchingBtn",
+      standard: true,
+      advanced: false,
+      stdClass: "bg-success text-white",
+      advClass: "text-success"
     });
   }
 
@@ -143,7 +147,11 @@ export default class TeamPage extends Component {
       hittingTable: false,
       pitchingTable: true,
       hittingBtnClass: "btn btn-outline-success hittingBtn",
-      pitchingBtnClass: "btn btn-success pitchingBtn"
+      pitchingBtnClass: "btn btn-success pitchingBtn",
+      standard: true,
+      advanced: false,
+      stdClass: "bg-success text-white",
+      advClass: "text-success"
     });
   }
 
