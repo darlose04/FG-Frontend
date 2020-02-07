@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import TeamPageBtns from "./TeamPageBtns";
 import BattingComponent from "./batting/BattingComponent";
-import StdBattingTable from "./batting/StdBattingTable";
-import AdvBattingTable from "./batting/AdvBattingTable";
+import TotalPitchingComponent from "./pitching/TotalPitchingComponent";
+
 import StdPitchingTable from "./pitching/StdPitchingTable";
 import AdvPitchingTable from "./pitching/AdvPitchingTable";
 import StdStartingTable from "./pitching/StdStartingTable";
@@ -215,28 +215,16 @@ export default class TeamPage extends Component {
           <BattingComponent data={batting} />
         ) : pitchingTable ? (
           <div>
-            <h2>Totals</h2>
-            {standard ? (
-              <StdPitchingTable
-                stats={pitching}
-                showStd={this.showStandard}
-                showAdv={this.showAdvanced}
-                stdClass={stdClass}
-                advClass={advClass}
-                clickStyle={clickStyle}
-              />
-            ) : advanced ? (
-              <AdvPitchingTable
-                stats={pitching}
-                showStd={this.showStandard}
-                showAdv={this.showAdvanced}
-                stdClass={stdClass}
-                advClass={advClass}
-                clickStyle={clickStyle}
-              />
-            ) : (
-              <div></div>
-            )}
+            <TotalPitchingComponent
+              std={standard}
+              adv={advanced}
+              data={pitching}
+              showStd={this.showStandard}
+              showAdv={this.showAdvanced}
+              stdClass={stdClass}
+              advClass={advClass}
+              clickStyle={clickStyle}
+            />
 
             <h2>Starting</h2>
             {standard ? (
