@@ -10,7 +10,7 @@ import AdvBattingTable from "../../../components/teams/singleTeam/batting/AdvBat
 
 describe("TeamPage component", () => {
   it("renders the TeamPage component", () => {
-    const wrapper = shallow(<TeamPage />);
+    const wrapper = shallow(<TeamPage team="Cubs" />);
     expect(wrapper.find(TeamPage)).toBeDefined();
   });
 
