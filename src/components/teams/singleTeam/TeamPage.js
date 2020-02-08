@@ -35,7 +35,7 @@ export default class TeamPage extends Component {
   }
 
   async componentDidMount() {
-    const teamName = this.props.match.params.team;
+    let teamName = this.props.match.params.team;
 
     let batting = await axios.get(`${baseUrl}/teambatting/teams/${teamName}`);
     let pitching = await axios.get(`${baseUrl}/teampitching/teams/${teamName}`);
@@ -170,7 +170,11 @@ export default class TeamPage extends Component {
   }
 
   render() {
-    const teamName = this.props.match.params.team;
+    let teamName = this.props.match.params.team;
+    // const location = this.props.location.aboutProps.location;
+    // const source = this.props.location.aboutProps.source;
+
+    // console.log(location);
 
     let clickStyle = {
       cursor: "pointer"
