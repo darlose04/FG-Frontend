@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 export default class TeamBattingTable extends Component {
   render() {
@@ -37,9 +36,9 @@ export default class TeamBattingTable extends Component {
           {stats.map(info => (
             <tr key={info.id}>
               <td>
-                <Link className="text-dark" to={`/teamselect/${info.team}`}>
+                <a className="text-dark" href={`/teamselect/${info.team}`}>
                   {info.team}
-                </Link>
+                </a>
               </td>
               <td>{info.games}</td>
               <td>{info.plate_appearances}</td>
