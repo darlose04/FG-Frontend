@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 export default class SeasonRosterStats extends Component {
   constructor(props) {
