@@ -17,6 +17,8 @@ export default class SeasonRosterStats extends Component {
       stdClass: "bg-success text-white",
       advClass: "text-success"
     };
+    this.showStandard = this.showStandard.bind(this);
+    this.showAdvanced = this.showAdvanced.bind(this);
   }
 
   async componentDidMount() {
@@ -55,7 +57,23 @@ export default class SeasonRosterStats extends Component {
     }
   }
 
-  showStandard() {}
+  showStandard() {
+    this.setState({
+      standard: true,
+      advanced: false,
+      stdClass: "bg-success text-white",
+      advClass: "text-success"
+    });
+  }
+
+  showAdvanced() {
+    this.setState({
+      standard: false,
+      advanced: true,
+      stdClass: "text-success",
+      advClass: "bg-success text-white"
+    });
+  }
 
   render() {
     const { rosterBatting, rosterStarters, rosterRelievers } = this.state;
