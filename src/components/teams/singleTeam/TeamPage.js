@@ -28,8 +28,7 @@ export default class TeamPage extends Component {
       hittingTable: true,
       pitchingTable: false,
       hittingBtnClass: "btn btn-success hittingBtn",
-      pitchingBtnClass: "btn btn-outline-success pitchingBtn",
-      seasonSelectClass: "btn btn-outline-success"
+      pitchingBtnClass: "btn btn-outline-success pitchingBtn"
     };
 
     this.showHitting = this.showHitting.bind(this);
@@ -176,7 +175,6 @@ export default class TeamPage extends Component {
 
   showSeason(e) {
     this.setState({
-      seasonSelectClass: "btn btn-success",
       season: e.target.value
     });
   }
@@ -207,8 +205,7 @@ export default class TeamPage extends Component {
       hittingTable,
       pitchingTable,
       hittingBtnClass,
-      pitchingBtnClass,
-      seasonSelectClass
+      pitchingBtnClass
     } = this.state;
 
     const display = () => {
@@ -286,10 +283,7 @@ export default class TeamPage extends Component {
           </h4>
         </div>
         {/* add button to return to team page */}
-        <TeamPageSeasonSelect
-          showSeason={this.showSeason}
-          seasonSelectClass={seasonSelectClass}
-        />
+        <TeamPageSeasonSelect showSeason={this.showSeason} season={season} />
         {display()}
       </div>
     );
