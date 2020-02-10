@@ -85,28 +85,32 @@ export default class SeasonRosterStats extends Component {
       rosterStarters,
       rosterRelievers,
       stdClass,
-      advClass
+      advClass,
+      standard
     } = this.state;
 
     return (
       <div>
         <h1>{this.props.season}</h1>
-        <RosterStdBatterTable
-          stats={rosterBatting}
-          showStd={this.showStandard}
-          showAdv={this.showAdvanced}
-          stdClass={stdClass}
-          advClass={advClass}
-          clickStyle={clickStyle}
-        />
-        <RosterAdvBatterTable
-          stats={rosterBatting}
-          showStd={this.showStandard}
-          showAdv={this.showAdvanced}
-          stdClass={stdClass}
-          advClass={advClass}
-          clickStyle={clickStyle}
-        />
+        {standard ? (
+          <RosterStdBatterTable
+            stats={rosterBatting}
+            showStd={this.showStandard}
+            showAdv={this.showAdvanced}
+            stdClass={stdClass}
+            advClass={advClass}
+            clickStyle={clickStyle}
+          />
+        ) : (
+          <RosterAdvBatterTable
+            stats={rosterBatting}
+            showStd={this.showStandard}
+            showAdv={this.showAdvanced}
+            stdClass={stdClass}
+            advClass={advClass}
+            clickStyle={clickStyle}
+          />
+        )}
       </div>
     );
   }
