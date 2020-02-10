@@ -174,9 +174,10 @@ export default class TeamPage extends Component {
     });
   }
 
-  showSeason() {
+  showSeason(e) {
     this.setState({
-      seasonSelectClass: "btn btn-success"
+      seasonSelectClass: "btn btn-success",
+      season: e.target.value
     });
   }
 
