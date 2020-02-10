@@ -11,7 +11,11 @@ export default class SeasonRosterStats extends Component {
     this.state = {
       rosterBatting: [],
       rosterStarters: [],
-      rosterRelievers: []
+      rosterRelievers: [],
+      standard: true,
+      advanced: false,
+      stdClass: "bg-success text-white",
+      advClass: "text-success"
     };
   }
 
@@ -51,13 +55,22 @@ export default class SeasonRosterStats extends Component {
     }
   }
 
+  showStandard() {}
+
   render() {
     const { rosterBatting, rosterStarters, rosterRelievers } = this.state;
 
     return (
       <div>
         <h1>{this.props.season}</h1>
-        <RosterStdBatterTable stats={rosterBatting} />
+        <RosterStdBatterTable
+          stats={rosterBatting}
+          showStd={showStandard}
+          showAdv={showAdvanced}
+          stdClass={stdClass}
+          advClass={advClass}
+          clickStyle={clickStyle}
+        />
         <RosterAdvBatterTable stats={rosterBatting} />
       </div>
     );
