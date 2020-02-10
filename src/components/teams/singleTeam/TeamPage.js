@@ -217,7 +217,7 @@ export default class TeamPage extends Component {
 
     const display = () => {
       if (season) {
-        return <SeasonRosterStats season={season} />;
+        return <SeasonRosterStats season={season} team={teamName} />;
       } else {
         if (hittingTable) {
           return (
@@ -298,11 +298,7 @@ export default class TeamPage extends Component {
             {`Return to ${teamName}`}
           </button>
         </Link>
-        <TeamPageSeasonSelect
-          showSeason={this.showSeason}
-          season={season}
-          team={teamName}
-        />
+        <TeamPageSeasonSelect showSeason={this.showSeason} season={season} />
         {display()}
       </div>
     );
