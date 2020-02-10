@@ -3,6 +3,7 @@ import RosterStdBatterTable from "./roster/RosterStdBatterTable";
 import RosterAdvBatterTable from "./roster/RosterAdvBatterTable";
 
 import axios from "axios";
+const baseUrl = "https://www.fgbaseballapi.com/api/";
 
 export default class SeasonRosterStats extends Component {
   constructor(props) {
@@ -14,14 +15,19 @@ export default class SeasonRosterStats extends Component {
     };
   }
 
-  componentDidMount() {}
+  async componentDidMount() {
+    let team = this.props.team;
+    let season = this.props.season;
+
+    let batting = await axios.get(
+      `${baseUrl}playerbatting/teams/${team}/${season}`
+    );
+  }
 
   render() {
-    const { season } = this.props;
-
     return (
       <div>
-        <h1>{season}</h1>
+        <h1>{this.props.season}</h1>
         <RosterStdBatterTable stats={rosterBatting} />
         <RosterAdvBatterTable stats={rosterBatting} />
       </div>
