@@ -200,12 +200,12 @@ export default class TeamPage extends Component {
     return (
       <div className="mt-4">
         <Link to="/teamselect">
-          <button type="button" className="btn btn-outline-success">
+          <button type="button" className="btn btn-outline-success mb-2">
             Return to team selection
           </button>
         </Link>
         <div className="mt-2">
-          <img src={teamLogo} alt={teamName} className="img-thumbnail" />
+          <img src={teamLogo} alt={teamName} className="img-fluid" />
           <h4>
             {city} {teamName}
           </h4>
