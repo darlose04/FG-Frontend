@@ -8,7 +8,7 @@ export default class TeamPageSeasonSelect extends Component {
         role="toolbar"
         aria-label="Toolbar with button groups"
       >
-        <div className="btn-group mr-2" role="group" aria-label="First group">
+        <div className="btn-group w-100" role="group" aria-label="First group">
           <button type="button" className="btn btn-outline-success">
             2002
           </button>
