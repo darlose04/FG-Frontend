@@ -283,8 +283,8 @@ export default class TeamPage extends Component {
             {city} {teamName}
           </h4>
         </div>
+        {/* add button to return to team page */}
         <TeamPageSeasonSelect />
-
         {display()}
       </div>
     );
