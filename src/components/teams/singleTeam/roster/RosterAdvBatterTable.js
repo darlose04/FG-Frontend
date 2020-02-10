@@ -18,14 +18,12 @@ export default class RosterAdvBatterTable extends Component {
       >
         <thead>
           <tr>
-            <tr>
-              <th className={stdClass} onClick={showStd} style={clickStyle}>
-                Standard
-              </th>
-              <th className={advClass} onClick={showAdv} style={clickStyle}>
-                Advanced
-              </th>
-            </tr>
+            <th className={stdClass} onClick={showStd} style={clickStyle}>
+              Standard
+            </th>
+            <th className={advClass} onClick={showAdv} style={clickStyle}>
+              Advanced
+            </th>
           </tr>
         </thead>
         <thead></thead>
