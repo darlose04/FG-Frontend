@@ -23,6 +23,8 @@ export default class TeamPageSeasonSelect extends Component {
       2019
     ];
 
+    const { showSeason, seasonSelectClass } = this.props;
+
     return (
       <div
         className="btn-toolbar my-2"
@@ -34,7 +36,8 @@ export default class TeamPageSeasonSelect extends Component {
             <button
               type="button"
               value={year}
-              className="btn btn-outline-success"
+              className={seasonSelectClass}
+              onClick={showSeason}
             >
               {year}
             </button>
