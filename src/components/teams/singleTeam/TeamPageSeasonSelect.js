@@ -37,7 +37,7 @@ export default class TeamPageSeasonSelect extends Component {
               type="button"
               value={year}
               className={
-                season == year ? "btn btn-success" : "btn btn-outline-success"
+                season === year ? "btn btn-success" : "btn btn-outline-success"
               }
               onClick={showSeason}
             >
