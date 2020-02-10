@@ -16,15 +16,7 @@ export default class TeamSelect extends Component {
             <div className="row-hl d-flex justify-content-between mt-4">
               {logo[divisionKey].map(team => (
                 <div className="p-2 item-hl" key={team.id}>
-                  <Link
-                    to={{
-                      pathname: `/teamselect/${team.teamName}`,
-                      aboutProps: {
-                        source: team.src,
-                        location: team.location
-                      }
-                    }}
-                  >
+                  <Link to={`/teamselect/${team.teamName}`}>
                     <div className="card teamImg">
                       <img
                         src={team.src}
