@@ -32,6 +32,25 @@ export default class SeasonRosterStats extends Component {
     });
   }
 
+  async componentDidUpdate(prevProps, prevState) {
+    let season = this.props.season;
+    let team = this.props.team;
+
+    if (prevProps.season !== season) {
+      let batting = await axios.get(
+        `${baseUrl}playerbatting/teams/${team}/${season}`
+      );
+
+      let sortedBatting = batting.data.sort((a, b) => {
+        return b.war - a.war;
+      });
+
+      this.setState({
+        rosterBatting: sortedBatting
+      });
+    }
+  }
+
   render() {
     const { rosterBatting, rosterStarters, rosterRelievers } = this.state;
 
