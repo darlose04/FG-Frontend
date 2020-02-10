@@ -36,6 +36,7 @@ export default class TeamPage extends Component {
     this.showStandard = this.showStandard.bind(this);
     this.showAdvanced = this.showAdvanced.bind(this);
     this.showSeason = this.showSeason.bind(this);
+    this.showTeamStats = this.showTeamStats.bind(this);
   }
 
   async componentDidMount() {
@@ -179,6 +180,12 @@ export default class TeamPage extends Component {
     });
   }
 
+  showTeamStats() {
+    this.setState({
+      season: ""
+    });
+  }
+
   render() {
     let teamName = this.props.match.params.team;
     const logos = this.props.logos.logos;
@@ -282,7 +289,15 @@ export default class TeamPage extends Component {
             {city} {teamName}
           </h4>
         </div>
-        {/* add button to return to team page */}
+        <Link to={`/teamselect/${teamName}`}>
+          <button
+            type="button"
+            className="btn btn-outline-success mb-2"
+            onClick={this.showTeamStats}
+          >
+            {`Return to ${teamName}`}
+          </button>
+        </Link>
         <TeamPageSeasonSelect showSeason={this.showSeason} season={season} />
         {display()}
       </div>
