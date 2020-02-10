@@ -6,6 +6,7 @@ import TotalPitchingComponent from "./pitching/TotalPitchingComponent";
 import StartingPitchingComponent from "./pitching/StartingPitchingComponent";
 import ReliefPitchingComponent from "./pitching/ReliefPitchingComponent";
 import TeamPageSeasonSelect from "./TeamPageSeasonSelect";
+import SeasonRosterStats from "./SeasonRosterStats";
 
 import axios from "axios";
 
@@ -193,6 +194,7 @@ export default class TeamPage extends Component {
 
     const {
       team,
+      season,
       batting,
       pitching,
       starting,
@@ -206,6 +208,67 @@ export default class TeamPage extends Component {
       hittingBtnClass,
       pitchingBtnClass
     } = this.state;
+
+    const display = () => {
+      if (season) {
+        return <SeasonRosterStats />;
+      } else {
+        if (hittingTable) {
+          return (
+            <div>
+              <TeamPageBtns
+                hittingBtnClass={hittingBtnClass}
+                pitchingBtnClass={pitchingBtnClass}
+                showHitting={this.showHitting}
+                showPitching={this.showPitching}
+              />
+              <BattingComponent data={batting} />
+            </div>
+          );
+        } else if (pitchingTable) {
+          return (
+            <div>
+              <TeamPageBtns
+                hittingBtnClass={hittingBtnClass}
+                pitchingBtnClass={pitchingBtnClass}
+                showHitting={this.showHitting}
+                showPitching={this.showPitching}
+              />
+              <TotalPitchingComponent
+                std={standard}
+                adv={advanced}
+                data={pitching}
+                showStd={this.showStandard}
+                showAdv={this.showAdvanced}
+                stdClass={stdClass}
+                advClass={advClass}
+                clickStyle={clickStyle}
+              />
+              <StartingPitchingComponent
+                std={standard}
+                adv={advanced}
+                data={starting}
+                showStd={this.showStandard}
+                showAdv={this.showAdvanced}
+                stdClass={stdClass}
+                advClass={advClass}
+                clickStyle={clickStyle}
+              />
+              <ReliefPitchingComponent
+                std={standard}
+                adv={advanced}
+                data={relieving}
+                showStd={this.showStandard}
+                showAdv={this.showAdvanced}
+                stdClass={stdClass}
+                advClass={advClass}
+                clickStyle={clickStyle}
+              />
+            </div>
+          );
+        }
+      }
+    };
 
     return (
       <div className="mt-4">
@@ -221,50 +284,8 @@ export default class TeamPage extends Component {
           </h4>
         </div>
         <TeamPageSeasonSelect />
-        <TeamPageBtns
-          hittingBtnClass={hittingBtnClass}
-          pitchingBtnClass={pitchingBtnClass}
-          showHitting={this.showHitting}
-          showPitching={this.showPitching}
-        />
-        {hittingTable ? (
-          <BattingComponent data={batting} />
-        ) : pitchingTable ? (
-          <div>
-            <TotalPitchingComponent
-              std={standard}
-              adv={advanced}
-              data={pitching}
-              showStd={this.showStandard}
-              showAdv={this.showAdvanced}
-              stdClass={stdClass}
-              advClass={advClass}
-              clickStyle={clickStyle}
-            />
-            <StartingPitchingComponent
-              std={standard}
-              adv={advanced}
-              data={starting}
-              showStd={this.showStandard}
-              showAdv={this.showAdvanced}
-              stdClass={stdClass}
-              advClass={advClass}
-              clickStyle={clickStyle}
-            />
-            <ReliefPitchingComponent
-              std={standard}
-              adv={advanced}
-              data={relieving}
-              showStd={this.showStandard}
-              showAdv={this.showAdvanced}
-              stdClass={stdClass}
-              advClass={advClass}
-              clickStyle={clickStyle}
-            />
-          </div>
-        ) : (
-          <div></div>
-        )}
+
+        {display()}
       </div>
     );
   }
