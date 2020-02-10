@@ -5,6 +5,7 @@ import BattingComponent from "./batting/BattingComponent";
 import TotalPitchingComponent from "./pitching/TotalPitchingComponent";
 import StartingPitchingComponent from "./pitching/StartingPitchingComponent";
 import ReliefPitchingComponent from "./pitching/ReliefPitchingComponent";
+import TeamPageSeasonSelect from "./TeamPageSeasonSelect";
 
 import axios from "axios";
 
@@ -210,6 +211,7 @@ export default class TeamPage extends Component {
             {city} {teamName}
           </h4>
         </div>
+        <TeamPageSeasonSelect />
         <TeamPageBtns
           hittingBtnClass={hittingBtnClass}
           pitchingBtnClass={pitchingBtnClass}
