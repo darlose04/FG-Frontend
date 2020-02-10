@@ -35,6 +35,7 @@ export default class TeamPage extends Component {
     this.showPitching = this.showPitching.bind(this);
     this.showStandard = this.showStandard.bind(this);
     this.showAdvanced = this.showAdvanced.bind(this);
+    this.showSeason = this.showSeason.bind(this);
   }
 
   async componentDidMount() {
@@ -169,6 +170,12 @@ export default class TeamPage extends Component {
       advanced: true,
       stdClass: "text-success",
       advClass: "bg-success text-white"
+    });
+  }
+
+  showSeason() {
+    this.setState({
+      seasonSelectClass: "btn btn-success"
     });
   }
 
