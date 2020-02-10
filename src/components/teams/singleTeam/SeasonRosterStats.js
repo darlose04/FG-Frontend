@@ -16,8 +16,8 @@ export default class SeasonRosterStats extends Component {
   }
 
   async componentDidMount() {
-    let team = this.props.team;
     let season = this.props.season;
+    let team = this.props.team;
 
     let batting = await axios.get(
       `${baseUrl}playerbatting/teams/${team}/${season}`
@@ -34,6 +34,7 @@ export default class SeasonRosterStats extends Component {
 
   render() {
     const { rosterBatting, rosterStarters, rosterRelievers } = this.state;
+
     return (
       <div>
         <h1>{this.props.season}</h1>
