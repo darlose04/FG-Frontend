@@ -30,13 +30,13 @@ export default class TeamPageSeasonSelect extends Component {
         aria-label="Toolbar with button groups"
       >
         <div className="btn-group w-100" role="group" aria-label="First group">
-          {seasonList.map(season => (
+          {seasonList.map(year => (
             <button
               type="button"
-              value={season}
+              value={year}
               className="btn btn-outline-success"
             >
-              {season}
+              {year}
             </button>
           ))}
         </div>
