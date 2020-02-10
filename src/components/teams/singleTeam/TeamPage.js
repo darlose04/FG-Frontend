@@ -15,6 +15,7 @@ export default class TeamPage extends Component {
     super(props);
     this.state = {
       team: "",
+      season: "",
       batting: [],
       pitching: [],
       starting: [],
@@ -26,7 +27,8 @@ export default class TeamPage extends Component {
       hittingTable: true,
       pitchingTable: false,
       hittingBtnClass: "btn btn-success hittingBtn",
-      pitchingBtnClass: "btn btn-outline-success pitchingBtn"
+      pitchingBtnClass: "btn btn-outline-success pitchingBtn",
+      seasonSelectClass: "btn btn-outline-success"
     };
 
     this.showHitting = this.showHitting.bind(this);
