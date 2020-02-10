@@ -10,59 +10,59 @@ export default class TeamPageSeasonSelect extends Component {
       >
         <div className="btn-group mr-2" role="group" aria-label="First group">
           <button type="button" className="btn btn-outline-success">
-            02
+            2002
           </button>
           <button type="button" className="btn btn-outline-success">
-            03
+            2003
           </button>
           <button type="button" className="btn btn-outline-success">
-            04
+            2004
           </button>
           <button type="button" className="btn btn-outline-success">
-            05
+            2005
           </button>
 
           <button type="button" className="btn btn-outline-success">
-            06
+            2006
           </button>
           <button type="button" className="btn btn-outline-success">
-            07
+            2007
           </button>
           <button type="button" className="btn btn-outline-success">
-            08
+            2008
           </button>
           <button type="button" className="btn btn-outline-success">
-            09
+            2009
           </button>
           <button type="button" className="btn btn-outline-success">
-            10
+            2010
           </button>
           <button type="button" className="btn btn-outline-success">
-            11
+            2011
           </button>
           <button type="button" className="btn btn-outline-success">
-            12
+            2012
           </button>
           <button type="button" className="btn btn-outline-success">
-            13
+            2013
           </button>
           <button type="button" className="btn btn-outline-success">
-            14
+            2014
           </button>
           <button type="button" className="btn btn-outline-success">
-            15
+            2015
           </button>
           <button type="button" className="btn btn-outline-success">
-            16
+            2016
           </button>
           <button type="button" className="btn btn-outline-success">
-            17
+            2017
           </button>
           <button type="button" className="btn btn-outline-success">
-            18
+            2018
           </button>
           <button type="button" className="btn btn-outline-success">
-            19
+            2019
           </button>
         </div>
       </div>
