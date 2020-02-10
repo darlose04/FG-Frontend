@@ -33,7 +33,7 @@ export default class RosterBatterTable extends Component {
           </tr>
         </thead>
         <tbody>
-          {stats.map(info => (
+          {this.props.stats.map(info => (
             <tr key={info.id}>
               <td>{info.name}</td>
               <td>{info.age}</td>
