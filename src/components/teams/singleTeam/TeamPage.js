@@ -217,7 +217,7 @@ export default class TeamPage extends Component {
 
     const display = () => {
       if (season) {
-        return <SeasonRosterStats />;
+        return <SeasonRosterStats season={season} />;
       } else {
         if (hittingTable) {
           return (
