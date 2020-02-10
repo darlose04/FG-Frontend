@@ -298,7 +298,11 @@ export default class TeamPage extends Component {
             {`Return to ${teamName}`}
           </button>
         </Link>
-        <TeamPageSeasonSelect showSeason={this.showSeason} season={season} />
+        <TeamPageSeasonSelect
+          showSeason={this.showSeason}
+          season={season}
+          team={teamName}
+        />
         {display()}
       </div>
     );
