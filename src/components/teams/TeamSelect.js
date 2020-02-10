@@ -19,7 +19,7 @@ export default class TeamSelect extends Component {
         {divisions.map(division => (
           <div className="row-hl d-flex justify-content-between mt-4">
             {division.map(team => (
-              <div className="p-2 item-hl row" key={team.id}>
+              <div className="p-0 item-hl row" key={team.id}>
                 <div className="col-sm">
                   <Link to={`/teamselect/${team.teamName}`}>
                     <div className="card teamImg">
