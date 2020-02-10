@@ -42,7 +42,6 @@ export default class RosterAdvBatterTable extends Component {
             <th scope="col">HR/FB</th>
             <th scope="col">ISO</th>
             <th scope="col">BABIP</th>
-            <th scope="col">AVG</th>
             <th scope="col">OBP</th>
             <th scope="col">SLG</th>
             <th scope="col">OPS</th>
@@ -70,7 +69,6 @@ export default class RosterAdvBatterTable extends Component {
               <td>{info.hr_per_fb}</td>
               <td>{info.iso}</td>
               <td>{info.babip}</td>
-              <td>{info.avg}</td>
               <td>{info.obp}</td>
               <td>{info.slg}</td>
               <td>{info.ops}</td>
