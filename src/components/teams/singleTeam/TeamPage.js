@@ -206,9 +206,9 @@ export default class TeamPage extends Component {
         </Link>
         <div className="mt-2">
           <img src={teamLogo} alt={teamName} className="img-thumbnail" />
-          <h3>
+          <h4>
             {city} {teamName}
-          </h3>
+          </h4>
         </div>
         <TeamPageBtns
           hittingBtnClass={hittingBtnClass}
