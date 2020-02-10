@@ -2,11 +2,31 @@ import React, { Component } from "react";
 
 export default class RosterBatterTable extends Component {
   render() {
+    const {
+      stats,
+      showStd,
+      showAdv,
+      stdClass,
+      advClass,
+      clickStyle
+    } = this.props;
     return (
       <table
         className="table table-sm table-striped table-bordered table-hover text-center standard"
         style={{ fontSize: "0.8rem", padding: ".2rem", whiteSpace: "nowrap" }}
       >
+        <thead>
+          <tr>
+            <tr>
+              <th className={stdClass} onClick={showStd} style={clickStyle}>
+                Standard
+              </th>
+              <th className={advClass} onClick={showAdv} style={clickStyle}>
+                Advanced
+              </th>
+            </tr>
+          </tr>
+        </thead>
         <thead>
           <tr className="bg-success text-white">
             <th scope="col">Name</th>
@@ -33,7 +53,7 @@ export default class RosterBatterTable extends Component {
           </tr>
         </thead>
         <tbody>
-          {this.props.stats.map(info => (
+          {stats.map(info => (
             <tr key={info.id}>
               <td>{info.name}</td>
               <td>{info.age}</td>
