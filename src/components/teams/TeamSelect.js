@@ -8,7 +8,7 @@ export default class TeamSelect extends Component {
 
     return (
       <div className="container mt-4">
-        <div className="row">
+        <div className="row logoRows">
           {logos.map(team => (
             <div className="col-2 p-2">
               <Link to={`/teamselect/${team.teamName}`}>
