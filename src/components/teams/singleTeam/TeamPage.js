@@ -171,10 +171,11 @@ export default class TeamPage extends Component {
 
   render() {
     let teamName = this.props.match.params.team;
-    // const location = this.props.location.aboutProps.location;
-    // const source = this.props.location.aboutProps.source;
+    const logos = this.props.logos.logos;
 
-    // console.log(location);
+    const teamInfo = logos.filter(logo => logo.teamName === teamName);
+    const city = teamInfo[0].location;
+    const teamLogo = teamInfo[0].src;
 
     let clickStyle = {
       cursor: "pointer"
@@ -203,7 +204,12 @@ export default class TeamPage extends Component {
             Return to team selection
           </button>
         </Link>
-        <h1>This is the team page for the {teamName}</h1>
+        <div className="mt-2">
+          <img src={teamLogo} alt={teamName} className="img-thumbnail" />
+          <h3>
+            {city} {teamName}
+          </h3>
+        </div>
         <TeamPageBtns
           hittingBtnClass={hittingBtnClass}
           pitchingBtnClass={pitchingBtnClass}
