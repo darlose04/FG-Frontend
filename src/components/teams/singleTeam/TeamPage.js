@@ -206,7 +206,8 @@ export default class TeamPage extends Component {
       hittingTable,
       pitchingTable,
       hittingBtnClass,
-      pitchingBtnClass
+      pitchingBtnClass,
+      seasonSelectClass
     } = this.state;
 
     const display = () => {
@@ -284,7 +285,10 @@ export default class TeamPage extends Component {
           </h4>
         </div>
         {/* add button to return to team page */}
-        <TeamPageSeasonSelect />
+        <TeamPageSeasonSelect
+          showSeason={this.showSeason}
+          seasonSelectClass={seasonSelectClass}
+        />
         {display()}
       </div>
     );
