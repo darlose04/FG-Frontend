@@ -29,6 +29,26 @@ export default class SeasonRosterStats extends Component {
       `${baseUrl}playerbatting/teams/${team}/${season}`
     );
 
+    // Acount for Rays and Nationals formerly being Devil Rays and Expos
+
+    if (team === "Rays") {
+      let oldBatting = await axios.get(
+        `${baseUrl}playerbatting/teams/Devil Rays/${season}`
+      );
+      for (let i = 0; i < oldBatting.data.length; i++) {
+        batting.data.push(oldBatting.data[i]);
+      }
+    }
+
+    if (team === "Nationals" && Number(season) < 2005) {
+      let oldBatting = await axios.get(
+        `${baseUrl}playerbatting/teams/Expos/${season}`
+      );
+      for (let i = 0; i < oldBatting.data.length; i++) {
+        batting.data.push(oldBatting.data[i]);
+      }
+    }
+
     let sortedBatting = batting.data.sort((a, b) => {
       return b.plate_appearances - a.plate_appearances;
     });
@@ -46,6 +66,26 @@ export default class SeasonRosterStats extends Component {
       let batting = await axios.get(
         `${baseUrl}playerbatting/teams/${team}/${season}`
       );
+
+      // account for Rays and Nationals having different names
+
+      if (team === "Rays") {
+        let oldBatting = await axios.get(
+          `${baseUrl}playerbatting/teams/Devil Rays/${season}`
+        );
+        for (let i = 0; i < oldBatting.data.length; i++) {
+          batting.data.push(oldBatting.data[i]);
+        }
+      }
+
+      if (team === "Nationals" && Number(season) < 2005) {
+        let oldBatting = await axios.get(
+          `${baseUrl}playerbatting/teams/Expos/${season}`
+        );
+        for (let i = 0; i < oldBatting.data.length; i++) {
+          batting.data.push(oldBatting.data[i]);
+        }
+      }
 
       let sortedBatting = batting.data.sort((a, b) => {
         return b.plate_appearances - a.plate_appearances;
