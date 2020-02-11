@@ -89,6 +89,9 @@ export default class SeasonRosterStats extends Component {
       standard
     } = this.state;
 
+    const { record } = this.props;
+    console.log(record);
+
     return (
       <div>
         <h1>{this.props.season}</h1>
