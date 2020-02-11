@@ -30,7 +30,7 @@ export default class SeasonRosterStats extends Component {
     );
 
     let sortedBatting = batting.data.sort((a, b) => {
-      return b.war - a.war;
+      return b.plate_appearances - a.plate_appearances;
     });
 
     this.setState({
@@ -48,7 +48,7 @@ export default class SeasonRosterStats extends Component {
       );
 
       let sortedBatting = batting.data.sort((a, b) => {
-        return b.war - a.war;
+        return b.plate_appearances - a.plate_appearances;
       });
 
       this.setState({
