@@ -15,7 +15,7 @@ export default class RosterAdvBatterTable extends Component {
      */
     return (
       <table
-        className="table table-sm table-striped table-bordered table-hover text-center advanced"
+        className="table table-sm table-striped table-hover table-bordered text-center advanced"
         style={{ fontSize: "0.8rem", padding: ".2rem", whiteSpace: "nowrap" }}
       >
         <thead>
