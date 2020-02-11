@@ -293,6 +293,47 @@ export default class TeamPage extends Component {
       }
     };
 
+    const logoNameDisplay = () => {
+      if (
+        teamName === "Rays" &&
+        Number(season) < 2008 && Number(season) > 2001
+      ) {
+        return (
+          <div>
+            <img
+              src="https://content.sportslogos.net/logos/53/76/thumbs/1347.gif"
+              alt="Devil Rays"
+              className="img-fluid"
+            />
+            <h4>Tampa Bay Devil Rays</h4>
+          </div>
+        );
+      } else if (
+        teamName === "Nationals" &&
+        Number(season) < 2005 && Number(season) > 2001
+      ) {
+        return (
+          <div>
+            <img
+              src="https://content.sportslogos.net/logos/54/66/thumbs/0uoumo4hp8daek0qfmje0rol3.gif"
+              alt="Expos"
+              className="img-fluid"
+            />
+            <h4>Montreal Expos</h4>
+          </div>
+        );
+      } else {
+        return (
+          <div>
+            <img src={teamLogo} alt={teamName} />
+            <h4>
+              {city} {teamName}
+            </h4>
+          </div>
+        );
+      }
+    };
+
     return (
       <div className="mt-4">
         <Link to="/teamselect">
@@ -300,12 +341,7 @@ export default class TeamPage extends Component {
             Return to team selection
           </button>
         </Link>
-        <div className="mt-2">
-          <img src={teamLogo} alt={teamName} className="img-fluid" />
-          <h4>
-            {city} {teamName}
-          </h4>
-        </div>
+        <div className="mt-2">{logoNameDisplay()}</div>
         <Link to={`/teamselect/${teamName}`}>
           <button
             type="button"
