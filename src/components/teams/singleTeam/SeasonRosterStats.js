@@ -90,11 +90,17 @@ export default class SeasonRosterStats extends Component {
     } = this.state;
 
     const { record } = this.props;
-    console.log(record);
+
+    let currentSeason = record.filter(item => item.season == this.props.season);
+
+    let displayRecord = currentSeason[0];
 
     return (
       <div>
-        <h1>{this.props.season}</h1>
+        <h3>
+          {this.props.season} record: {displayRecord.wins}-
+          {displayRecord.losses}
+        </h3>
         {standard ? (
           <RosterStdBatterTable
             stats={rosterBatting}
