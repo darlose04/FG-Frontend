@@ -17,6 +17,7 @@ export default class TeamPage extends Component {
     this.state = {
       team: "",
       season: "",
+      record: [],
       batting: [],
       pitching: [],
       starting: [],
@@ -121,12 +122,25 @@ export default class TeamPage extends Component {
       return b.season - a.season;
     });
 
+    let winLossRecord = [];
+
+    sortedPitching.map(team => {
+      let winLoss = {
+        season: team.season,
+        wins: team.wins,
+        losses: team.losses
+      };
+
+      winLossRecord.push(winLoss);
+    });
+
     this.setState({
       team: teamName,
       batting: sortedBatting,
       pitching: sortedPitching,
       starting: sortedStarting,
-      relieving: sortedRelieving
+      relieving: sortedRelieving,
+      record: winLossRecord
     });
   }
 
@@ -201,6 +215,7 @@ export default class TeamPage extends Component {
     const {
       team,
       season,
+      record,
       batting,
       pitching,
       starting,
@@ -217,7 +232,9 @@ export default class TeamPage extends Component {
 
     const display = () => {
       if (season) {
-        return <SeasonRosterStats season={season} team={teamName} />;
+        return (
+          <SeasonRosterStats record={record} season={season} team={teamName} />
+        );
       } else {
         if (hittingTable) {
           return (
