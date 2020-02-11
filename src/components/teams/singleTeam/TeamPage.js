@@ -296,7 +296,8 @@ export default class TeamPage extends Component {
     const logoNameDisplay = () => {
       if (
         teamName === "Rays" &&
-        Number(season) < 2008 && Number(season) > 2001
+        Number(season) < 2008 &&
+        Number(season) > 2001
       ) {
         return (
           <div>
@@ -310,7 +311,8 @@ export default class TeamPage extends Component {
         );
       } else if (
         teamName === "Nationals" &&
-        Number(season) < 2005 && Number(season) > 2001
+        Number(season) < 2005 &&
+        Number(season) > 2001
       ) {
         return (
           <div>
@@ -336,21 +338,25 @@ export default class TeamPage extends Component {
 
     return (
       <div className="mt-4">
-        <Link to="/teamselect">
-          <button type="button" className="btn btn-outline-success mb-2">
-            Return to team selection
-          </button>
-        </Link>
+        <div>
+          <Link to="/teamselect">
+            <button type="button" className="btn btn-outline-success mb-2 mr-1">
+              Return to team selection
+            </button>
+          </Link>
+          <Link to={`/teamselect/${teamName}`}>
+            <button
+              type="button"
+              className="btn btn-outline-success mb-2"
+              onClick={this.showTeamStats}
+            >
+              {`Return to ${teamName}`}
+            </button>
+          </Link>
+        </div>
+
         <div className="mt-2">{logoNameDisplay()}</div>
-        <Link to={`/teamselect/${teamName}`}>
-          <button
-            type="button"
-            className="btn btn-outline-success mb-2"
-            onClick={this.showTeamStats}
-          >
-            {`Return to ${teamName}`}
-          </button>
-        </Link>
+
         <TeamPageSeasonSelect showSeason={this.showSeason} season={season} />
         {display()}
       </div>
