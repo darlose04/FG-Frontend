@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import RosterStdBatterTable from "./roster/RosterStdBatterTable";
 import RosterAdvBatterTable from "./roster/RosterAdvBatterTable";
-import RosterStdStartTable from "./roster/RosterStdStarterTable";
-import RosterAdvStartTable from "./roster/RosterAdvStarterTable";
+import RosterStdStarterTable from "./roster/RosterStdStarterTable";
+import RosterAdvStarterTable from "./roster/RosterAdvStarterTable";
 
 import axios from "axios";
 const baseUrl = "https://www.fgbaseballapi.com/api/";
@@ -201,6 +201,7 @@ export default class SeasonRosterStats extends Component {
           {this.props.season} record: {displayRecord.wins}-
           {displayRecord.losses}
         </h3>
+        <h3>Batting</h3>
         {standard ? (
           <RosterStdBatterTable
             stats={rosterBatting}
@@ -220,6 +221,27 @@ export default class SeasonRosterStats extends Component {
             clickStyle={clickStyle}
           />
         )}
+        <h3>Starting Pitching</h3>
+        {standard ? (
+          <RosterStdStarterTable
+            stats={rosterStarters}
+            showStd={this.showStandard}
+            showAdv={this.showAdvanced}
+            stdClass={stdClass}
+            advClass={advClass}
+            clickStyle={clickStyle}
+          />
+        ) : (
+          <RosterAdvStarterTable
+            stats={rosterStarters}
+            showStd={this.showStandard}
+            showAdv={this.showAdvanced}
+            stdClass={stdClass}
+            advClass={advClass}
+            clickStyle={clickStyle}
+          />
+        )}
+        <h3>Relief Pitching</h3>
       </div>
     );
   }
