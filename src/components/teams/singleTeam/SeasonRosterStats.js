@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import RosterStdBatterTable from "./roster/RosterStdBatterTable";
 import RosterAdvBatterTable from "./roster/RosterAdvBatterTable";
 import RosterStdStartTable from "./roster/RosterStdStarterTable";
+import RosterAdvStartTable from "./roster/RosterAdvStarterTable";
 
 import axios from "axios";
 const baseUrl = "https://www.fgbaseballapi.com/api/";
@@ -79,8 +80,13 @@ export default class SeasonRosterStats extends Component {
       return b.plate_appearances - a.plate_appearances;
     });
 
+    let sortedStarting = starting.data.sort((a, b) => {
+      return b.ip - a.ip;
+    });
+
     this.setState({
-      rosterBatting: sortedBatting
+      rosterBatting: sortedBatting,
+      rosterStarters: sortedStarting
     });
   }
 
@@ -93,8 +99,12 @@ export default class SeasonRosterStats extends Component {
         `${baseUrl}playerbatting/teams/${team}/${season}`
       );
 
-      // account for Rays and Nationals having different names
+      let starting = await axios.get(
+        `${baseUrl}playerstarting/teams/${team}/${season}`
+      );
 
+      // account for Rays and Nationals having different names
+      // batting
       if (team === "Rays") {
         let oldBatting = await axios.get(
           `${baseUrl}playerbatting/teams/Devil Rays/${season}`
@@ -113,12 +123,36 @@ export default class SeasonRosterStats extends Component {
         }
       }
 
+      //starting
+      if (team === "Rays") {
+        let oldStarting = await axios.get(
+          `${baseUrl}playerstarting/teams/Devil Rays/${season}`
+        );
+        for (let i = 0; i < oldStarting.data.length; i++) {
+          starting.data.push(oldStarting.data[i]);
+        }
+      }
+
+      if (team === "Nationals" && Number(season) < 2005) {
+        let oldStarting = await axios.get(
+          `${baseUrl}playerstarting/teams/Expos/${season}`
+        );
+        for (let i = 0; i < oldStarting.data.length; i++) {
+          starting.data.push(oldStarting.data[i]);
+        }
+      }
+
       let sortedBatting = batting.data.sort((a, b) => {
         return b.plate_appearances - a.plate_appearances;
       });
 
+      let sortedStarting = starting.data.sort((a, b) => {
+        return b.ip - a.ip;
+      });
+
       this.setState({
-        rosterBatting: sortedBatting
+        rosterBatting: sortedBatting,
+        rosterStarters: sortedStarting
       });
     }
   }
