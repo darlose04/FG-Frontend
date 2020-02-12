@@ -35,6 +35,10 @@ export default class SeasonRosterStats extends Component {
       `${baseUrl}playerstarting/teams/${team}/${season}`
     );
 
+    let relieving = await axios.get(
+      `${baseUrl}playerrelieving/teams/${team}/${season}`
+    );
+
     // Account for Rays and Nationals formerly being Devil Rays and Expos
     // hitting
     if (team === "Rays") {
@@ -75,6 +79,23 @@ export default class SeasonRosterStats extends Component {
     }
 
     // relieving
+    if (team === "Rays") {
+      let oldRelieving = await axios.get(
+        `${baseUrl}playerrelieving/teams/Devil Rays/${season}`
+      );
+      for (let i = 0; i < oldRelieving.data.length; i++) {
+        relieving.data.push(oldRelieving.data[i]);
+      }
+    }
+
+    if (team === "Nationals" && Number(season) < 2005) {
+      let oldRelieving = await axios.get(
+        `${baseUrl}playerrelieving/teams/Expos/${season}`
+      );
+      for (let i = 0; i < oldRelieving.data.length; i++) {
+        relieving.data.push(oldRelieving.data[i]);
+      }
+    }
 
     let sortedBatting = batting.data.sort((a, b) => {
       return b.plate_appearances - a.plate_appearances;
@@ -84,9 +105,14 @@ export default class SeasonRosterStats extends Component {
       return b.ip - a.ip;
     });
 
+    let sortedRelieving = relieving.data.sort((a, b) => {
+      return b.saves - a.saves;
+    });
+
     this.setState({
       rosterBatting: sortedBatting,
-      rosterStarters: sortedStarting
+      rosterStarters: sortedStarting,
+      rosterRelievers: sortedRelieving
     });
   }
 
