@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import RosterStdBatterTable from "./roster/RosterStdBatterTable";
 import RosterAdvBatterTable from "./roster/RosterAdvBatterTable";
+import RosterStdStartTable from "./roster/RosterStdStarterTable";
 
 import axios from "axios";
 const baseUrl = "https://www.fgbaseballapi.com/api/";
@@ -29,8 +30,12 @@ export default class SeasonRosterStats extends Component {
       `${baseUrl}playerbatting/teams/${team}/${season}`
     );
 
-    // Account for Rays and Nationals formerly being Devil Rays and Expos
+    let starting = await axios.get(
+      `${baseUrl}playerstarting/teams/${team}/${season}`
+    );
 
+    // Account for Rays and Nationals formerly being Devil Rays and Expos
+    // hitting
     if (team === "Rays") {
       let oldBatting = await axios.get(
         `${baseUrl}playerbatting/teams/Devil Rays/${season}`
@@ -48,6 +53,10 @@ export default class SeasonRosterStats extends Component {
         batting.data.push(oldBatting.data[i]);
       }
     }
+
+    // starting
+
+    // relieving
 
     let sortedBatting = batting.data.sort((a, b) => {
       return b.plate_appearances - a.plate_appearances;
