@@ -2,6 +2,15 @@ import React, { Component } from "react";
 
 export default class RosterAdvStarterTable extends Component {
   render() {
+    let {
+      stats,
+      showStd,
+      showAdv,
+      stdClass,
+      advClass,
+      clickStyle
+    } = this.props;
+
     return (
       <table
         className="table table-sm table-striped table-bordered table-hover text-center standard"
