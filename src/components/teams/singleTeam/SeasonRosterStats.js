@@ -3,6 +3,8 @@ import RosterStdBatterTable from "./roster/RosterStdBatterTable";
 import RosterAdvBatterTable from "./roster/RosterAdvBatterTable";
 import RosterStdStarterTable from "./roster/RosterStdStarterTable";
 import RosterAdvStarterTable from "./roster/RosterAdvStarterTable";
+import RosterStdRelieverTable from "./roster/RosterStdRelieverTable";
+import RosterAdvRelieverTable from "./roster/RosterAdvRelieverTable";
 
 import axios from "axios";
 const baseUrl = "https://www.fgbaseballapi.com/api/";
@@ -296,6 +298,25 @@ export default class SeasonRosterStats extends Component {
           />
         )}
         <h3>Relief Pitching</h3>
+        {standard ? (
+          <RosterStdRelieverTable
+            stats={rosterRelievers}
+            showStd={this.showStandard}
+            showAdv={this.showAdvanced}
+            stdClass={stdClass}
+            advClass={advClass}
+            clickStyle={clickStyle}
+          />
+        ) : (
+          <RosterAdvRelieverTable
+            stats={rosterRelievers}
+            showStd={this.showStandard}
+            showAdv={this.showAdvanced}
+            stdClass={stdClass}
+            advClass={advClass}
+            clickStyle={clickStyle}
+          />
+        )}
       </div>
     );
   }
