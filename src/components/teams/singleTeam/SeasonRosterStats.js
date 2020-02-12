@@ -29,7 +29,7 @@ export default class SeasonRosterStats extends Component {
       `${baseUrl}playerbatting/teams/${team}/${season}`
     );
 
-    // Acount for Rays and Nationals formerly being Devil Rays and Expos
+    // Account for Rays and Nationals formerly being Devil Rays and Expos
 
     if (team === "Rays") {
       let oldBatting = await axios.get(
