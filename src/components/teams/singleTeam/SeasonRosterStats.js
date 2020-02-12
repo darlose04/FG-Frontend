@@ -257,7 +257,26 @@ export default class SeasonRosterStats extends Component {
           {this.props.season} record: {displayRecord.wins}-
           {displayRecord.losses}
         </h3>
-        <h3>Batting</h3>
+
+        <ul className="list-group list-group-horizontal">
+          <li className="list-group-item ">
+            <a className="text-success" href="#batters">
+              Batters
+            </a>
+          </li>
+          <li className="list-group-item">
+            <a className="text-success" href="#starters">
+              Starters
+            </a>
+          </li>
+          <li className="list-group-item">
+            <a className="text-success" href="#relievers">
+              Relievers
+            </a>
+          </li>
+        </ul>
+
+        <h3 id="batters">Batting</h3>
         {standard ? (
           <RosterStdBatterTable
             stats={rosterBatting}
@@ -277,7 +296,7 @@ export default class SeasonRosterStats extends Component {
             clickStyle={clickStyle}
           />
         )}
-        <h3>Starting Pitching</h3>
+        <h3 id="starters">Starting Pitching</h3>
         {standard ? (
           <RosterStdStarterTable
             stats={rosterStarters}
@@ -297,7 +316,7 @@ export default class SeasonRosterStats extends Component {
             clickStyle={clickStyle}
           />
         )}
-        <h3>Relief Pitching</h3>
+        <h3 id="relievers">Relief Pitching</h3>
         {standard ? (
           <RosterStdRelieverTable
             stats={rosterRelievers}
