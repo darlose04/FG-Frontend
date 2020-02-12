@@ -4,8 +4,11 @@ import { Line } from "react-chartjs-2";
 export default class TeamHittingChart extends Component {
   render() {
     const { data } = this.props;
-    console.log(data);
-    let chartData = data.reverse();
+
+    let homers = [];
+    data.map(year => {
+      homers.unshift(year.home_runs);
+    });
 
     const info = {
       labels: [
@@ -71,9 +74,7 @@ export default class TeamHittingChart extends Component {
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: chartData.map(year => {
-            return year.home_runs;
-          })
+          data: homers
         }
       ]
     };
