@@ -7,7 +7,7 @@ export default class TeamHittingChart extends Component {
 
     let homers = [];
     data.map(year => {
-      homers.unshift(year.home_runs);
+      return homers.unshift(year.home_runs);
     });
 
     const info = {
