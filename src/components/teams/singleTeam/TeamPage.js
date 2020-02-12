@@ -317,6 +317,16 @@ export default class TeamPage extends Component {
               <TeamHittingChart data={batting} />
             </div>
           );
+        } else {
+          return (
+            <TeamPageBtns
+              hittingBtnClass={hittingBtnClass}
+              pitchingBtnClass={pitchingBtnClass}
+              showHitting={this.showHitting}
+              showPitching={this.showPitching}
+              showChart={this.showChart}
+            />
+          );
         }
       }
     };
