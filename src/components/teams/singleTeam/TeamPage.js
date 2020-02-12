@@ -205,7 +205,9 @@ export default class TeamPage extends Component {
 
   showChart() {
     this.setState({
-      showChart: !this.state.showChart
+      showChart: !this.state.showChart,
+      hittingTable: false,
+      pitchingTbale: false
     });
   }
 
@@ -266,6 +268,7 @@ export default class TeamPage extends Component {
                 pitchingBtnClass={pitchingBtnClass}
                 showHitting={this.showHitting}
                 showPitching={this.showPitching}
+                showChart={this.showChart}
               />
               <TotalPitchingComponent
                 std={standard}
@@ -297,6 +300,19 @@ export default class TeamPage extends Component {
                 advClass={advClass}
                 clickStyle={clickStyle}
               />
+            </div>
+          );
+        } else if (this.state.showChart) {
+          return (
+            <div>
+              <TeamPageBtns
+                hittingBtnClass={hittingBtnClass}
+                pitchingBtnClass={pitchingBtnClass}
+                showHitting={this.showHitting}
+                showPitching={this.showPitching}
+                showChart={this.showChart}
+              />
+              <TeamHittingChart />
             </div>
           );
         }
