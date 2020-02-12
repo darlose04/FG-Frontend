@@ -312,7 +312,7 @@ export default class TeamPage extends Component {
                 showPitching={this.showPitching}
                 showChart={this.showChart}
               />
-              <TeamHittingChart />
+              <TeamHittingChart data={batting} />
             </div>
           );
         }
