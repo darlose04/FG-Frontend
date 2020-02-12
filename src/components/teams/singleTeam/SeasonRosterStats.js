@@ -55,6 +55,23 @@ export default class SeasonRosterStats extends Component {
     }
 
     // starting
+    if (team === "Rays") {
+      let oldStarting = await axios.get(
+        `${baseUrl}playerstarting/teams/Devil Rays/${season}`
+      );
+      for (let i = 0; i < oldStarting.data.length; i++) {
+        starting.data.push(oldStarting.data[i]);
+      }
+    }
+
+    if (team === "Nationals" && Number(season) < 2005) {
+      let oldStarting = await axios.get(
+        `${baseUrl}playerstarting/teams/Expos/${season}`
+      );
+      for (let i = 0; i < oldStarting.data.length; i++) {
+        starting.data.push(oldStarting.data[i]);
+      }
+    }
 
     // relieving
 
