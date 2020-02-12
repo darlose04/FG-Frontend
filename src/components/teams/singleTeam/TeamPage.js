@@ -7,6 +7,7 @@ import StartingPitchingComponent from "./pitching/StartingPitchingComponent";
 import ReliefPitchingComponent from "./pitching/ReliefPitchingComponent";
 import TeamPageSeasonSelect from "./TeamPageSeasonSelect";
 import SeasonRosterStats from "./SeasonRosterStats";
+import TeamHittingChart from "./charts/TeamHittingChart";
 
 import axios from "axios";
 
@@ -204,7 +205,7 @@ export default class TeamPage extends Component {
 
   showChart() {
     this.setState({
-      showChart: true
+      showChart: !this.state.showChart
     });
   }
 
@@ -252,6 +253,7 @@ export default class TeamPage extends Component {
                 pitchingBtnClass={pitchingBtnClass}
                 showHitting={this.showHitting}
                 showPitching={this.showPitching}
+                showChart={this.showChart}
               />
               <BattingComponent data={batting} />
             </div>
