@@ -35,6 +35,7 @@ export default class TeamPageSeasonSelect extends Component {
           {seasonList.map(year => (
             <button
               type="button"
+              key={year}
               value={year}
               className={
                 season === year ? "btn btn-success" : "btn btn-outline-success"
