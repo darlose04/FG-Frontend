@@ -134,10 +134,93 @@ export default class TeamHittingChart extends Component {
       ]
     };
 
+    let runs = [];
+    data.map(year => {
+      return runs.unshift(year.runs);
+    });
+
+    let rbi = [];
+    data.map(year => {
+      return rbi.unshift(year.rbi);
+    });
+
+    const scoring = {
+      labels: [
+        "2002",
+        "2003",
+        "2004",
+        "2005",
+        "2006",
+        "2007",
+        "2008",
+        "2009",
+        "2010",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019"
+      ],
+      datasets: [
+        {
+          label: "Runs",
+          fill: false,
+          lineTension: 0.1,
+          backgroundColor: "#42aa75",
+          borderColor: "#42aa75",
+          borderCapStyle: "butt",
+          borderDash: [],
+          borderDashOffset: 0.0,
+          borderJoinStyle: "miter",
+          pointBorderColor: "#42aa75",
+          pointBackgroundColor: "#fff",
+          pointBorderWidth: 1,
+          pointHoverRadius: 5,
+          pointHoverBackgroundColor: "#42aa75",
+          pointHoverBorderColor: "rgba(220,220,220,1)",
+          pointHoverBorderWidth: 2,
+          pointRadius: 1,
+          pointHitRadius: 10,
+          data: runs
+        },
+        {
+          label: "RBI",
+          fill: false,
+          lineTension: 0.1,
+          backgroundColor: "#429daa",
+          borderColor: "#429daa",
+          borderCapStyle: "butt",
+          borderDash: [],
+          borderDashOffset: 0.0,
+          borderJoinStyle: "miter",
+          pointBorderColor: "#429daa",
+          pointBackgroundColor: "#fff",
+          pointBorderWidth: 1,
+          pointHoverRadius: 5,
+          pointHoverBackgroundColor: "#429daa",
+          pointHoverBorderColor: "rgba(220,220,220,1)",
+          pointHoverBorderWidth: 2,
+          pointRadius: 1,
+          pointHitRadius: 10,
+          data: rbi
+        }
+      ]
+    };
+
     return (
-      <div className="mb-3 w-50">
-        <h4 className="text-center">Hit Type</h4>
-        <Line data={hits} />
+      <div className="mb-3">
+        <div className="mb-3 w-50">
+          <h4 className="text-center">Hit Type</h4>
+          <Line data={hits} />
+        </div>
+        <div className="mb-3 w-50">
+          <h4 className="text-center">Scoring</h4>
+          <Line data={scoring} />
+        </div>
       </div>
     );
   }
