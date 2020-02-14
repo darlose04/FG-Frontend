@@ -240,7 +240,8 @@ export default class TeamPage extends Component {
       hittingTable,
       pitchingTable,
       hittingBtnClass,
-      pitchingBtnClass
+      pitchingBtnClass,
+      showChart
     } = this.state;
 
     const display = () => {
@@ -304,7 +305,7 @@ export default class TeamPage extends Component {
               />
             </div>
           );
-        } else if (this.state.showChart) {
+        } else if (showChart) {
           return (
             <div>
               <TeamPageBtns
