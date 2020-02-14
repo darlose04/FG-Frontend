@@ -9,7 +9,7 @@ export default class Navbar extends Component {
       <nav className="navbar navbar-expand-md navbar-dark bg-success">
         <div className="container">
           <Link className="text-white navbar-brand" to="#">
-            MLB API
+            MLB Stats
           </Link>
           <button
             className="navbar-toggler"
