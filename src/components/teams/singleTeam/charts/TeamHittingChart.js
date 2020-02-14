@@ -212,12 +212,12 @@ export default class TeamHittingChart extends Component {
     };
 
     return (
-      <div className="mb-3">
-        <div className="mb-3 w-50">
+      <div className="mb-3 row">
+        <div className="mb-3 col">
           <h4 className="text-center">Hit Type</h4>
           <Line data={hits} />
         </div>
-        <div className="mb-3 w-50">
+        <div className="mb-3 col">
           <h4 className="text-center">Scoring</h4>
           <Line data={scoring} />
         </div>
