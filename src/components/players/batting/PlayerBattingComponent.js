@@ -16,8 +16,13 @@ export default class PlayerBattingComponent extends Component {
     } = this.props;
     return (
       <div>
-        <PlayerStdBattingTable stats={data} />
-        <PlayerAdvBattingTable stats={data} />
+        {std ? (
+          <PlayerStdBattingTable />
+        ) : adv ? (
+          <PlayerAdvBattingTable />
+        ) : (
+          <div></div>
+        )}
       </div>
     );
   }
