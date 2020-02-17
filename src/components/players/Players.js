@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import PlayerSearch from "./PlayerSearch";
 
 export default class Players extends Component {
   render() {
     return (
       <div className="mt-4">
-        <div className="jumbotron jumbotron-fluid">
+        <div className="jumbotron jumbotron-fluid mb-4">
           <div className="container">
             <h1 className="display-4 text-success text-center">
               Player Statistics
@@ -15,6 +16,7 @@ export default class Players extends Component {
             </p>
           </div>
         </div>
+        <PlayerSearch />
       </div>
     );
   }
