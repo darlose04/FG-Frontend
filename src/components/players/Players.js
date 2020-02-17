@@ -8,7 +8,9 @@ export default class Players extends Component {
     super(props);
     this.state = {
       showSearch: false,
-      showStats: false
+      showStats: false,
+      playerSearchClass: "btn btn-outline-success",
+      playerStatsClass: "btn btn-outline-success"
     };
 
     this.showSearchForm = this.showSearchForm.bind(this);
@@ -18,18 +20,23 @@ export default class Players extends Component {
   showSearchForm() {
     this.setState({
       showSearch: true,
-      showStats: false
+      showStats: false,
+      playerSearchClass: "btn btn-success",
+      playerStatsClass: "btn btn-outline-success"
     });
   }
 
   showStatsBtns() {
     this.setState({
       showSearch: false,
-      showStats: true
+      showStats: true,
+      playerSearchClass: "btn btn-outline-success",
+      playerStatsClass: "btn btn-success"
     });
   }
 
   render() {
+    const { playerSearchClass, playerStatsClass } = this.state;
     return (
       <div className="mt-4">
         <div className="jumbotron jumbotron-fluid mb-4">
@@ -46,6 +53,8 @@ export default class Players extends Component {
         <BtnChoice
           showSearchForm={this.showSearchForm}
           showStatsBtns={this.showStatsBtns}
+          searchBtn={playerSearchClass}
+          statsBtn={playerStatsClass}
         />
         {this.state.showSearch ? <PlayerSearch /> : <div></div>}
         {this.state.showStats ? <PlayerPageBtns /> : <div></div>}
