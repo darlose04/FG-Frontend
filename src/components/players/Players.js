@@ -20,7 +20,9 @@ export default class Players extends Component {
       season: 2019,
       batters: [],
       starters: [],
-      relievers: []
+      relievers: [],
+      stdClass: "bg-success text-white",
+      advClass: "text-success"
     };
 
     this.showSearchForm = this.showSearchForm.bind(this);
@@ -89,6 +91,10 @@ export default class Players extends Component {
   }
 
   render() {
+    let clickStyle = {
+      cursor: "pointer"
+    };
+
     const {
       showSearch,
       showStats,
