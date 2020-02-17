@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import BtnChoice from "./BtnChoice";
 import PlayerSearch from "./PlayerSearch";
 import PlayerPageBtns from "./PlayerPageBtns";
+import PlayerBattingComponent from "./batting/PlayerBattingComponent";
 
 export default class Players extends Component {
   constructor(props) {
@@ -103,7 +104,10 @@ export default class Players extends Component {
       hittersBtnClass,
       startersBtnClass,
       relieversBtnClass,
-      season
+      season,
+      showHitters,
+      showStarters,
+      showRelievers
     } = this.state;
 
     return (
@@ -140,6 +144,7 @@ export default class Players extends Component {
         ) : (
           <div></div>
         )}
+        {showHitters ? <PlayerBattingComponent /> : <div></div>}
       </div>
     );
   }
