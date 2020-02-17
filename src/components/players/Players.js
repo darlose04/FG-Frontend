@@ -4,6 +4,9 @@ import PlayerSearch from "./PlayerSearch";
 import PlayerPageBtns from "./PlayerPageBtns";
 import PlayerBattingComponent from "./batting/PlayerBattingComponent";
 
+import axios from "axios";
+const baseUrl = "https://www.fgbaseballapi.com/api";
+
 export default class Players extends Component {
   constructor(props) {
     super(props);
