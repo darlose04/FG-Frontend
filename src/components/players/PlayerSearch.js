@@ -6,13 +6,13 @@ export default class PlayerSearch extends Component {
       <form>
         <div className="form-row justify-content-center align-items-center">
           <div className="col-sm-4">
-            <label className="sr-only" for="inlineFormInputName">
+            <label className="sr-only" htmlFor="playerSearch">
               Name
             </label>
             <input
               type="text"
               className="form-control"
-              id="inlineFormInputName"
+              id="playerSearch"
               placeholder="Player Search"
             />
           </div>
