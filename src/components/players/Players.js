@@ -25,6 +25,7 @@ export default class Players extends Component {
     this.showHittersTbl = this.showHittersTbl.bind(this);
     this.showStartersTbl = this.showStartersTbl.bind(this);
     this.showRelieversTbl = this.showRelieversTbl.bind(this);
+    this.changeSeason = this.changeSeason.bind(this);
   }
 
   showSearchForm() {
@@ -78,6 +79,12 @@ export default class Players extends Component {
     });
   }
 
+  changeSeason(newSeason) {
+    this.setState({
+      season: newSeason
+    });
+  }
+
   render() {
     const {
       showSearch,
@@ -118,8 +125,8 @@ export default class Players extends Component {
             startBtn={startersBtnClass}
             showRelievers={this.showRelieversTbl}
             reliefBtn={relieversBtnClass}
-            seasonSubmit={this.seasonSubmit}
             season={season}
+            changeSeason={this.changeSeason}
           />
         ) : (
           <div></div>
