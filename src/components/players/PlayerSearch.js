@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class PlayerSearch extends Component {
   render() {
     return (
-      <form>
+      <form className="my-3">
         <div className="form-row justify-content-center align-items-center">
           <div className="col-sm-4">
             <label className="sr-only" htmlFor="playerSearch">
