@@ -86,7 +86,8 @@ export default class Home extends Component {
               <div className="card-body">
                 <h5 className="card-title">Scores & Standings</h5>
                 <p className="card-text">
-                  View daily scores or divisional standings.
+                  View daily scores or divisional standings. <br />
+                  (Not Implemented Yet)
                 </p>
                 <a href="#" className="btn btn-success">
                   Scores & Standings
