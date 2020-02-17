@@ -10,7 +10,10 @@ export default class Players extends Component {
       showSearch: false,
       showStats: false,
       playerSearchClass: "btn btn-outline-success",
-      playerStatsClass: "btn btn-outline-success"
+      playerStatsClass: "btn btn-outline-success",
+      hittersBtnClass: "btn btn-outline-success",
+      startersBtnClass: "btn btn-outline-success",
+      relieversBtnClass: "btn btn-outline-success"
     };
 
     this.showSearchForm = this.showSearchForm.bind(this);
