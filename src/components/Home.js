@@ -4,7 +4,7 @@ import "../styles/Home.css";
 export default class Home extends Component {
   render() {
     return (
-      <div className="homePage mt-3">
+      <div className="homePage mt-5">
         <div className="row mb-3">
           <div className="col-sm-12">
             <div className="card">
