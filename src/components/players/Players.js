@@ -25,6 +25,7 @@ export default class Players extends Component {
     this.showHittersTbl = this.showHittersTbl.bind(this);
     this.showStartersTbl = this.showStartersTbl.bind(this);
     this.showRelieversTbl = this.showRelieversTbl.bind(this);
+    this.seasonSubmit = this.seasonSubmit.bind(this);
   }
 
   showSearchForm() {
@@ -78,6 +79,13 @@ export default class Players extends Component {
     });
   }
 
+  seasonSubmit(e) {
+    e.preventDefault();
+    this.setState({
+      season: e.target.value
+    });
+  }
+
   render() {
     const {
       showSearch,
@@ -88,6 +96,7 @@ export default class Players extends Component {
       startersBtnClass,
       relieversBtnClass
     } = this.state;
+
     return (
       <div className="mt-4">
         <div className="jumbotron jumbotron-fluid mb-4">
