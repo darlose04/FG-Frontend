@@ -4,9 +4,20 @@ export default class Glossary extends Component {
   render() {
     return (
       <div className="container mt-2">
-        <h1 className="text-center mb-2 display-3">Statistics Defined</h1>
+        <h1 id="top" className="text-center mb-2 display-3">
+          Statistics Glossary
+        </h1>
+        <div>
+          <a href="#hitting" className="text-success mr-1">
+            Go to Hitting
+          </a>
+          {" | "}
+          <a href="#pitching" className="text-success">
+            Go to Pitching
+          </a>
+        </div>
 
-        <div className="p-3 border border-dark mb-3">
+        <div id="hitting" className="p-3 border border-dark mb-3">
           <h3>Hitting Statistics</h3>
           <p>
             Statistic definitions from{" "}
@@ -179,7 +190,11 @@ export default class Glossary extends Component {
           </ul>
         </div>
 
-        <div className="p-3 border border-dark mb-3">
+        <a href="#top" className="text-success">
+          Back to Top
+        </a>
+
+        <div id="pitching" className="p-3 border border-dark mb-3">
           <h3>Pitching Statistics</h3>
           <p>
             Statistic definitions from{" "}
