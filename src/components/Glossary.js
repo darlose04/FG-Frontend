@@ -1,9 +1,13 @@
 import React, { Component } from "react";
+import "../styles/Glossary.css";
 
 export default class Glossary extends Component {
   render() {
     return (
-      <div className="container mt-2">
+      <div
+        className="container mt-2"
+        style={{ backgroundColor: "rgba(0,0,0,0.9)" }}
+      >
         <h1 id="top" className="text-center mb-2 display-3">
           Statistics Glossary
         </h1>
@@ -17,9 +21,9 @@ export default class Glossary extends Component {
           </a>
         </div>
 
-        <div id="hitting" className="p-3 border border-dark mb-3">
-          <h3>Hitting Statistics</h3>
-          <p>
+        <div id="hitting" className="p-3 mb-3">
+          <h3 className="sectionTitle">Hitting Statistics</h3>
+          <p className="sectionTitle">
             Statistic definitions from{" "}
             <a href="https://library.fangraphs.com/offense/offensive-statistics-list/">
               Fangraphs
@@ -194,9 +198,9 @@ export default class Glossary extends Component {
           Back to Top
         </a>
 
-        <div id="pitching" className="p-3 border border-dark mb-3">
-          <h3>Pitching Statistics</h3>
-          <p>
+        <div id="pitching" className="p-3 mb-3">
+          <h3 className="sectionTitle">Pitching Statistics</h3>
+          <p className="sectionTitle">
             Statistic definitions from{" "}
             <a href="https://library.fangraphs.com/pitching/complete-list-pitching/">
               Fangraphs
