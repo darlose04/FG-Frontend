@@ -6,6 +6,20 @@ export default class Home extends Component {
     return (
       <div className="homePage mt-3">
         <div className="row mb-3">
+          <div className="col-sm-12">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Statistics</h5>
+                <p className="card-text">
+                  Hitting and pitching statistics are organized between standard
+                  and advanced stats. Charts can also be viewed to compare data
+                  between seasons, teams, or league averages.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="row mb-3">
           <div className="col-sm-6">
             <div className="card">
               <div className="card-body">
@@ -35,7 +49,7 @@ export default class Home extends Component {
             </div>
           </div>
         </div>
-        <div className="row">
+        <div className="row mb-3">
           <div className="col-sm-6">
             <div className="card">
               <div className="card-body">
@@ -61,6 +75,35 @@ export default class Home extends Component {
                 </p>
                 <a href="/teamstats" className="btn btn-success">
                   Team Statistics
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="row mb-3">
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Scores & Standings</h5>
+                <p className="card-text">
+                  View daily scores or divisional standings.
+                </p>
+                <a href="#" className="btn btn-success">
+                  Scores & Standings
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-6">
+            <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Glossary</h5>
+                <p className="card-text">
+                  Any unfamiliar statistics? The Glossary contains definitions
+                  for all statistics used.
+                </p>
+                <a href="/glossary" className="btn btn-success">
+                  Glossary
                 </a>
               </div>
             </div>
