@@ -17,9 +17,23 @@ export default class PlayerBattingComponent extends Component {
     return (
       <div>
         {std ? (
-          <PlayerStdBattingTable />
+          <PlayerStdBattingTable
+            stats={data}
+            showStd={showStd}
+            showAdv={showAdv}
+            stdClass={stdClass}
+            advClass={advClass}
+            clickStyle={clickStyle}
+          />
         ) : adv ? (
-          <PlayerAdvBattingTable />
+          <PlayerAdvBattingTable
+            stats={data}
+            showStd={showStd}
+            showAdv={showAdv}
+            stdClass={stdClass}
+            advClass={advClass}
+            clickStyle={clickStyle}
+          />
         ) : (
           <div></div>
         )}
