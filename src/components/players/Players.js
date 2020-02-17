@@ -47,6 +47,8 @@ export default class Players extends Component {
           showSearchForm={this.showSearchForm}
           showStatsBtns={this.showStatsBtns}
         />
+        {this.state.showSearch ? <PlayerSearch /> : <div></div>}
+        {this.state.showStats ? <PlayerPageBtns /> : <div></div>}
       </div>
     );
   }
