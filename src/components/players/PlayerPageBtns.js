@@ -8,7 +8,8 @@ export default class PlayerPageBtns extends Component {
       showStarters,
       startBtn,
       showRelievers,
-      reliefBtn
+      reliefBtn,
+      season
     } = this.props;
 
     return (
@@ -24,7 +25,7 @@ export default class PlayerPageBtns extends Component {
                 id="seasonSelectHitting"
                 // onChange={this.seasonChange}
               >
-                <option defaultValue="season">Season</option>
+                <option defaultValue={season}>{season}</option>
                 <option value="2019">2019</option>
                 <option value="2018">2018</option>
                 <option value="2017">2017</option>
