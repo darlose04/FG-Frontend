@@ -14,6 +14,9 @@ export default class Players extends Component {
       hittersBtnClass: "btn btn-outline-success",
       startersBtnClass: "btn btn-outline-success",
       relieversBtnClass: "btn btn-outline-success",
+      showHitters: false,
+      showStarters: false,
+      showRelievers: false,
       season: 2019
     };
 
