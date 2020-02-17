@@ -13,7 +13,8 @@ export default class Players extends Component {
       playerStatsClass: "btn btn-outline-success",
       hittersBtnClass: "btn btn-outline-success",
       startersBtnClass: "btn btn-outline-success",
-      relieversBtnClass: "btn btn-outline-success"
+      relieversBtnClass: "btn btn-outline-success",
+      season: 2019
     };
 
     this.showSearchForm = this.showSearchForm.bind(this);
@@ -39,7 +40,12 @@ export default class Players extends Component {
   }
 
   render() {
-    const { playerSearchClass, playerStatsClass } = this.state;
+    const {
+      showSearch,
+      showStats,
+      playerSearchClass,
+      playerStatsClass
+    } = this.state;
     return (
       <div className="mt-4">
         <div className="jumbotron jumbotron-fluid mb-4">
@@ -59,8 +65,8 @@ export default class Players extends Component {
           searchBtn={playerSearchClass}
           statsBtn={playerStatsClass}
         />
-        {this.state.showSearch ? <PlayerSearch /> : <div></div>}
-        {this.state.showStats ? <PlayerPageBtns /> : <div></div>}
+        {showSearch ? <PlayerSearch /> : <div></div>}
+        {showStats ? <PlayerPageBtns /> : <div></div>}
       </div>
     );
   }
