@@ -43,7 +43,10 @@ export default class Players extends Component {
       showSearch: true,
       showStats: false,
       playerSearchClass: "btn btn-success",
-      playerStatsClass: "btn btn-outline-success"
+      playerStatsClass: "btn btn-outline-success",
+      showHitters: false,
+      showStarters: false,
+      showRelievers: false
     });
   }
 
