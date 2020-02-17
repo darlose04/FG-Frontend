@@ -55,6 +55,22 @@ export default class Players extends Component {
     });
   }
 
+  async componentDidUpdate(prevProps, prevState) {
+    if (prevState.season !== this.state.season) {
+      let batting = await axios.get(
+        `${baseUrl}/playerbatting/${this.state.season}`
+      );
+
+      let sortedBatting = batting.data.sort((a, b) => {
+        return b.war - a.war;
+      });
+
+      this.setState({
+        batters: sortedBatting
+      });
+    }
+  }
+
   showSearchForm() {
     this.setState({
       showSearch: true,
