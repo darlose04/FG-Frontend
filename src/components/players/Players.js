@@ -178,8 +178,8 @@ export default class Players extends Component {
             adv={advanced}
             stdClass={stdClass}
             advClass={advClass}
-            showStd={this.showStd}
-            showAdv={this.showAdv}
+            showStd={this.showStandard}
+            showAdv={this.showAdvanced}
             clickStyle={clickStyle}
           />
         ) : (
