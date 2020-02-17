@@ -2,6 +2,15 @@ import React, { Component } from "react";
 
 export default class PlayerAdvBattingTable extends Component {
   render() {
+    const {
+      stats,
+      showStd,
+      showAdv,
+      stdClass,
+      advClass,
+      clickStyle
+    } = this.props;
+
     return (
       <table
         className="table table-sm table-striped table-hover table-bordered text-center advanced"
