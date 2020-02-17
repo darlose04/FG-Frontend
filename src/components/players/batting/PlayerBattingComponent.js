@@ -4,7 +4,16 @@ import PlayerAdvBattingTable from "./PlayerAdvBattingTable";
 
 export default class PlayerBattingComponent extends Component {
   render() {
-    const { data } = this.props;
+    const {
+      data,
+      std,
+      adv,
+      stdClass,
+      advClass,
+      showStd,
+      showAdv,
+      clickStyle
+    } = this.props;
     return (
       <div>
         <PlayerStdBattingTable stats={data} />
