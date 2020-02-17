@@ -25,7 +25,6 @@ export default class Players extends Component {
     this.showHittersTbl = this.showHittersTbl.bind(this);
     this.showStartersTbl = this.showStartersTbl.bind(this);
     this.showRelieversTbl = this.showRelieversTbl.bind(this);
-    this.seasonSubmit = this.seasonSubmit.bind(this);
   }
 
   showSearchForm() {
@@ -76,13 +75,6 @@ export default class Players extends Component {
       hittersBtnClass: "btn btn-outline-success",
       startersBtnClass: "btn btn-outline-success",
       relieversBtnClass: "btn btn-success"
-    });
-  }
-
-  seasonSubmit(e) {
-    e.preventDefault();
-    this.setState({
-      season: e.target.value
     });
   }
 
