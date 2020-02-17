@@ -4,6 +4,31 @@ import PlayerSearch from "./PlayerSearch";
 import PlayerPageBtns from "./PlayerPageBtns";
 
 export default class Players extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showSearch: false,
+      showStats: false
+    };
+
+    this.showSearchForm = this.showSearchForm.bind(this);
+    this.showStatsBtns = this.showStatsBtns.bind(this);
+  }
+
+  showSearchForm() {
+    this.setState({
+      showSearch: true,
+      showStats: false
+    });
+  }
+
+  showStatsBtns() {
+    this.setState({
+      showSearch: false,
+      showStats: true
+    });
+  }
+
   render() {
     return (
       <div className="mt-4">
@@ -18,7 +43,10 @@ export default class Players extends Component {
             </p>
           </div>
         </div>
-        <BtnChoice />
+        <BtnChoice
+          showSearchForm={this.showSearchForm}
+          showStatsBtns={this.showStatsBtns}
+        />
       </div>
     );
   }
