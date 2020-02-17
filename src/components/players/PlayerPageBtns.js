@@ -34,7 +34,7 @@ export default class PlayerPageBtns extends Component {
     } = this.props;
 
     return (
-      <div>
+      <div className="mb-3">
         <form className="seasonSelectForm" onSubmit={this.seasonSubmit}>
           <div className="form-row align-items-center">
             <div className="col-6 my-3">
