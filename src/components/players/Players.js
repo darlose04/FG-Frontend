@@ -22,6 +22,7 @@ export default class Players extends Component {
 
     this.showSearchForm = this.showSearchForm.bind(this);
     this.showStatsBtns = this.showStatsBtns.bind(this);
+    this.showHittersTbl = this.showHittersTbl.bind(this);
   }
 
   showSearchForm() {
@@ -39,6 +40,17 @@ export default class Players extends Component {
       showStats: true,
       playerSearchClass: "btn btn-outline-success",
       playerStatsClass: "btn btn-success"
+    });
+  }
+
+  showHittersTbl() {
+    this.setState({
+      showHitters: true,
+      showStarters: false,
+      showRelievers: false,
+      hittersBtnClass: "btn btn-success",
+      startersBtnClass: "btn btn-outline-success",
+      relieversBtnClass: "btn btn-outline-success"
     });
   }
 
