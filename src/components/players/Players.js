@@ -23,6 +23,8 @@ export default class Players extends Component {
     this.showSearchForm = this.showSearchForm.bind(this);
     this.showStatsBtns = this.showStatsBtns.bind(this);
     this.showHittersTbl = this.showHittersTbl.bind(this);
+    this.showStartersTbl = this.showStartersTbl.bind(this);
+    this.showRelieversTbl = this.showRelieversTbl.bind(this);
   }
 
   showSearchForm() {
@@ -51,6 +53,28 @@ export default class Players extends Component {
       hittersBtnClass: "btn btn-success",
       startersBtnClass: "btn btn-outline-success",
       relieversBtnClass: "btn btn-outline-success"
+    });
+  }
+
+  showStartersTbl() {
+    this.setState({
+      showHitters: false,
+      showStarters: true,
+      showRelievers: false,
+      hittersBtnClass: "btn btn-outline-success",
+      startersBtnClass: "btn btn-success",
+      relieversBtnClass: "btn btn-outline-success"
+    });
+  }
+
+  showRelieversTbl() {
+    this.setState({
+      showHitters: false,
+      showStarters: false,
+      showRelievers: true,
+      hittersBtnClass: "btn btn-outline-success",
+      startersBtnClass: "btn btn-outline-success",
+      relieversBtnClass: "btn btn-success"
     });
   }
 
