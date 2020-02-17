@@ -28,7 +28,7 @@ export default class Home extends Component {
                   Search for players in the above search bar or on the Player
                   Search page.
                 </p>
-                <a href="#" className="btn btn-success">
+                <a href="/players" className="btn btn-success">
                   Player Search
                 </a>
               </div>
@@ -42,7 +42,7 @@ export default class Home extends Component {
                   Instead of searching for a specific player, return hitting and
                   pitching statistics for players according to season.
                 </p>
-                <a href="#" className="btn btn-success">
+                <a href="/players" className="btn btn-success">
                   Player Seasons
                 </a>
               </div>
