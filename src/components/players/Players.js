@@ -94,7 +94,8 @@ export default class Players extends Component {
       playerStatsClass,
       hittersBtnClass,
       startersBtnClass,
-      relieversBtnClass
+      relieversBtnClass,
+      season
     } = this.state;
 
     return (
@@ -125,6 +126,8 @@ export default class Players extends Component {
             startBtn={startersBtnClass}
             showRelievers={this.showRelieversTbl}
             reliefBtn={relieversBtnClass}
+            seasonSubmit={this.seasonSubmit}
+            season={season}
           />
         ) : (
           <div></div>
