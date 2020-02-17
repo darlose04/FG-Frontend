@@ -34,6 +34,8 @@ export default class Players extends Component {
     this.showStartersTbl = this.showStartersTbl.bind(this);
     this.showRelieversTbl = this.showRelieversTbl.bind(this);
     this.changeSeason = this.changeSeason.bind(this);
+    this.showStandard = this.showStandard.bind(this);
+    this.showAdvanced = this.showAdvanced.bind(this);
   }
 
   showSearchForm() {
