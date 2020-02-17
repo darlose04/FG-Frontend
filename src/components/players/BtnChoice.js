@@ -6,14 +6,14 @@ export default class BtnChoice extends Component {
       <div className="btn-group w-100 mb-3" role="group">
         <button
           type="button"
-          className="btn btn-outline-success"
+          className={this.props.searchBtn}
           onClick={this.props.showSearchForm}
         >
           Search for a Specific Player
         </button>
         <button
           type="button"
-          className="btn btn-outline-success"
+          className={this.props.statsBtn}
           onClick={this.props.showStatsBtns}
         >
           Return Player Stats by Season
