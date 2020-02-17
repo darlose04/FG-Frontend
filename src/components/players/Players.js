@@ -23,7 +23,9 @@ export default class Players extends Component {
       starters: [],
       relievers: [],
       stdClass: "bg-success text-white",
-      advClass: "text-success"
+      advClass: "text-success",
+      standard: true,
+      advanced: false
     };
 
     this.showSearchForm = this.showSearchForm.bind(this);
@@ -91,6 +93,24 @@ export default class Players extends Component {
     });
   }
 
+  showStandard() {
+    this.setState({
+      standard: true,
+      advanced: false,
+      stdClass: "bg-success text-white",
+      advClass: "text-success"
+    });
+  }
+
+  showAdvanced() {
+    this.setState({
+      standard: false,
+      advanced: true,
+      stdClass: "text-success",
+      advClass: "bg-success text-white"
+    });
+  }
+
   render() {
     let clickStyle = {
       cursor: "pointer"
@@ -107,7 +127,14 @@ export default class Players extends Component {
       season,
       showHitters,
       showStarters,
-      showRelievers
+      showRelievers,
+      batters,
+      starters,
+      relievers,
+      stdClass,
+      advClass,
+      standard,
+      advanced
     } = this.state;
 
     return (
@@ -144,7 +171,20 @@ export default class Players extends Component {
         ) : (
           <div></div>
         )}
-        {showHitters ? <PlayerBattingComponent /> : <div></div>}
+        {showHitters ? (
+          <PlayerBattingComponent
+            data={batters}
+            std={standard}
+            adv={advanced}
+            stdClass={stdClass}
+            advClass={advClass}
+            showStd={this.showStd}
+            showAdv={this.showAdv}
+            clickStyle={clickStyle}
+          />
+        ) : (
+          <div></div>
+        )}
       </div>
     );
   }
