@@ -5,7 +5,7 @@ export default class PlayerPageBtns extends Component {
     return (
       <div className="btn-group w-100" role="group">
         <button type="button" className="btn btn-outline-success">
-          Hitting
+          Hitters
         </button>
         <button type="button" className="btn btn-outline-success">
           Starters
