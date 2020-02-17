@@ -17,7 +17,10 @@ export default class Players extends Component {
       showHitters: false,
       showStarters: false,
       showRelievers: false,
-      season: 2019
+      season: 2019,
+      batters: [],
+      starters: [],
+      relievers: []
     };
 
     this.showSearchForm = this.showSearchForm.bind(this);
