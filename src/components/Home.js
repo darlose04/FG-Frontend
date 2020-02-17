@@ -5,7 +5,7 @@ export default class Home extends Component {
   render() {
     return (
       <div className="homePage mt-5">
-        <div className="row mb-3">
+        <div className="row mb-4">
           <div className="col-sm-12">
             <div className="card">
               <div className="card-body">
@@ -19,7 +19,7 @@ export default class Home extends Component {
             </div>
           </div>
         </div>
-        <div className="row mb-3">
+        <div className="row mb-4">
           <div className="col-sm-6">
             <div className="card">
               <div className="card-body">
@@ -49,7 +49,7 @@ export default class Home extends Component {
             </div>
           </div>
         </div>
-        <div className="row mb-3">
+        <div className="row mb-4">
           <div className="col-sm-6">
             <div className="card">
               <div className="card-body">
@@ -80,7 +80,7 @@ export default class Home extends Component {
             </div>
           </div>
         </div>
-        <div className="row mb-3">
+        <div className="row mb-4">
           <div className="col-sm-6">
             <div className="card">
               <div className="card-body">
