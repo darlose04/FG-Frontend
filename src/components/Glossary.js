@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import "../styles/Glossary.css";
+// import "../styles/Glossary.css";
 
 export default class Glossary extends Component {
   render() {
     return (
       <div
         className="container mt-2"
-        style={{ backgroundColor: "rgba(0,0,0,0.9)" }}
+        // style={{ backgroundColor: "rgba(0,0,0,0.9)" }}
       >
         <h1 id="top" className="text-center mb-2 display-3">
           Statistics Glossary
