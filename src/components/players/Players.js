@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import BtnChoice from "./BtnChoice";
 import PlayerSearch from "./PlayerSearch";
+import PlayerPageBtns from "./PlayerPageBtns";
 
 export default class Players extends Component {
   render() {
@@ -16,7 +18,7 @@ export default class Players extends Component {
             </p>
           </div>
         </div>
-        <PlayerSearch />
+        <BtnChoice />
       </div>
     );
   }
