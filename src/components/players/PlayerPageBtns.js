@@ -1,6 +1,26 @@
 import React, { Component } from "react";
 
 export default class PlayerPageBtns extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      season: this.props.season
+    };
+    this.seasonChange = this.seasonChange.bind(this);
+    this.seasonSubmit = this.seasonSubmit.bind(this);
+  }
+
+  seasonChange(e) {
+    this.setState({
+      season: e.target.value
+    });
+  }
+
+  seasonSubmit(e) {
+    e.preventDefault();
+    this.props.changeSeason(this.state.season);
+  }
+
   render() {
     const {
       showHitters,
@@ -9,7 +29,8 @@ export default class PlayerPageBtns extends Component {
       startBtn,
       showRelievers,
       reliefBtn,
-      season
+      season,
+      seasonSubmit
     } = this.props;
 
     return (
@@ -23,7 +44,7 @@ export default class PlayerPageBtns extends Component {
               <select
                 className="custom-select mr-sm-2 text-center"
                 id="seasonSelectHitting"
-                // onChange={this.seasonChange}
+                onChange={this.seasonChange}
               >
                 <option defaultValue={season}>{season}</option>
                 <option value="2019">2019</option>
