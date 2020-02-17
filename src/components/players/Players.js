@@ -83,7 +83,10 @@ export default class Players extends Component {
       showSearch,
       showStats,
       playerSearchClass,
-      playerStatsClass
+      playerStatsClass,
+      hittersBtnClass,
+      startersBtnClass,
+      relieversBtnClass
     } = this.state;
     return (
       <div className="mt-4">
@@ -105,7 +108,18 @@ export default class Players extends Component {
           statsBtn={playerStatsClass}
         />
         {showSearch ? <PlayerSearch /> : <div></div>}
-        {showStats ? <PlayerPageBtns /> : <div></div>}
+        {showStats ? (
+          <PlayerPageBtns
+            showHitters={this.showHittersTbl}
+            hitBtn={hittersBtnClass}
+            showStarters={this.showStartersTbl}
+            startBtn={startersBtnClass}
+            showRelievers={this.showRelieversTbl}
+            reliefBtn={relieversBtnClass}
+          />
+        ) : (
+          <div></div>
+        )}
       </div>
     );
   }
