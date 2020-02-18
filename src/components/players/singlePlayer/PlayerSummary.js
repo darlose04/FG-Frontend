@@ -32,9 +32,18 @@ export default class PlayerSummary extends Component {
       return b.season - a.season;
     });
 
+    let relieving = await axios.get(
+      `${baseUrl}/playerrelieving/players/${playerName}`
+    );
+
+    let sortedRelieving = relieving.data.sort((a, b) => {
+      return b.season - a.season;
+    });
+
     this.setState({
       playerHitting: sortedHitting,
-      playerStarting: sortedStarting
+      playerStarting: sortedStarting,
+      playerRelieving: sortedRelieving
     });
   }
 
