@@ -1,6 +1,25 @@
 import React, { Component } from "react";
 
 export default class PlayerSearch extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchName: ""
+    };
+
+    this.searchValue = this.searchValue.bind(this);
+  }
+
+  searchValue(e) {
+    this.setState({
+      searchName: e.target.value
+    });
+  }
+
+  searchSumbit(e) {
+    e.preventDefault();
+  }
+
   render() {
     return (
       <form className="my-3">
@@ -14,6 +33,7 @@ export default class PlayerSearch extends Component {
               className="form-control"
               id="playerSearch"
               placeholder="Player Search"
+              onChange={this.searchValue}
             />
           </div>
           <div>
