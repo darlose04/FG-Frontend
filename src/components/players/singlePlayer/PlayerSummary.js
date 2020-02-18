@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import BattingComponent from "./batting/BattingComponent";
 import StartingComponent from "./pitching/StartingComponent";
+import ReliefComponent from "./pitching/ReliefComponent";
 
 import axios from "axios";
 
@@ -100,6 +101,23 @@ export default class PlayerSummary extends Component {
             <h3>Starting Pitching</h3>
             <StartingComponent
               data={playerStarting}
+              std={standard}
+              adv={advanced}
+              stdClass={stdClass}
+              advClass={advClass}
+              showStd={this.showStandard}
+              showAdv={this.showAdvanced}
+              clickStyle={clickStyle}
+            />
+          </div>
+        ) : (
+          <div></div>
+        )}
+        {playerRelieving.length > 0 ? (
+          <div>
+            <h3>Relief Pitching</h3>
+            <ReliefComponent
+              data={playerRelieving}
               std={standard}
               adv={advanced}
               stdClass={stdClass}
