@@ -29,7 +29,7 @@ export default class StdBattingTable extends Component {
         <thead>
           <tr className="bg-success text-white">
             <th scope="col">Name</th>
-            <th scope="col">Age</th>
+            <th scope="col">Team</th>
             <th scope="col">Games</th>
             <th scope="col">PA</th>
             <th scope="col">AB</th>
@@ -55,7 +55,7 @@ export default class StdBattingTable extends Component {
           {stats.map(info => (
             <tr key={info.id}>
               <td>{info.name}</td>
-              <td>{info.age}</td>
+              <td>{info.team}</td>
               <td>{info.games}</td>
               <td>{info.plate_appearances}</td>
               <td>{info.at_bats}</td>

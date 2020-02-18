@@ -14,7 +14,11 @@ export default class PlayerAdvBattingTable extends Component {
     return (
       <table
         className="table table-sm table-striped table-hover table-bordered text-center advanced"
-        style={{ fontSize: "0.8rem", padding: ".2rem", whiteSpace: "nowrap" }}
+        style={{
+          fontSize: "0.73rem",
+          padding: ".1rem",
+          whiteSpace: "nowrap"
+        }}
       >
         <thead>
           <tr>
@@ -30,7 +34,7 @@ export default class PlayerAdvBattingTable extends Component {
         <thead>
           <tr className="bg-success text-white">
             <th scope="col">Name</th>
-            <th scope="col">Age</th>
+            <th scope="col">Team</th>
             <th scope="col">PA</th>
             <th scope="col">BB%</th>
             <th scope="col">K%</th>
@@ -57,7 +61,7 @@ export default class PlayerAdvBattingTable extends Component {
           {stats.map(info => (
             <tr key={info.id}>
               <td>{info.name}</td>
-              <td>{info.age}</td>
+              <td>{info.team}</td>
               <td>{info.plate_appearances}</td>
               <td>{info.bb_perc}</td>
               <td>{info.k_perc}</td>
