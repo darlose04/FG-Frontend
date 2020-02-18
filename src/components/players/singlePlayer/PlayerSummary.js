@@ -8,7 +8,8 @@ export default class PlayerSummary extends Component {
     super(props);
     this.state = {
       playerHitting: [],
-      playerPitching: []
+      playerStarting: [],
+      playerRelieving: []
     };
   }
 
@@ -23,8 +24,17 @@ export default class PlayerSummary extends Component {
       return b.season - a.season;
     });
 
+    let starting = await axios.get(
+      `${baseUrl}/playerstarting/players/${playerName}`
+    );
+
+    let sortedStarting = starting.data.sort((a, b) => {
+      return b.season - a.season;
+    });
+
     this.setState({
-      playerHitting: sortedHitting
+      playerHitting: sortedHitting,
+      playerStarting: sortedStarting
     });
   }
 
