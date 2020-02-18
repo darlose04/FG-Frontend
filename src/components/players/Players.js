@@ -75,8 +75,17 @@ export default class Players extends Component {
         return b.war - a.war;
       });
 
+      let starting = await axios.get(
+        `${baseUrl}/playerstarting/${this.state.season}`
+      );
+
+      let sortedStarting = starting.data.sort((a, b) => {
+        return b.war - a.war;
+      });
+
       this.setState({
-        batters: sortedBatting
+        batters: sortedBatting,
+        starters: sortedStarting
       });
     }
   }
