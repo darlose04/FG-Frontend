@@ -24,7 +24,7 @@ class App extends Component {
             <Route exact path="/players" render={() => <Players />} />
             <Route
               exact
-              path="players/:player"
+              path="/players/:player"
               render={props => <PlayerSummary {...props} />}
             />
             <Route exact path="/teamstats" render={() => <TeamStats />} />
