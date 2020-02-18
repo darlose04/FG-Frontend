@@ -92,7 +92,7 @@ export default class PlayerSummary extends Component {
 
     return (
       <div>
-        <h1 className="mt-3">{playerName}</h1>
+        <h1 className="my-3">{playerName}</h1>
         <BattingComponent
           data={playerHitting}
           std={standard}
