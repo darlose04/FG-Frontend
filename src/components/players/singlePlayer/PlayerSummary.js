@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import BattingComponent from "./batting/BattingComponent";
 import axios from "axios";
 
 const baseUrl = "https://www.fgbaseballapi.com/api";
@@ -9,8 +10,15 @@ export default class PlayerSummary extends Component {
     this.state = {
       playerHitting: [],
       playerStarting: [],
-      playerRelieving: []
+      playerRelieving: [],
+      standard: true,
+      advanced: false,
+      stdClass: "bg-success text-white",
+      advClass: "text-success"
     };
+
+    this.showStandard = this.showStandard.bind(this);
+    this.showAdvanced = this.showAdvanced.bind(this);
   }
 
   async componentDidMount() {
@@ -50,9 +58,29 @@ export default class PlayerSummary extends Component {
   render() {
     let playerName = this.props.match.params.player;
 
+    const {
+      playerHitting,
+      playerStarting,
+      playerRelieving,
+      standard,
+      advanced,
+      stdClass,
+      advClass
+    } = this.state;
+
     return (
       <div>
         <h1 className="mt-3">{playerName}</h1>
+        <BattingComponent
+          data={playerHitting}
+          std={standard}
+          adv={advanced}
+          stdClass={stdClass}
+          advClass={advClass}
+          showStd={this.showStandard}
+          showAdv={this.showAdvanced}
+          clickStyle={clickStyle}
+        />
       </div>
     );
   }
