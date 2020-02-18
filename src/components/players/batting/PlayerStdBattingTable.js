@@ -54,8 +54,16 @@ export default class StdBattingTable extends Component {
         <tbody>
           {stats.map(info => (
             <tr key={info.id}>
-              <td>{info.name}</td>
-              <td>{info.team}</td>
+              <td>
+                <a className="text-dark" href={`/players/${info.name}`}>
+                  {info.name}
+                </a>
+              </td>
+              <td>
+                <a className="text-dark" href={`/teamselect/${info.team}`}>
+                  {info.team}
+                </a>
+              </td>
               <td>{info.games}</td>
               <td>{info.plate_appearances}</td>
               <td>{info.at_bats}</td>
