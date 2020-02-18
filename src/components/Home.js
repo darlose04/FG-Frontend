@@ -81,7 +81,7 @@ export default class Home extends Component {
           </div>
         </div>
         <div className="row mb-4">
-          <div className="col-sm-6">
+          {/* <div className="col-sm-6">
             <div className="card">
               <div className="card-body">
                 <h5 className="card-title">Scores & Standings</h5>
@@ -94,7 +94,7 @@ export default class Home extends Component {
                 </a>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="col-sm-6">
             <div className="card">
               <div className="card-body">
