@@ -4,6 +4,7 @@ import PlayerSearch from "./PlayerSearch";
 import PlayerPageBtns from "./PlayerPageBtns";
 import PlayerBattingComponent from "./batting/PlayerBattingComponent";
 import PlayerStartingPitchingComponent from "./pitching/PlayerStartingPitchingComponent";
+import PlayerReliefComponent from "./pitching/PlayerReliefComponent";
 
 import axios from "axios";
 const baseUrl = "https://www.fgbaseballapi.com/api";
@@ -245,6 +246,20 @@ export default class Players extends Component {
         {showStarters ? (
           <PlayerStartingPitchingComponent
             data={starters}
+            std={standard}
+            adv={advanced}
+            stdClass={stdClass}
+            advClass={advClass}
+            showStd={this.showStandard}
+            showAdv={this.showAdvanced}
+            clickStyle={clickStyle}
+          />
+        ) : (
+          <div></div>
+        )}
+        {showRelievers ? (
+          <PlayerReliefComponent
+            data={relievers}
             std={standard}
             adv={advanced}
             stdClass={stdClass}
