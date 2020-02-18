@@ -29,7 +29,7 @@ export default class PlayerStdStartingTable extends Component {
         <thead>
           <tr className="bg-success text-white">
             <th scope="col">Name</th>
-            <th scope="col">Age</th>
+            <th scope="col">Team</th>
             <th scope="col">W</th>
             <th scope="col">L</th>
             <th scope="col">G</th>
@@ -58,7 +58,7 @@ export default class PlayerStdStartingTable extends Component {
           {stats.map(info => (
             <tr key={info.id}>
               <td>{info.name}</td>
-              <td>{info.age}</td>
+              <td>{info.team}</td>
               <td>{info.wins}</td>
               <td>{info.losses}</td>
               <td>{info.games}</td>
