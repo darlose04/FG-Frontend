@@ -15,7 +15,7 @@ export default class AdvBattingTable extends Component {
       <table
         className="table table-sm table-striped table-hover table-bordered text-center advanced"
         style={{
-          fontSize: "0.73rem",
+          fontSize: "0.8rem",
           padding: ".1rem",
           whiteSpace: "nowrap"
         }}
@@ -23,10 +23,10 @@ export default class AdvBattingTable extends Component {
         <thead>
           <tr>
             <th className={stdClass} onClick={showStd} style={clickStyle}>
-              Standard
+              Std
             </th>
             <th className={advClass} onClick={showAdv} style={clickStyle}>
-              Advanced
+              Adv
             </th>
           </tr>
         </thead>

@@ -19,10 +19,10 @@ export default class StdBattingTable extends Component {
         <thead>
           <tr>
             <th className={stdClass} onClick={showStd} style={clickStyle}>
-              Standard
+              Std
             </th>
             <th className={advClass} onClick={showAdv} style={clickStyle}>
-              Advanced
+              Adv
             </th>
           </tr>
         </thead>
