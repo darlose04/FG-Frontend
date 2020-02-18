@@ -55,6 +55,24 @@ export default class PlayerSummary extends Component {
     });
   }
 
+  showStandard() {
+    this.setState({
+      standard: true,
+      advanced: false,
+      stdClass: "bg-success text-white",
+      advClass: "text-success"
+    });
+  }
+
+  showAdvanced() {
+    this.setState({
+      standard: false,
+      advanced: true,
+      stdClass: "text-success",
+      advClass: "bg-success text-white"
+    });
+  }
+
   render() {
     let playerName = this.props.match.params.player;
 
