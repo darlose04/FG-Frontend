@@ -8,7 +8,6 @@ export default class PlayerSearch extends Component {
     };
 
     this.searchValue = this.searchValue.bind(this);
-    this.searchSubmit = this.searchSubmit.bind(this);
   }
 
   searchValue(e) {
@@ -17,13 +16,9 @@ export default class PlayerSearch extends Component {
     });
   }
 
-  searchSubmit(e) {
-    e.preventDefault();
-  }
-
   render() {
     return (
-      <form className="my-3" onSubmit={this.searchSubmit}>
+      <form action={`/players/${this.state.searchName}`} className="my-3">
         <div className="form-row justify-content-center align-items-center">
           <div className="col-sm-4">
             <label className="sr-only" htmlFor="playerSearch">
