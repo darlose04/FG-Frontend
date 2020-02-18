@@ -55,8 +55,16 @@ export default class PlayerAdvStartingTable extends Component {
         <tbody>
           {stats.map(info => (
             <tr key={info.id}>
-              <td>{info.name}</td>
-              <td>{info.team}</td>
+              <td>
+                <a className="text-dark" href={`/players/${info.name}`}>
+                  {info.name}
+                </a>
+              </td>
+              <td>
+                <a className="text-dark" href={`/teamselect/${info.team}`}>
+                  {info.team}
+                </a>
+              </td>
               <td>{info.wins}</td>
               <td>{info.losses}</td>
               <td>{info.games}</td>
