@@ -27,6 +27,7 @@ export default class StdReliefTable extends Component {
         </thead>
         <thead>
           <tr className="bg-success text-white">
+            <th scope="col">Season</th>
             <th scope="col">Team</th>
             <th scope="col">Age</th>
             <th scope="col">W</th>
@@ -56,6 +57,7 @@ export default class StdReliefTable extends Component {
         <tbody>
           {stats.map(info => (
             <tr key={info.id}>
+              <td>{info.season}</td>
               <td>
                 <a className="text-dark" href={`/teamselect/${info.team}`}>
                   {info.team}
