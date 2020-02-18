@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import BattingComponent from "./batting/BattingComponent";
+import StartingComponent from "./pitching/StartingComponent";
+
 import axios from "axios";
 
 const baseUrl = "https://www.fgbaseballapi.com/api";
@@ -93,6 +95,24 @@ export default class PlayerSummary extends Component {
     return (
       <div>
         <h1 className="my-3">{playerName}</h1>
+        {playerStarting.length > 0 ? (
+          <div>
+            <h3>Starting Pitching</h3>
+            <StartingComponent
+              data={playerStarting}
+              std={standard}
+              adv={advanced}
+              stdClass={stdClass}
+              advClass={advClass}
+              showStd={this.showStandard}
+              showAdv={this.showAdvanced}
+              clickStyle={clickStyle}
+            />
+          </div>
+        ) : (
+          <div></div>
+        )}
+        <h3>Hitting</h3>
         <BattingComponent
           data={playerHitting}
           std={standard}
