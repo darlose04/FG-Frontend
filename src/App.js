@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
 import Players from "./components/players/Players";
+import PlayerSummary from "./components/players/PlayerSummary";
 import TeamStats from "./components/teams/TeamStats";
 import TeamSelect from "./components/teams/TeamSelect";
 import TeamPage from "./components/teams/singleTeam/TeamPage";
@@ -21,6 +22,11 @@ class App extends Component {
             <Route exact path="/" render={() => <Home />} />
             <Route exact path="/about" render={() => <About />} />
             <Route exact path="/players" render={() => <Players />} />
+            <Route
+              exact
+              path="players/:player"
+              render={props => <PlayerSummary {...props} />}
+            />
             <Route exact path="/teamstats" render={() => <TeamStats />} />
             <Route
               exact
