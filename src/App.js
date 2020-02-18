@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import About from "./components/About";
 import Players from "./components/players/Players";
-import PlayerSummary from "./components/players/PlayerSummary";
+import PlayerSummary from "./components/players/singlePlayer/PlayerSummary";
 import TeamStats from "./components/teams/TeamStats";
 import TeamSelect from "./components/teams/TeamSelect";
 import TeamPage from "./components/teams/singleTeam/TeamPage";
