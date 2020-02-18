@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import PlayerStdReliefTable from "./PlayerStdReliefTable";
+import PlayerAdvReliefTable from "./PlayerAdvReliefTable";
 
 export default class PlayerReliefComponent extends Component {
   render() {
