@@ -93,9 +93,18 @@ export default class Players extends Component {
         return b.war - a.war;
       });
 
+      let relieving = await axios.get(
+        `${baseUrl}/playerrelieving/${this.state.season}`
+      );
+
+      let sortedRelieving = relieving.data.sort((a, b) => {
+        return b.saves - a.saves;
+      });
+
       this.setState({
         batters: sortedBatting,
-        starters: sortedStarting
+        starters: sortedStarting,
+        relievers: sortedRelieving
       });
     }
   }
