@@ -16,135 +16,92 @@ export default class StdBattingTable extends Component {
       columns: [
         {
           label: "Name",
-          field: "name",
-          sort: "asc",
-          width: 200
+          field: "name"
         },
         {
           label: "Team",
-          field: "team",
-          sort: "asc",
-          width: 100
+          field: "team"
         },
         {
           label: "Games",
-          field: "games",
-          sort: "asc",
-          width: 100
+          field: "games"
         },
         {
           label: "PA",
-          field: "pa",
-          sort: "asc",
-          width: 100
+          field: "pa"
         },
         {
           label: "AB",
-          field: "ab",
-          sort: "asc",
-          width: 100
+          field: "ab"
         },
         {
           label: "H",
-          field: "h",
-          sort: "asc",
-          width: 100
+          field: "h"
         },
         {
           label: "1B",
-          field: "single",
-          sort: "asc",
-          width: 100
+          field: "single"
         },
         {
           label: "2B",
-          field: "double",
-          sort: "asc",
-          width: 100
+          field: "double"
         },
         {
           label: "3B",
-          field: "triple",
-          sort: "asc",
-          width: 100
+          field: "triple"
         },
         {
           label: "HR",
-          field: "hr",
-          sort: "asc",
-          width: 100
+          field: "hr"
         },
         {
           label: "R",
-          field: "r",
-          sort: "asc",
-          width: 100
+          field: "r"
         },
         {
           label: "RBI",
-          field: "rbi",
-          sort: "asc",
-          width: 100
+          field: "rbi"
         },
         {
           label: "SB",
-          field: "sb",
-          sort: "asc",
-          width: 100
+          field: "sb"
         },
         {
           label: "BB",
-          field: "bb",
-          sort: "asc",
-          width: 100
+          field: "bb"
         },
         {
           label: "IBB",
-          field: "ibb",
-          sort: "asc",
-          width: 100
+          field: "ibb"
         },
         {
           label: "SO",
-          field: "so",
-          sort: "asc",
-          width: 100
+          field: "so"
         },
         {
           label: "HBP",
-          field: "hbp",
-          sort: "asc",
-          width: 100
+          field: "hbp"
         },
         {
           label: "SF",
-          field: "sf",
-          sort: "asc",
-          width: 100
+          field: "sf"
         },
         {
           label: "SH",
-          field: "sh",
-          sort: "asc",
-          width: 100
+          field: "sh"
         },
         {
           label: "GDP",
-          field: "gdp",
-          sort: "asc",
-          width: 20
+          field: "gdp"
         },
         {
           label: "AVG",
-          field: "avg",
-          sort: "asc",
-          width: 100
+          field: "avg"
         },
         {
           label: "WAR",
           field: "war",
-          sort: "desc",
-          width: 100
+          sort: "desc"
         }
       ],
       rows: stats.map(info => ({
@@ -174,7 +131,16 @@ export default class StdBattingTable extends Component {
     };
 
     return (
-      <MDBDataTable striped bordered hover data={data} />
+      <MDBDataTable
+        className="text-nowrap"
+        autoWidth
+        order={[("war", "desc")]}
+        striped
+        bordered
+        hover
+        searching={false}
+        data={data}
+      />
 
       // <table
       //   className="table table-sm table-striped table-bordered table-hover text-center standard"
