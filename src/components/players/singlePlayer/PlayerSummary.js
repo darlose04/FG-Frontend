@@ -94,10 +94,6 @@ export default class PlayerSummary extends Component {
       advClass
     } = this.state;
 
-    console.log(playerHitting.length);
-    console.log(playerStarting.length);
-    console.log(playerRelieving.length);
-
     return (
       <div>
         {playerHitting.length === 0 &&
