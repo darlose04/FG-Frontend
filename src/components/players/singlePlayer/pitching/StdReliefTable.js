@@ -2,14 +2,7 @@ import React, { Component } from "react";
 
 export default class StdReliefTable extends Component {
   render() {
-    let {
-      stats,
-      showStd,
-      showAdv,
-      stdClass,
-      advClass,
-      clickStyle
-    } = this.props;
+    let { stats } = this.props;
     return (
       <table
         className="table table-sm table-striped table-bordered table-hover text-center standard"
@@ -17,12 +10,7 @@ export default class StdReliefTable extends Component {
       >
         <thead>
           <tr>
-            <th className={stdClass} onClick={showStd} style={clickStyle}>
-              Standard
-            </th>
-            <th className={advClass} onClick={showAdv} style={clickStyle}>
-              Advanced
-            </th>
+            <th className="bg-success text-white">Standard</th>
           </tr>
         </thead>
         <thead>
