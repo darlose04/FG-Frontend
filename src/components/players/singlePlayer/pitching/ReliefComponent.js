@@ -9,7 +9,6 @@ export default class ReliefComponent extends Component {
     return (
       <div>
         <StdReliefTable stats={data} />
-
         <AdvReliefTable stats={data} />
       </div>
     );

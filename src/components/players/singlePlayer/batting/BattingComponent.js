@@ -9,7 +9,6 @@ export default class BattingComponent extends Component {
     return (
       <div>
         <StdBattingTable stats={data} />
-
         <AdvBattingTable stats={data} />
       </div>
     );
