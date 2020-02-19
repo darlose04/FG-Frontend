@@ -113,16 +113,7 @@ export default class PlayerSummary extends Component {
             {playerStarting.length > 0 ? (
               <div>
                 <h3>Starting Pitching</h3>
-                <StartingComponent
-                  data={playerStarting}
-                  std={standard}
-                  adv={advanced}
-                  stdClass={stdClass}
-                  advClass={advClass}
-                  showStd={this.showStandard}
-                  showAdv={this.showAdvanced}
-                  clickStyle={clickStyle}
-                />
+                <StartingComponent data={playerStarting} />
               </div>
             ) : (
               <div></div>
