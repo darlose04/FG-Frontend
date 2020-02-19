@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import BattingComponent from "./batting/BattingComponent";
 import StartingComponent from "./pitching/StartingComponent";
 import ReliefComponent from "./pitching/ReliefComponent";
+import logos from "../../../logos";
 
 import axios from "axios";
 
@@ -93,14 +94,63 @@ export default class PlayerSummary extends Component {
       advClass
     } = this.state;
 
+    console.log(playerHitting.length);
+    console.log(playerStarting.length);
+    console.log(playerRelieving.length);
+
     return (
       <div>
-        <h1 className="my-3">{playerName}</h1>
-        {playerStarting.length > 0 ? (
+        {playerHitting.length === 0 &&
+        playerStarting.length === 0 &&
+        playerRelieving.length === 0 ? (
           <div>
-            <h3>Starting Pitching</h3>
-            <StartingComponent
-              data={playerStarting}
+            <h1 className="mt-3 mb-2 text-center">No Player Found</h1>
+            <h4 className="text-center">
+              <a className="text-success" href="/players">
+                Return to Search
+              </a>
+            </h4>
+          </div>
+        ) : (
+          <div>
+            <h1 className="my-3">{playerName}</h1>
+            {playerStarting.length > 0 ? (
+              <div>
+                <h3>Starting Pitching</h3>
+                <StartingComponent
+                  data={playerStarting}
+                  std={standard}
+                  adv={advanced}
+                  stdClass={stdClass}
+                  advClass={advClass}
+                  showStd={this.showStandard}
+                  showAdv={this.showAdvanced}
+                  clickStyle={clickStyle}
+                />
+              </div>
+            ) : (
+              <div></div>
+            )}
+            {playerRelieving.length > 0 ? (
+              <div>
+                <h3>Relief Pitching</h3>
+                <ReliefComponent
+                  data={playerRelieving}
+                  std={standard}
+                  adv={advanced}
+                  stdClass={stdClass}
+                  advClass={advClass}
+                  showStd={this.showStandard}
+                  showAdv={this.showAdvanced}
+                  clickStyle={clickStyle}
+                />
+              </div>
+            ) : (
+              <div></div>
+            )}
+            <h3>Hitting</h3>
+            <BattingComponent
+              data={playerHitting}
               std={standard}
               adv={advanced}
               stdClass={stdClass}
@@ -110,37 +160,7 @@ export default class PlayerSummary extends Component {
               clickStyle={clickStyle}
             />
           </div>
-        ) : (
-          <div></div>
         )}
-        {playerRelieving.length > 0 ? (
-          <div>
-            <h3>Relief Pitching</h3>
-            <ReliefComponent
-              data={playerRelieving}
-              std={standard}
-              adv={advanced}
-              stdClass={stdClass}
-              advClass={advClass}
-              showStd={this.showStandard}
-              showAdv={this.showAdvanced}
-              clickStyle={clickStyle}
-            />
-          </div>
-        ) : (
-          <div></div>
-        )}
-        <h3>Hitting</h3>
-        <BattingComponent
-          data={playerHitting}
-          std={standard}
-          adv={advanced}
-          stdClass={stdClass}
-          advClass={advClass}
-          showStd={this.showStandard}
-          showAdv={this.showAdvanced}
-          clickStyle={clickStyle}
-        />
       </div>
     );
   }
