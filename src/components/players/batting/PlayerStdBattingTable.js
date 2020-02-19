@@ -105,7 +105,11 @@ export default class StdBattingTable extends Component {
         }
       ],
       rows: stats.map(info => ({
-        name: info.name,
+        name: (
+          <a className="text-dark" href={`/players/${info.name}`}>
+            {info.name}
+          </a>
+        ),
         team: info.team,
         games: info.games,
         pa: info.plate_appearances,
@@ -133,6 +137,7 @@ export default class StdBattingTable extends Component {
     return (
       <MDBDataTable
         className="text-nowrap"
+        style={{ fontSize: ".8rem" }}
         autoWidth
         order={[("war", "desc")]}
         striped
