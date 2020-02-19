@@ -145,16 +145,7 @@ export default class PlayerSummary extends Component {
               <div></div>
             )}
             <h3>Hitting</h3>
-            <BattingComponent
-              data={playerHitting}
-              std={standard}
-              adv={advanced}
-              stdClass={stdClass}
-              advClass={advClass}
-              showStd={this.showStandard}
-              showAdv={this.showAdvanced}
-              clickStyle={clickStyle}
-            />
+            <BattingComponent data={playerHitting} />
           </div>
         )}
       </div>
