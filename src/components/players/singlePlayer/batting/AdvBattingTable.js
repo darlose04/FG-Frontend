@@ -2,14 +2,7 @@ import React, { Component } from "react";
 
 export default class AdvBattingTable extends Component {
   render() {
-    const {
-      stats,
-      showStd,
-      showAdv,
-      stdClass,
-      advClass,
-      clickStyle
-    } = this.props;
+    const { stats } = this.props;
 
     return (
       <table
@@ -22,12 +15,7 @@ export default class AdvBattingTable extends Component {
       >
         <thead>
           <tr>
-            <th className={stdClass} onClick={showStd} style={clickStyle}>
-              Standard
-            </th>
-            <th className={advClass} onClick={showAdv} style={clickStyle}>
-              Advanced
-            </th>
+            <th className="bg-success text-white">Advanced</th>
           </tr>
         </thead>
         <thead></thead>
