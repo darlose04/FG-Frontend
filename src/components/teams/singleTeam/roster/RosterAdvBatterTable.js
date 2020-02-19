@@ -11,8 +11,6 @@ export default class RosterAdvBatterTable extends Component {
       clickStyle
     } = this.props;
 
-    /* for some reason this advanced table is not being displayed correctly in Firefox browsers. It works fine in Chrome though. And none of the other tables in any other section of the site are having issues in Chrome or Firefox. The css is the same in the inspector tool. Not sure what the problem is.
-     */
     return (
       <table
         className="table table-sm table-striped table-hover table-bordered text-center advanced"
