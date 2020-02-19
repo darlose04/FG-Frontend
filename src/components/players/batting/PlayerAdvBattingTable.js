@@ -30,7 +30,6 @@ export default class PlayerAdvBattingTable extends Component {
             </th>
           </tr>
         </thead>
-        <thead></thead>
         <thead>
           <tr className="bg-success text-white">
             <th scope="col">Name</th>
