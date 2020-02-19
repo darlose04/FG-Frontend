@@ -130,16 +130,7 @@ export default class PlayerSummary extends Component {
             {playerRelieving.length > 0 ? (
               <div>
                 <h3>Relief Pitching</h3>
-                <ReliefComponent
-                  data={playerRelieving}
-                  std={standard}
-                  adv={advanced}
-                  stdClass={stdClass}
-                  advClass={advClass}
-                  showStd={this.showStandard}
-                  showAdv={this.showAdvanced}
-                  clickStyle={clickStyle}
-                />
+                <ReliefComponent data={playerRelieving} />
               </div>
             ) : (
               <div></div>
