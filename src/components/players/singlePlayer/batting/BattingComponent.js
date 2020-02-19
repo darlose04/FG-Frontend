@@ -4,36 +4,13 @@ import AdvBattingTable from "./AdvBattingTable";
 
 export default class BattingComponent extends Component {
   render() {
-    const {
-      data,
-      std,
-      adv,
-      stdClass,
-      advClass,
-      showStd,
-      showAdv,
-      clickStyle
-    } = this.props;
+    const { data } = this.props;
 
     return (
       <div>
-        <StdBattingTable
-          stats={data}
-          showStd={showStd}
-          showAdv={showAdv}
-          stdClass={stdClass}
-          advClass={advClass}
-          clickStyle={clickStyle}
-        />
+        <StdBattingTable stats={data} />
 
-        <AdvBattingTable
-          stats={data}
-          showStd={showStd}
-          showAdv={showAdv}
-          stdClass={stdClass}
-          advClass={advClass}
-          clickStyle={clickStyle}
-        />
+        <AdvBattingTable stats={data} />
       </div>
     );
   }
