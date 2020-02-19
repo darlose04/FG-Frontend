@@ -28,11 +28,9 @@ export default class RosterAdvBatterTable extends Component {
             </th>
           </tr>
         </thead>
-        <thead></thead>
         <thead>
           <tr className="bg-success text-white">
             <th scope="col">Name</th>
-            <th scope="col">Age</th>
             <th scope="col">PA</th>
             <th scope="col">BB%</th>
             <th scope="col">K%</th>
@@ -59,7 +57,6 @@ export default class RosterAdvBatterTable extends Component {
           {stats.map(info => (
             <tr key={info.id}>
               <td>{info.name}</td>
-              <td>{info.age}</td>
               <td>{info.plate_appearances}</td>
               <td>{info.bb_perc}</td>
               <td>{info.k_perc}</td>
