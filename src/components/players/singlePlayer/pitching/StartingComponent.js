@@ -4,40 +4,12 @@ import AdvStartingTable from "./AdvStartingTable";
 
 export default class StartingComponent extends Component {
   render() {
-    const {
-      data,
-      std,
-      adv,
-      stdClass,
-      advClass,
-      showStd,
-      showAdv,
-      clickStyle
-    } = this.props;
+    const { data } = this.props;
 
     return (
       <div>
-        {std ? (
-          <StdStartingTable
-            stats={data}
-            showStd={showStd}
-            showAdv={showAdv}
-            stdClass={stdClass}
-            advClass={advClass}
-            clickStyle={clickStyle}
-          />
-        ) : adv ? (
-          <AdvStartingTable
-            stats={data}
-            showStd={showStd}
-            showAdv={showAdv}
-            stdClass={stdClass}
-            advClass={advClass}
-            clickStyle={clickStyle}
-          />
-        ) : (
-          <div></div>
-        )}
+        <StdStartingTable stats={data} />
+        <AdvStartingTable stats={data} />
       </div>
     );
   }
