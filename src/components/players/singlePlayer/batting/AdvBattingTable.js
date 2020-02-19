@@ -18,7 +18,6 @@ export default class AdvBattingTable extends Component {
             <th className="bg-success text-white">Advanced</th>
           </tr>
         </thead>
-        <thead></thead>
         <thead>
           <tr className="bg-success text-white">
             <th scope="col">Season</th>
