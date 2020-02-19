@@ -14,15 +14,8 @@ export default class PlayerSummary extends Component {
     this.state = {
       playerHitting: [],
       playerStarting: [],
-      playerRelieving: [],
-      standard: true,
-      advanced: false,
-      stdClass: "bg-success text-white",
-      advClass: "text-success"
+      playerRelieving: []
     };
-
-    this.showStandard = this.showStandard.bind(this);
-    this.showAdvanced = this.showAdvanced.bind(this);
   }
 
   async componentDidMount() {
@@ -59,24 +52,6 @@ export default class PlayerSummary extends Component {
     });
   }
 
-  showStandard() {
-    this.setState({
-      standard: true,
-      advanced: false,
-      stdClass: "bg-success text-white",
-      advClass: "text-success"
-    });
-  }
-
-  showAdvanced() {
-    this.setState({
-      standard: false,
-      advanced: true,
-      stdClass: "text-success",
-      advClass: "bg-success text-white"
-    });
-  }
-
   render() {
     let playerName = this.props.match.params.player;
 
@@ -84,15 +59,7 @@ export default class PlayerSummary extends Component {
       cursor: "pointer"
     };
 
-    const {
-      playerHitting,
-      playerStarting,
-      playerRelieving,
-      standard,
-      advanced,
-      stdClass,
-      advClass
-    } = this.state;
+    const { playerHitting, playerStarting, playerRelieving } = this.state;
 
     return (
       <div>
