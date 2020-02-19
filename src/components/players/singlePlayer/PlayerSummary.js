@@ -55,10 +55,6 @@ export default class PlayerSummary extends Component {
   render() {
     let playerName = this.props.match.params.player;
 
-    let clickStyle = {
-      cursor: "pointer"
-    };
-
     const { playerHitting, playerStarting, playerRelieving } = this.state;
 
     return (
