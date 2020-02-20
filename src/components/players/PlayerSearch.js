@@ -8,7 +8,8 @@ export default class PlayerSearch extends Component {
     this.state = {
       searchName: "",
       allPlayers: [],
-      namesDisplay: []
+      namesDisplay: [],
+      loading: true
     };
 
     this.searchValue = this.searchValue.bind(this);
@@ -33,6 +34,10 @@ export default class PlayerSearch extends Component {
     });
 
     let uniquePlayers = [...new Set(players)];
+
+    this.setState({
+      allPlayers: uniquePlayers
+    });
   }
 
   searchValue(e) {
@@ -60,30 +65,44 @@ export default class PlayerSearch extends Component {
 
   render() {
     this.searchPlayers(this.state.searchName);
+
     return (
       <div>
-        <form action={`/players/${this.state.searchName}`} className="my-3">
-          <div className="form-row justify-content-center align-items-center">
-            <div className="col-sm-4">
-              <label className="sr-only" htmlFor="playerSearch">
-                Name
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="playerSearch"
-                placeholder="Player Search"
-                onChange={this.searchValue}
-              />
-            </div>
-            <div>
-              <button type="submit" className="btn btn-success">
-                Search
-              </button>
-            </div>
+        {this.state.loading ? (
+          <div className="d-flex justify-content-center">
+            <div
+              className="mt-5 spinner-border text-success"
+              role="status"
+              style={{ width: "5rem", height: "5rem" }}
+            ></div>
+            {/* <span>Loading database for search...</span> */}
           </div>
-        </form>
-        <ul></ul>
+        ) : (
+          <div>
+            <form action={`/players/${this.state.searchName}`} className="my-3">
+              <div className="form-row justify-content-center align-items-center">
+                <div className="col-sm-4">
+                  <label className="sr-only" htmlFor="playerSearch">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="playerSearch"
+                    placeholder="Player Search"
+                    onChange={this.searchValue}
+                  />
+                </div>
+                <div>
+                  <button type="submit" className="btn btn-success">
+                    Search
+                  </button>
+                </div>
+              </div>
+            </form>
+            <ul></ul>
+          </div>
+        )}
       </div>
     );
   }
