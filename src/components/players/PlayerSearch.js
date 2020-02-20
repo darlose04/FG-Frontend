@@ -36,7 +36,8 @@ export default class PlayerSearch extends Component {
     let uniquePlayers = [...new Set(players)];
 
     this.setState({
-      allPlayers: uniquePlayers
+      allPlayers: uniquePlayers,
+      loading: false
     });
   }
 
@@ -69,13 +70,17 @@ export default class PlayerSearch extends Component {
     return (
       <div>
         {this.state.loading ? (
-          <div className="d-flex justify-content-center">
-            <div
-              className="mt-5 spinner-border text-success"
-              role="status"
-              style={{ width: "5rem", height: "5rem" }}
-            ></div>
-            {/* <span>Loading database for search...</span> */}
+          <div>
+            <div className="d-flex justify-content-center">
+              <div
+                className="mt-5 spinner-border text-success"
+                role="status"
+                style={{ width: "5rem", height: "5rem" }}
+              ></div>
+            </div>
+            <div className="mt-3 text-center">
+              Loading database for search...
+            </div>
           </div>
         ) : (
           <div>
