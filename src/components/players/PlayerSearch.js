@@ -108,11 +108,17 @@ export default class PlayerSearch extends Component {
                 </div>
               </div>
             </form>
-            <ul>
-              {this.state.namesDisplay.map(name => (
-                <li>{name}</li>
-              ))}
-            </ul>
+            <div className="text-center">
+              {this.state.namesDisplay.length < 25 ? (
+                <ul>
+                  {this.state.namesDisplay.map(name => (
+                    <li>{name}</li>
+                  ))}
+                </ul>
+              ) : (
+                <div></div>
+              )}
+            </div>
           </div>
         )}
       </div>
