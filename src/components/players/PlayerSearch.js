@@ -97,10 +97,23 @@ export default class PlayerSearch extends Component {
                     type="text"
                     className="form-control"
                     id="playerSearch"
+                    name="playerNames"
+                    list="playerNames"
                     placeholder="Player Search"
                     onChange={this.searchPlayers}
                   />
+                  <div></div>
+                  {this.state.namesDisplay.length < 30 ? (
+                    <datalist id="playerNames">
+                      {this.state.namesDisplay.map(name => (
+                        <option value={name}>{name}</option>
+                      ))}
+                    </datalist>
+                  ) : (
+                    <option></option>
+                  )}
                 </div>
+
                 <div>
                   <button type="submit" className="btn btn-success">
                     Search
@@ -108,17 +121,6 @@ export default class PlayerSearch extends Component {
                 </div>
               </div>
             </form>
-            <div className="text-center">
-              {this.state.namesDisplay.length < 25 ? (
-                <ul>
-                  {this.state.namesDisplay.map(name => (
-                    <li>{name}</li>
-                  ))}
-                </ul>
-              ) : (
-                <div></div>
-              )}
-            </div>
           </div>
         )}
       </div>
