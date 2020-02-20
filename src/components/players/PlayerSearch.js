@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import axios from "axios";
+const baseUrl = "https://www.fgbaseballapi.com/api";
 
 export default class PlayerSearch extends Component {
   constructor(props) {
     super(props);
     this.state = {
       searchName: "",
-      starters: []
+      allPlayers: [],
+      namesDisplay: []
     };
 
     this.searchValue = this.searchValue.bind(this);
@@ -14,16 +16,23 @@ export default class PlayerSearch extends Component {
   }
 
   async componentDidMount() {
-    const res = await fetch(
-      "https://www.fgbaseballapi.com/api/playerstarting/2019"
-    );
+    // get all players for search functionality
+    let allBatters = await axios.get(`${baseUrl}/playerbatting/`);
+    let allStarters = await axios.get(`${baseUrl}/playerstarting/`);
+    let allRelievers = await axios.get(`${baseUrl}/playerrelieving/`);
 
-    const starters = await res.json();
-    console.log(starters);
-
-    this.setState({
-      starters: starters
+    let players = [];
+    allBatters.data.map(batter => {
+      return players.push(batter.name);
     });
+    allStarters.data.map(starter => {
+      return players.push(starter.name);
+    });
+    allRelievers.data.map(reliever => {
+      return players.push(reliever.name);
+    });
+
+    let uniquePlayers = [...new Set(players)];
   }
 
   searchValue(e) {
@@ -32,14 +41,22 @@ export default class PlayerSearch extends Component {
     });
   }
 
-  async searchPlayers(searchText) {
+  searchPlayers = async searchText => {
     // get matches to current text input
-    let matches = this.state.starters.filter(starter => {
+    let matches = this.state.allPlayers.filter(player => {
       const regex = new RegExp(`^${searchText}`, "gi");
-      return starter.name.match(regex);
+      return player.match(regex);
     });
+
+    if (this.state.searchName === "") {
+      matches = [];
+    }
+
     console.log(matches);
-  }
+    // this.setState({
+    //   namesDisplay: matches
+    // });
+  };
 
   render() {
     this.searchPlayers(this.state.searchName);
@@ -66,6 +83,7 @@ export default class PlayerSearch extends Component {
             </div>
           </div>
         </form>
+        <ul></ul>
       </div>
     );
   }
