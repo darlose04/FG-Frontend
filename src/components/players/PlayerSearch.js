@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Spinner from "../layout/Spinner";
 import axios from "axios";
 const baseUrl = "https://www.fgbaseballapi.com/api";
 
@@ -71,23 +72,10 @@ export default class PlayerSearch extends Component {
   };
 
   render() {
-    // this.searchPlayers(this.state.searchName);
-
     return (
       <div>
         {this.state.loading ? (
-          <div>
-            <div className="d-flex justify-content-center">
-              <div
-                className="mt-5 spinner-border text-success"
-                role="status"
-                style={{ width: "5rem", height: "5rem" }}
-              ></div>
-            </div>
-            <div className="mt-3 text-center">
-              Loading database for search...
-            </div>
-          </div>
+          <Spinner />
         ) : (
           <div>
             <form action={`/players/${this.state.searchName}`} className="my-3">
