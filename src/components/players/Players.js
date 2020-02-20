@@ -232,15 +232,7 @@ export default class Players extends Component {
           searchBtn={playerSearchClass}
           statsBtn={playerStatsClass}
         />
-        {showSearch ? (
-          <PlayerSearch
-            batters={batters}
-            starters={starters}
-            relievers={relievers}
-          />
-        ) : (
-          <div></div>
-        )}
+        {showSearch ? <PlayerSearch /> : <div></div>}
         {showStats ? (
           <PlayerPageBtns
             showHitters={this.showHittersTbl}
