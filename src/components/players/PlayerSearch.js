@@ -9,7 +9,7 @@ export default class PlayerSearch extends Component {
       searchName: "",
       allPlayers: [],
       namesDisplay: [],
-      loading: false
+      loading: true
     };
 
     this.searchValue = this.searchValue.bind(this);
@@ -59,6 +59,9 @@ export default class PlayerSearch extends Component {
 
     if (this.state.searchName === "") {
       matches = [];
+      this.setState({
+        namesDisplay: []
+      });
     }
 
     console.log(matches);
@@ -101,7 +104,6 @@ export default class PlayerSearch extends Component {
                     placeholder="Player Search"
                     onChange={this.searchPlayers}
                   />
-
                   {this.state.namesDisplay.length < 30 ? (
                     <datalist id="playerNames">
                       {this.state.namesDisplay.map(name => (
@@ -109,14 +111,14 @@ export default class PlayerSearch extends Component {
                       ))}
                     </datalist>
                   ) : (
-                    <option></option>
+                    <div></div>
                   )}
                 </div>
-              </div>
-              <div className="form-row justify-content-center align-items-center mt-2">
-                <button type="submit" className="col-sm-4 btn btn-success ">
-                  Search
-                </button>
+                <div>
+                  <button type="submit" className="btn btn-success ">
+                    Search
+                  </button>
+                </div>
               </div>
             </form>
           </div>
