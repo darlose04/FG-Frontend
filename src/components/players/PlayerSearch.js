@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { bindActionCreators } from "redux";
 
 export default class PlayerSearch extends Component {
   constructor(props) {
@@ -20,38 +19,49 @@ export default class PlayerSearch extends Component {
 
   async searchPlayers(searchText) {
     const resBatters = await fetch(
-      "https://www.fgbaseballapi.com/api/playerbatting"
+      "https://www.fgbaseballapi.com/api/playerbatting/2019"
     );
     const resStarters = await fetch(
-      "https://www.fgbaseballapi.com/api/playerstarting"
+      "https://www.fgbaseballapi.com/api/playerstarting/2019"
     );
     const resRelievers = await fetch(
-      "https://www.fgbaseballapi.com/api/playerrelieving"
+      "https://www.fgbaseballapi.com/api/playerrelieving/2019"
     );
+
     const batters = await resBatters.json();
     const starters = await resStarters.json();
     const relievers = await resRelievers.json();
 
-    const players = [];
+    // const players = [];
 
-    batters.map(batter => {
-      return players.push(batter);
-    });
-    starters.map(starter => {
-      return players.push(starter);
-    });
-    relievers.map(reliever => {
-      return players.push(reliever);
-    });
+    // batters.map(batter => {
+    //   return players.push(batter);
+    // });
+    // starters.map(starter => {
+    //   return players.push(starter);
+    // });
+    // relievers.map(reliever => {
+    //   return players.push(reliever);
+    // });
+
+    console.log(batters);
 
     // get matches to current text input
-    let matches = players.filter(player => {
+    let matches = batters.filter(batter => {
       const regex = new RegExp(`^${searchText}`, "gi");
+      return batter.name.match(regex);
     });
+
+    console.log(matches);
   }
 
   render() {
-    this.searchPlayers();
+    // const search = document.getElementById("playerSearch");
+    // const matchList = document.getElementById("match-list");
+    // this.searchPlayers();
+    // search.addEventListener("input", () =>
+    //   this.searchPlayers(this.state.searchName)
+    // );
     return (
       <form action={`/players/${this.state.searchName}`} className="my-3">
         <div className="form-row justify-content-center align-items-center">
