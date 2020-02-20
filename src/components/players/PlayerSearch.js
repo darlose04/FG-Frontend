@@ -47,10 +47,13 @@ export default class PlayerSearch extends Component {
     });
   }
 
-  searchPlayers = async searchText => {
+  searchPlayers = async e => {
+    this.setState({
+      searchName: e.target.value
+    });
     // get matches to current text input
     let matches = this.state.allPlayers.filter(player => {
-      const regex = new RegExp(`^${searchText}`, "gi");
+      const regex = new RegExp(`^${this.state.searchName}`, "gi");
       return player.match(regex);
     });
 
@@ -59,13 +62,13 @@ export default class PlayerSearch extends Component {
     }
 
     console.log(matches);
-    // this.setState({
-    //   namesDisplay: matches
-    // });
+    this.setState({
+      namesDisplay: matches
+    });
   };
 
   render() {
-    this.searchPlayers(this.state.searchName);
+    // this.searchPlayers(this.state.searchName);
 
     return (
       <div>
@@ -95,7 +98,7 @@ export default class PlayerSearch extends Component {
                     className="form-control"
                     id="playerSearch"
                     placeholder="Player Search"
-                    onChange={this.searchValue}
+                    onChange={this.searchPlayers}
                   />
                 </div>
                 <div>
@@ -105,7 +108,11 @@ export default class PlayerSearch extends Component {
                 </div>
               </div>
             </form>
-            <ul></ul>
+            <ul>
+              {this.state.namesDisplay.map(name => (
+                <li>{name}</li>
+              ))}
+            </ul>
           </div>
         )}
       </div>
