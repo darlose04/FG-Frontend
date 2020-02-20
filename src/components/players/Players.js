@@ -27,6 +27,7 @@ export default class Players extends Component {
       batters: [],
       starters: [],
       relievers: [],
+      allPlayers: [],
       stdClass: "bg-success text-white",
       advClass: "text-success",
       standard: true,
@@ -44,6 +45,24 @@ export default class Players extends Component {
   }
 
   async componentDidMount() {
+    // get all players for search functionality
+    let allBatters = await axios.get(`${baseUrl}/playerbatting/`);
+    let allStarters = await axios.get(`${baseUrl}/playerstarting/`);
+    let allRelievers = await axios.get(`${baseUrl}/playerrelieving/`);
+
+    let players = [];
+    allBatters.data.map(batter => {
+      return players.push(batter.name);
+    });
+    allStarters.data.map(starter => {
+      return players.push(starter.name);
+    });
+    allRelievers.data.map(reliever => {
+      return players.push(reliever.name);
+    });
+
+    console.log(players);
+
     let batting = await axios.get(
       `${baseUrl}/playerbatting/${this.state.season}`
     );
@@ -232,7 +251,15 @@ export default class Players extends Component {
           searchBtn={playerSearchClass}
           statsBtn={playerStatsClass}
         />
-        {showSearch ? <PlayerSearch /> : <div></div>}
+        {showSearch ? (
+          <PlayerSearch
+            batters={batters}
+            starters={starters}
+            relievers={relievers}
+          />
+        ) : (
+          <div></div>
+        )}
         {showStats ? (
           <PlayerPageBtns
             showHitters={this.showHittersTbl}
