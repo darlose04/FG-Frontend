@@ -6,7 +6,7 @@ export default class HomeCard extends Component {
     const { title, msg, link, button } = this.props;
     return (
       <div className="col-6 ">
-        <div className="card m-1">
+        <div className="card m-1" style={{ height: "175px" }}>
           <div className="card-body">
             <h5 className="card-title">{title}</h5>
             <p className="card-text">{msg}</p>
