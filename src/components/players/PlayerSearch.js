@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Spinner from "../layout/Spinner";
 import axios from "axios";
 const baseUrl = "https://www.fgbaseballapi.com/api";
+// const baseUrl = "http://localhost:4000/api";
 
 export default class PlayerSearch extends Component {
   constructor(props) {
