@@ -56,7 +56,7 @@ export default class Home extends Component {
     ];
 
     return (
-      <div className="homePage mt-5">
+      <div className="homePage mt-4">
         <div className="row">
           {cardInfo.map(card => (
             <HomeCard
