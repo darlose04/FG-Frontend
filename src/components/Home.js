@@ -9,7 +9,7 @@ export default class Home extends Component {
         id: 1,
         title: "Statistics",
         message:
-          "Hitting and pitching statistics are organized between standard and advanced stats and encompass the seasons 2002-2019. Charts can also be viewed to compare data between seasons, teams, or league averages.",
+          "Hitting and pitching statistics are organized between standard and advanced stats and encompass the seasons 2002-2019. Charts can also be viewed to compare data between seasons, teams, or players.",
         link: "",
         button: ""
       },

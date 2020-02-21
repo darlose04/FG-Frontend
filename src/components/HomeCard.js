@@ -5,20 +5,18 @@ export default class HomeCard extends Component {
   render() {
     const { title, msg, link, button } = this.props;
     return (
-      <div className="row mb-4">
-        <div className="col-sm-6">
-          <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">{title}</h5>
-              <p className="card-text">{msg}</p>
-              {link === "" ? (
-                <div></div>
-              ) : (
-                <a href={link} className="btn btn-success">
-                  {button}
-                </a>
-              )}
-            </div>
+      <div className="col-6 ">
+        <div className="card m-1">
+          <div className="card-body">
+            <h5 className="card-title">{title}</h5>
+            <p className="card-text">{msg}</p>
+            {link === "" ? (
+              <div></div>
+            ) : (
+              <a href={link} className="btn btn-success">
+                {button}
+              </a>
+            )}
           </div>
         </div>
       </div>
