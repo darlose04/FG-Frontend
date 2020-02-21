@@ -54,17 +54,20 @@ export default class Home extends Component {
         button: "Glossary"
       }
     ];
+
     return (
       <div className="homePage mt-5">
-        {cardInfo.map(card => (
-          <HomeCard
-            key={card.id}
-            title={card.title}
-            msg={card.message}
-            link={card.link}
-            button={card.button}
-          />
-        ))}
+        <div className="row">
+          {cardInfo.map(card => (
+            <HomeCard
+              key={card.id}
+              title={card.title}
+              msg={card.message}
+              link={card.link}
+              button={card.button}
+            />
+          ))}
+        </div>
       </div>
     );
   }
