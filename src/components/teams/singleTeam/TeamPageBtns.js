@@ -7,7 +7,10 @@ export default class TeamPageBtns extends Component {
       pitchingBtnClass,
       showHitting,
       showPitching,
-      showChart
+      showHittingChart,
+      showPitchingChart,
+      hcBtnClass,
+      pcBtnClass
     } = this.props;
 
     return (
@@ -31,15 +34,15 @@ export default class TeamPageBtns extends Component {
         <div className="btn-group w-100 mb-1" role="group">
           <button
             type="button"
-            className="w-100 btn btn-success"
-            onClick={showChart}
+            className={hcBtnClass}
+            onClick={showHittingChart}
           >
             Hitting Charts
           </button>
           <button
             type="button"
-            className="w-100 btn btn-success"
-            onClick={showChart}
+            className={pcBtnClass}
+            onClick={showPitchingChart}
           >
             Pitching Charts
           </button>
