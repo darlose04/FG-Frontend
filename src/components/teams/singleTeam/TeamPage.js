@@ -8,6 +8,7 @@ import ReliefPitchingComponent from "./pitching/ReliefPitchingComponent";
 import TeamPageSeasonSelect from "./TeamPageSeasonSelect";
 import SeasonRosterStats from "./SeasonRosterStats";
 import TeamHittingChart from "./charts/TeamHittingChart";
+import TeamPitchingChart from "./charts/TeamPitchingChart";
 
 import axios from "axios";
 
