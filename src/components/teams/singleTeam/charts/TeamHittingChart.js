@@ -43,17 +43,17 @@ export default class TeamHittingChart extends Component {
 
     let stats1 = [];
     data.map(year => {
-      return stats1.unshift(year.statsOne);
+      return stats1.unshift(year[statsOne]);
     });
 
     let stats2 = [];
     data.map(year => {
-      return stats2.unshift(year.statsTwo);
+      return stats2.unshift(year[statsTwo]);
     });
 
     let stats3 = [];
     data.map(year => {
-      return stats3.unshift(year.statsThree);
+      return stats3.unshift(year[statsThree]);
     });
 
     const hits = {
@@ -175,7 +175,7 @@ export default class TeamHittingChart extends Component {
         </div>
         <div className="mb-3 row">
           <div className="mb-3 col">
-            <h4 className="text-center">Hit Type</h4>
+            <h4 className="text-center">Stats Comparison</h4>
             <Line data={hits} />
           </div>
         </div>
