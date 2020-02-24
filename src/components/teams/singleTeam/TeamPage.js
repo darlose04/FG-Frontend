@@ -374,7 +374,11 @@ export default class TeamPage extends Component {
                 pcBtnClass={pcBtnClass}
               />
 
-              <TeamPitchingChart />
+              <TeamPitchingChart
+                totalData={pitching}
+                startingData={starting}
+                reliefData={relieving}
+              />
             </div>
           );
         } else {
