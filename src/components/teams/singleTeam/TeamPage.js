@@ -156,7 +156,10 @@ export default class TeamPage extends Component {
     this.setState({
       hittingTable: true,
       pitchingTable: false,
-      showChart: false,
+      showHittingChart: false,
+      showPitchingChart: false,
+      hcBtnClass: "btn btn-outline-success",
+      pcBtnClass: "btn btn-outline-success",
       hittingBtnClass: "btn btn-success hittingBtn",
       pitchingBtnClass: "btn btn-outline-success pitchingBtn",
       standard: true,
@@ -170,7 +173,10 @@ export default class TeamPage extends Component {
     this.setState({
       hittingTable: false,
       pitchingTable: true,
-      showChart: false,
+      showHittingChart: false,
+      showPitchingChart: false,
+      hcBtnClass: "btn btn-outline-success",
+      pcBtnClass: "btn btn-outline-success",
       hittingBtnClass: "btn btn-outline-success hittingBtn",
       pitchingBtnClass: "btn btn-success pitchingBtn",
       standard: true,
