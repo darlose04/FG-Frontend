@@ -60,7 +60,7 @@ export default class TeamHittingChart extends Component {
       labels: season,
       datasets: [
         {
-          label: "Doubles",
+          label: statsOne,
           fill: false,
           lineTension: 0.1,
           backgroundColor: "#eb2326",
@@ -78,10 +78,10 @@ export default class TeamHittingChart extends Component {
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: doubles
+          data: stats1
         },
         {
-          label: "Triples",
+          label: statsTwo,
           fill: false,
           lineTension: 0.1,
           backgroundColor: "#28292e",
@@ -99,10 +99,10 @@ export default class TeamHittingChart extends Component {
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: triples
+          data: stats2
         },
         {
-          label: "Home Runs",
+          label: statsThree,
           fill: false,
           lineTension: 0.1,
           backgroundColor: "#23eb24",
@@ -120,7 +120,7 @@ export default class TeamHittingChart extends Component {
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: homers
+          data: stats3
         }
       ]
     };
