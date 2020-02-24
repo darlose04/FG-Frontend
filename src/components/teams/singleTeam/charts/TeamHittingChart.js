@@ -44,16 +44,43 @@ export default class TeamHittingChart extends Component {
 
     let stats1 = [];
     data.map(year => {
+      if (
+        statsOne === "gb_perc" ||
+        statsOne === "fb_perc" ||
+        statsOne === "ld_perc" ||
+        statsOne === "bb_perc" ||
+        statsOne === "k_perc"
+      ) {
+        return stats1.unshift(Number(year[statsOne].replace("%", "")));
+      }
       return stats1.unshift(year[statsOne]);
     });
 
     let stats2 = [];
     data.map(year => {
+      if (
+        statsTwo === "gb_perc" ||
+        statsTwo === "fb_perc" ||
+        statsTwo === "ld_perc" ||
+        statsTwo === "bb_perc" ||
+        statsTwo === "k_perc"
+      ) {
+        return stats2.unshift(Number(year[statsTwo].replace("%", "")));
+      }
       return stats2.unshift(year[statsTwo]);
     });
 
     let stats3 = [];
     data.map(year => {
+      if (
+        statsThree === "gb_perc" ||
+        statsThree === "fb_perc" ||
+        statsThree === "ld_perc" ||
+        statsThree === "bb_perc" ||
+        statsThree === "k_perc"
+      ) {
+        return stats3.unshift(Number(year[statsThree].replace("%", "")));
+      }
       return stats3.unshift(year[statsThree]);
     });
 
