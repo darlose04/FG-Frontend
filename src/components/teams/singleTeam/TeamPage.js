@@ -212,17 +212,27 @@ export default class TeamPage extends Component {
 
   showHittingChart() {
     this.setState({
-      showChart: !this.state.showChart,
+      showHittingChart: true,
+      showPitchingChart: false,
+      hcBtnClass: "btn btn-success",
+      pcBtnClass: "btn btn-outline-success",
       hittingTable: false,
-      pitchingTable: false
+      pitchingTable: false,
+      hittingBtnClass: "btn btn-outline-success",
+      pitchingBtnClass: "btn btn-outline-success"
     });
   }
 
   showPitchingChart() {
     this.setState({
-      showChart: !this.state.showChart,
+      showHittingChart: false,
+      showPitchingChart: true,
+      hcBtnClass: "btn btn-outline-success",
+      pcBtnClass: "btn btn-success",
       hittingTable: false,
-      pitchingTable: false
+      pitchingTable: false,
+      hittingBtnClass: "btn btn-outline-success",
+      pitchingBtnClass: "btn btn-outline-success"
     });
   }
 
