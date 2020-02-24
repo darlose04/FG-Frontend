@@ -53,7 +53,11 @@ export default class RosterBatterTable extends Component {
         <tbody>
           {stats.map(info => (
             <tr key={info.id}>
-              <td>{info.name}</td>
+              <td>
+                <a className="text-dark" href={`/players/${info.name}`}>
+                  {info.name}
+                </a>
+              </td>
               <td>{info.age}</td>
               <td>{info.games}</td>
               <td>{info.plate_appearances}</td>

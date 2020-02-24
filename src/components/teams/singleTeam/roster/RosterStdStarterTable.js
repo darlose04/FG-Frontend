@@ -57,7 +57,11 @@ export default class RosterStdStarterTable extends Component {
         <tbody>
           {stats.map(info => (
             <tr key={info.id}>
-              <td>{info.name}</td>
+              <td>
+                <a className="text-dark" href={`/players/${info.name}`}>
+                  {info.name}
+                </a>
+              </td>
               <td>{info.age}</td>
               <td>{info.wins}</td>
               <td>{info.losses}</td>
