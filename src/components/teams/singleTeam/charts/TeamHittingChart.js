@@ -95,64 +95,6 @@ export default class TeamHittingChart extends Component {
       ]
     };
 
-    let runs = [];
-    data.map(year => {
-      return runs.unshift(year.runs);
-    });
-
-    let rbi = [];
-    data.map(year => {
-      return rbi.unshift(year.rbi);
-    });
-
-    const scoring = {
-      labels: season,
-      datasets: [
-        {
-          label: "Runs",
-          fill: false,
-          lineTension: 0.1,
-          backgroundColor: "#42aa75",
-          borderColor: "#42aa75",
-          borderCapStyle: "butt",
-          borderDash: [],
-          borderDashOffset: 0.0,
-          borderJoinStyle: "miter",
-          pointBorderColor: "#42aa75",
-          pointBackgroundColor: "#fff",
-          pointBorderWidth: 1,
-          pointHoverRadius: 5,
-          pointHoverBackgroundColor: "#42aa75",
-          pointHoverBorderColor: "rgba(220,220,220,1)",
-          pointHoverBorderWidth: 2,
-          pointRadius: 1,
-          pointHitRadius: 10,
-          data: runs
-        },
-        {
-          label: "RBI",
-          fill: false,
-          lineTension: 0.1,
-          backgroundColor: "#429daa",
-          borderColor: "#429daa",
-          borderCapStyle: "butt",
-          borderDash: [],
-          borderDashOffset: 0.0,
-          borderJoinStyle: "miter",
-          pointBorderColor: "#429daa",
-          pointBackgroundColor: "#fff",
-          pointBorderWidth: 1,
-          pointHoverRadius: 5,
-          pointHoverBackgroundColor: "#429daa",
-          pointHoverBorderColor: "rgba(220,220,220,1)",
-          pointHoverBorderWidth: 2,
-          pointRadius: 1,
-          pointHitRadius: 10,
-          data: rbi
-        }
-      ]
-    };
-
     return (
       <div>
         <h5>Select Stats to Compare</h5>
@@ -162,10 +104,6 @@ export default class TeamHittingChart extends Component {
             <h4 className="text-center">Hit Type</h4>
             <Line data={hits} />
           </div>
-          {/* <div className="mb-3 col">
-          <h4 className="text-center">Scoring</h4>
-          <Line data={scoring} />
-        </div> */}
         </div>
       </div>
     );
