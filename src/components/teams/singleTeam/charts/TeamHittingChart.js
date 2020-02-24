@@ -3,8 +3,24 @@ import { Line } from "react-chartjs-2";
 
 export default class TeamHittingChart extends Component {
   render() {
+    constructor(props) {
+      super(props);
+      this.state = {
+        statsOne: "",
+        statsTwo: "",
+        statsThree: ""
+      }
+    }
+    
     const { data } = this.props;
-    console.log(data[1]);
+    const keys = Object.keys(data[0]);
+    console.log(keys);
+
+    const options = [
+      {
+
+      }
+    ]
 
     let season = [];
     data.map(year => {
@@ -98,7 +114,11 @@ export default class TeamHittingChart extends Component {
     return (
       <div>
         <h5>Select Stats to Compare</h5>
-        <select name="" id="statsOne"></select>
+        <select name="" id="statsOne">
+          {keys.map(key => (
+            <option value={key}>{key}</option>
+          ))}
+        </select>
         <div className="mb-3 row">
           <div className="mb-3 col">
             <h4 className="text-center">Hit Type</h4>
