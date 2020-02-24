@@ -30,7 +30,10 @@ export default class TeamPage extends Component {
       advClass: "text-success",
       hittingTable: true,
       pitchingTable: false,
-      showChart: false,
+      showHittingChart: false,
+      showPitchingChart: false,
+      hcBtnClass: "btn btn-outline-success",
+      pcBtnClass: "btn btn-outline-success",
       hittingBtnClass: "btn btn-success hittingBtn",
       pitchingBtnClass: "btn btn-outline-success pitchingBtn"
     };
@@ -41,7 +44,8 @@ export default class TeamPage extends Component {
     this.showAdvanced = this.showAdvanced.bind(this);
     this.showSeason = this.showSeason.bind(this);
     this.showTeamStats = this.showTeamStats.bind(this);
-    this.showChart = this.showChart.bind(this);
+    this.showHittingChart = this.showHittingChart.bind(this);
+    this.showPitchingChart = this.showPitchingChart.bind(this);
   }
 
   async componentDidMount() {
@@ -206,7 +210,15 @@ export default class TeamPage extends Component {
     });
   }
 
-  showChart() {
+  showHittingChart() {
+    this.setState({
+      showChart: !this.state.showChart,
+      hittingTable: false,
+      pitchingTable: false
+    });
+  }
+
+  showPitchingChart() {
     this.setState({
       showChart: !this.state.showChart,
       hittingTable: false,
@@ -316,6 +328,7 @@ export default class TeamPage extends Component {
                 showPitching={this.showPitching}
                 showChart={this.showChart}
               />
+
               <TeamHittingChart data={batting} />
             </div>
           );
