@@ -28,13 +28,22 @@ export default class TeamPageBtns extends Component {
             Pitching
           </button>
         </div>
-        <button
-          type="button"
-          className="w-100 btn btn-success"
-          onClick={showChart}
-        >
-          Display Charts
-        </button>
+        <div className="btn-group w-100 mb-1" role="group">
+          <button
+            type="button"
+            className="w-100 btn btn-success"
+            onClick={showChart}
+          >
+            Hitting Charts
+          </button>
+          <button
+            type="button"
+            className="w-100 btn btn-success"
+            onClick={showChart}
+          >
+            Pitching Charts
+          </button>
+        </div>
       </div>
     );
   }
