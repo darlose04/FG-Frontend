@@ -32,26 +32,26 @@ export default class TeamHittingChart extends Component {
   }
 
   render() {
+    const { statsOne, statsTwo, statsThree } = this.state;
     const { data } = this.props;
     const keys = Object.keys(data[0]);
-    console.log(keys);
 
     let season = [];
     data.map(year => {
       return season.unshift(year.season);
     });
 
-    let doubles = [];
+    let stats1 = [];
     data.map(year => {
-      return doubles.unshift(year.doubles);
+      return stats1.unshift(year.doubles);
     });
 
-    let triples = [];
+    let stats2 = [];
     data.map(year => {
       return triples.unshift(year.triples);
     });
 
-    let homers = [];
+    let stats3 = [];
     data.map(year => {
       return homers.unshift(year.home_runs);
     });
@@ -126,7 +126,7 @@ export default class TeamHittingChart extends Component {
     };
 
     return (
-      <div>
+      <div className="border p-2 mb-3 border-dark">
         <div className="mb-3">
           <h5>Select Stats to Compare</h5>
           <select
