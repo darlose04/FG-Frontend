@@ -34,8 +34,8 @@ export default class TeamHittingChart extends Component {
   render() {
     const { statsOne, statsTwo, statsThree } = this.state;
     const { data } = this.props;
-    const keys = Object.keys(data[0]);
-    console.log(data[0]);
+    const objectKeys = Object.keys(data[0]);
+    const keys = objectKeys.slice(3);
 
     let season = [];
     data.map(year => {
