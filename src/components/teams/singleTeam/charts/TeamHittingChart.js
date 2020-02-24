@@ -2,25 +2,21 @@ import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
 
 export default class TeamHittingChart extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      statsOne: "",
+      statsTwo: "",
+      statsThree: ""
+    };
+  }
+
   render() {
-    constructor(props) {
-      super(props);
-      this.state = {
-        statsOne: "",
-        statsTwo: "",
-        statsThree: ""
-      }
-    }
-    
     const { data } = this.props;
     const keys = Object.keys(data[0]);
     console.log(keys);
 
-    const options = [
-      {
-
-      }
-    ]
+    const options = [{}];
 
     let season = [];
     data.map(year => {
