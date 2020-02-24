@@ -49,7 +49,8 @@ export default class TeamHittingChart extends Component {
         statsOne === "fb_perc" ||
         statsOne === "ld_perc" ||
         statsOne === "bb_perc" ||
-        statsOne === "k_perc"
+        statsOne === "k_perc" ||
+        statsOne === "hr_per_fb"
       ) {
         return stats1.unshift(Number(year[statsOne].replace("%", "")));
       }
@@ -63,7 +64,8 @@ export default class TeamHittingChart extends Component {
         statsTwo === "fb_perc" ||
         statsTwo === "ld_perc" ||
         statsTwo === "bb_perc" ||
-        statsTwo === "k_perc"
+        statsTwo === "k_perc" ||
+        statsTwo === "hr_per_fb"
       ) {
         return stats2.unshift(Number(year[statsTwo].replace("%", "")));
       }
@@ -77,7 +79,8 @@ export default class TeamHittingChart extends Component {
         statsThree === "fb_perc" ||
         statsThree === "ld_perc" ||
         statsThree === "bb_perc" ||
-        statsThree === "k_perc"
+        statsThree === "k_perc" ||
+        statsThree === "hr_per_fb"
       ) {
         return stats3.unshift(Number(year[statsThree].replace("%", "")));
       }
