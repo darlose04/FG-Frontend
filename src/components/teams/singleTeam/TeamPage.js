@@ -264,7 +264,10 @@ export default class TeamPage extends Component {
       pitchingTable,
       hittingBtnClass,
       pitchingBtnClass,
-      showChart
+      showHittingChart,
+      showPitchingChart,
+      hcBtnClass,
+      pcBtnClass
     } = this.state;
 
     const display = () => {
@@ -281,7 +284,10 @@ export default class TeamPage extends Component {
                 pitchingBtnClass={pitchingBtnClass}
                 showHitting={this.showHitting}
                 showPitching={this.showPitching}
-                showChart={this.showChart}
+                showHittingChart={this.showHittingChart}
+                showPitchingChart={this.showPitchingChart}
+                hcBtnClass={hcBtnClass}
+                pcBtnClass={pcBtnClass}
               />
               <BattingComponent data={batting} />
             </div>
@@ -294,7 +300,10 @@ export default class TeamPage extends Component {
                 pitchingBtnClass={pitchingBtnClass}
                 showHitting={this.showHitting}
                 showPitching={this.showPitching}
-                showChart={this.showChart}
+                showHittingChart={this.showHittingChart}
+                showPitchingChart={this.showPitchingChart}
+                hcBtnClass={hcBtnClass}
+                pcBtnClass={pcBtnClass}
               />
               <TotalPitchingComponent
                 std={standard}
@@ -328,7 +337,7 @@ export default class TeamPage extends Component {
               />
             </div>
           );
-        } else if (showChart) {
+        } else if (showHittingChart) {
           return (
             <div>
               <TeamPageBtns
@@ -336,10 +345,30 @@ export default class TeamPage extends Component {
                 pitchingBtnClass={pitchingBtnClass}
                 showHitting={this.showHitting}
                 showPitching={this.showPitching}
-                showChart={this.showChart}
+                showHittingChart={this.showHittingChart}
+                showPitchingChart={this.showPitchingChart}
+                hcBtnClass={hcBtnClass}
+                pcBtnClass={pcBtnClass}
               />
 
               <TeamHittingChart data={batting} />
+            </div>
+          );
+        } else if (showPitchingChart) {
+          return (
+            <div>
+              <TeamPageBtns
+                hittingBtnClass={hittingBtnClass}
+                pitchingBtnClass={pitchingBtnClass}
+                showHitting={this.showHitting}
+                showPitching={this.showPitching}
+                showHittingChart={this.showHittingChart}
+                showPitchingChart={this.showPitchingChart}
+                hcBtnClass={hcBtnClass}
+                pcBtnClass={pcBtnClass}
+              />
+
+              <TeamPitchingChart />
             </div>
           );
         } else {
@@ -349,7 +378,10 @@ export default class TeamPage extends Component {
               pitchingBtnClass={pitchingBtnClass}
               showHitting={this.showHitting}
               showPitching={this.showPitching}
-              showChart={this.showChart}
+              showHittingChart={this.showHittingChart}
+              showPitchingChart={this.showPitchingChart}
+              hcBtnClass={hcBtnClass}
+              pcBtnClass={pcBtnClass}
             />
           );
         }
