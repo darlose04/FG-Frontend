@@ -44,16 +44,43 @@ export default class TeamPitchingChart extends Component {
 
     let stats1 = [];
     totalData.map(year => {
+      if (
+        statsOne === "gb_perc" ||
+        statsOne === "fb_perc" ||
+        statsOne === "ld_perc" ||
+        statsOne === "lob_perc" ||
+        statsOne === "hr_per_fb"
+      ) {
+        return stats1.unshift(Number(year[statsOne].replace("%", "")));
+      }
       return stats1.unshift(year[statsOne]);
     });
 
     let stats2 = [];
     totalData.map(year => {
+      if (
+        statsTwo === "gb_perc" ||
+        statsTwo === "fb_perc" ||
+        statsTwo === "ld_perc" ||
+        statsTwo === "lob_perc" ||
+        statsTwo === "hr_per_fb"
+      ) {
+        return stats2.unshift(Number(year[statsTwo].replace("%", "")));
+      }
       return stats2.unshift(year[statsTwo]);
     });
 
     let stats3 = [];
     totalData.map(year => {
+      if (
+        statsThree === "gb_perc" ||
+        statsThree === "fb_perc" ||
+        statsThree === "ld_perc" ||
+        statsThree === "lob_perc" ||
+        statsThree === "hr_per_fb"
+      ) {
+        return stats3.unshift(Number(year[statsThree].replace("%", "")));
+      }
       return stats3.unshift(year[statsThree]);
     });
 
