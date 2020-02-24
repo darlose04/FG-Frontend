@@ -35,6 +35,7 @@ export default class TeamHittingChart extends Component {
     const { statsOne, statsTwo, statsThree } = this.state;
     const { data } = this.props;
     const keys = Object.keys(data[0]);
+    console.log(data[0]);
 
     let season = [];
     data.map(year => {
@@ -56,11 +57,15 @@ export default class TeamHittingChart extends Component {
       return stats3.unshift(year[statsThree]);
     });
 
-    const hits = {
+    const statistics = {
       labels: season,
       datasets: [
         {
-          label: statsOne,
+          label: statsOne
+            .replace(/_/g, " ")
+            .replace("perc", "%")
+            .replace("per", "/")
+            .toUpperCase(),
           fill: false,
           lineTension: 0.1,
           backgroundColor: "#eb2326",
@@ -81,7 +86,11 @@ export default class TeamHittingChart extends Component {
           data: stats1
         },
         {
-          label: statsTwo,
+          label: statsTwo
+            .replace(/_/g, " ")
+            .replace("perc", "%")
+            .replace("per", "/")
+            .toUpperCase(),
           fill: false,
           lineTension: 0.1,
           backgroundColor: "#28292e",
@@ -102,7 +111,11 @@ export default class TeamHittingChart extends Component {
           data: stats2
         },
         {
-          label: statsThree,
+          label: statsThree
+            .replace(/_/g, " ")
+            .replace("perc", "%")
+            .replace("per", "/")
+            .toUpperCase(),
           fill: false,
           lineTension: 0.1,
           backgroundColor: "#23eb24",
@@ -182,7 +195,7 @@ export default class TeamHittingChart extends Component {
         <div className="mb-3 row">
           <div className="mb-3 col">
             <h4 className="text-center">Stats Comparison</h4>
-            <Line data={hits} />
+            <Line data={statistics} />
           </div>
         </div>
       </div>
