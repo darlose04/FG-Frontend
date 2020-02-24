@@ -9,6 +9,26 @@ export default class TeamHittingChart extends Component {
       statsTwo: "",
       statsThree: ""
     };
+
+    this.statsOne = this.statsOne.bind(this);
+    this.statsTwo = this.statsTwo.bind(this);
+    this.statsThree = this.statsThree.bind(this);
+  }
+
+  statsOne(e) {
+    this.setState({
+      statsOne: e.target.value
+    });
+  }
+  statsTwo(e) {
+    this.setState({
+      statsTwo: e.target.value
+    });
+  }
+  statsThree(e) {
+    this.setState({
+      statsThree: e.target.value
+    });
   }
 
   render() {
@@ -109,7 +129,12 @@ export default class TeamHittingChart extends Component {
       <div>
         <div className="mb-3">
           <h5>Select Stats to Compare</h5>
-          <select className="mr-2" name="" id="statsOne">
+          <select
+            className="mr-2"
+            name=""
+            id="statsOne"
+            onChange={this.statsOne}
+          >
             {keys.map(key => (
               <option key={key} value={key}>
                 {key
@@ -120,7 +145,12 @@ export default class TeamHittingChart extends Component {
               </option>
             ))}
           </select>
-          <select className="mr-2" name="" id="statsTwo">
+          <select
+            className="mr-2"
+            name=""
+            id="statsTwo"
+            onChange={this.statsTwo}
+          >
             {keys.map(key => (
               <option key={key} value={key}>
                 {key
@@ -131,7 +161,7 @@ export default class TeamHittingChart extends Component {
               </option>
             ))}
           </select>
-          <select name="" id="statsThree">
+          <select name="" id="statsThree" onChange={this.statsThree}>
             {keys.map(key => (
               <option key={key} value={key}>
                 {key
