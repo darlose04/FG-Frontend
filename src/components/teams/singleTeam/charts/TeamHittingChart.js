@@ -43,17 +43,17 @@ export default class TeamHittingChart extends Component {
 
     let stats1 = [];
     data.map(year => {
-      return stats1.unshift(year.doubles);
+      return stats1.unshift(year.statsOne);
     });
 
     let stats2 = [];
     data.map(year => {
-      return triples.unshift(year.triples);
+      return stats2.unshift(year.statsTwo);
     });
 
     let stats3 = [];
     data.map(year => {
-      return homers.unshift(year.home_runs);
+      return stats3.unshift(year.statsThree);
     });
 
     const hits = {
@@ -63,17 +63,17 @@ export default class TeamHittingChart extends Component {
           label: "Doubles",
           fill: false,
           lineTension: 0.1,
-          backgroundColor: "#883341",
-          borderColor: "#883341",
+          backgroundColor: "#eb2326",
+          borderColor: "#eb2326",
           borderCapStyle: "butt",
           borderDash: [],
           borderDashOffset: 0.0,
           borderJoinStyle: "miter",
-          pointBorderColor: "#883341",
+          pointBorderColor: "#eb2326",
           pointBackgroundColor: "#fff",
           pointBorderWidth: 1,
           pointHoverRadius: 5,
-          pointHoverBackgroundColor: "#883341",
+          pointHoverBackgroundColor: "#eb2326",
           pointHoverBorderColor: "rgba(220,220,220,1)",
           pointHoverBorderWidth: 2,
           pointRadius: 1,
@@ -105,17 +105,17 @@ export default class TeamHittingChart extends Component {
           label: "Home Runs",
           fill: false,
           lineTension: 0.1,
-          backgroundColor: "#42aa75",
-          borderColor: "#42aa75",
+          backgroundColor: "#23eb24",
+          borderColor: "#23eb24",
           borderCapStyle: "butt",
           borderDash: [],
           borderDashOffset: 0.0,
           borderJoinStyle: "miter",
-          pointBorderColor: "#42aa75",
+          pointBorderColor: "#23eb24",
           pointBackgroundColor: "#fff",
           pointBorderWidth: 1,
           pointHoverRadius: 5,
-          pointHoverBackgroundColor: "#42aa75",
+          pointHoverBackgroundColor: "#23eb24",
           pointHoverBorderColor: "rgba(220,220,220,1)",
           pointHoverBorderWidth: 2,
           pointRadius: 1,
