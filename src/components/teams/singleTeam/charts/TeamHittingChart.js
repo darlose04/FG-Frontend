@@ -171,7 +171,7 @@ export default class TeamHittingChart extends Component {
     return (
       <div className="border p-2 mb-3 border-dark">
         <div className="mb-3">
-          <h5>Select Stats to Compare</h5>
+          <h5>Select Hitting Stats to Compare</h5>
           <select
             className="mr-2"
             name=""
