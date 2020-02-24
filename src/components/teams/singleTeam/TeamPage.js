@@ -9,6 +9,8 @@ import TeamPageSeasonSelect from "./TeamPageSeasonSelect";
 import SeasonRosterStats from "./SeasonRosterStats";
 import TeamHittingChart from "./charts/TeamHittingChart";
 import TeamPitchingChart from "./charts/TeamPitchingChart";
+import TeamStartingChart from "./charts/TeamStartingChart";
+import TeamReliefChart from "./charts/TeamReliefChart";
 
 import axios from "axios";
 
@@ -374,11 +376,9 @@ export default class TeamPage extends Component {
                 pcBtnClass={pcBtnClass}
               />
 
-              <TeamPitchingChart
-                totalData={pitching}
-                startingData={starting}
-                reliefData={relieving}
-              />
+              <TeamPitchingChart totalData={pitching} />
+              <TeamStartingChart startingData={starting} />
+              <TeamReliefChart reliefData={relieving} />
             </div>
           );
         } else {
