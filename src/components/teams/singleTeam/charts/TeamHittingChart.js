@@ -135,6 +135,8 @@ export default class TeamHittingChart extends Component {
             id="statsOne"
             onChange={this.statsOne}
           >
+            <option value="">Select Statistics</option>
+            <option value="">Remove Stat</option>
             {keys.map(key => (
               <option key={key} value={key}>
                 {key
@@ -151,6 +153,8 @@ export default class TeamHittingChart extends Component {
             id="statsTwo"
             onChange={this.statsTwo}
           >
+            <option value="">Select Statistics</option>
+            <option value="">Remove Stat</option>
             {keys.map(key => (
               <option key={key} value={key}>
                 {key
@@ -162,6 +166,8 @@ export default class TeamHittingChart extends Component {
             ))}
           </select>
           <select name="" id="statsThree" onChange={this.statsThree}>
+            <option value="">Select Statistics</option>
+            <option value="">Remove Stat</option>
             {keys.map(key => (
               <option key={key} value={key}>
                 {key
