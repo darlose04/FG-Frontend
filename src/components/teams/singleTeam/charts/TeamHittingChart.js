@@ -16,8 +16,6 @@ export default class TeamHittingChart extends Component {
     const keys = Object.keys(data[0]);
     console.log(keys);
 
-    const options = [{}];
-
     let season = [];
     data.map(year => {
       return season.unshift(year.season);
@@ -112,7 +110,13 @@ export default class TeamHittingChart extends Component {
         <h5>Select Stats to Compare</h5>
         <select name="" id="statsOne">
           {keys.map(key => (
-            <option value={key}>{key}</option>
+            <option key={key} value={key}>
+              {key
+                .replace(/_/g, " ")
+                .replace("perc", "%")
+                .replace("per", "/")
+                .toUpperCase()}
+            </option>
           ))}
         </select>
         <div className="mb-3 row">
