@@ -4,15 +4,11 @@ import { Line } from "react-chartjs-2";
 export default class TeamHittingChart extends Component {
   render() {
     const { data } = this.props;
+    console.log(data[1]);
 
     let season = [];
     data.map(year => {
       return season.unshift(year.season);
-    });
-
-    let singles = [];
-    data.map(year => {
-      return singles.unshift(year.singles);
     });
 
     let doubles = [];
@@ -158,15 +154,19 @@ export default class TeamHittingChart extends Component {
     };
 
     return (
-      <div className="mb-3 row">
-        <div className="mb-3 col">
-          <h4 className="text-center">Hit Type</h4>
-          <Line data={hits} />
-        </div>
-        {/* <div className="mb-3 col">
+      <div>
+        <h5>Select Stats to Compare</h5>
+        <select name="" id="statsOne"></select>
+        <div className="mb-3 row">
+          <div className="mb-3 col">
+            <h4 className="text-center">Hit Type</h4>
+            <Line data={hits} />
+          </div>
+          {/* <div className="mb-3 col">
           <h4 className="text-center">Scoring</h4>
           <Line data={scoring} />
         </div> */}
+        </div>
       </div>
     );
   }
