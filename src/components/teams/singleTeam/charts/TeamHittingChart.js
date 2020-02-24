@@ -107,18 +107,42 @@ export default class TeamHittingChart extends Component {
 
     return (
       <div>
-        <h5>Select Stats to Compare</h5>
-        <select name="" id="statsOne">
-          {keys.map(key => (
-            <option key={key} value={key}>
-              {key
-                .replace(/_/g, " ")
-                .replace("perc", "%")
-                .replace("per", "/")
-                .toUpperCase()}
-            </option>
-          ))}
-        </select>
+        <div className="mb-3">
+          <h5>Select Stats to Compare</h5>
+          <select className="mr-2" name="" id="statsOne">
+            {keys.map(key => (
+              <option key={key} value={key}>
+                {key
+                  .replace(/_/g, " ")
+                  .replace("perc", "%")
+                  .replace("per", "/")
+                  .toUpperCase()}
+              </option>
+            ))}
+          </select>
+          <select className="mr-2" name="" id="statsTwo">
+            {keys.map(key => (
+              <option key={key} value={key}>
+                {key
+                  .replace(/_/g, " ")
+                  .replace("perc", "%")
+                  .replace("per", "/")
+                  .toUpperCase()}
+              </option>
+            ))}
+          </select>
+          <select name="" id="statsThree">
+            {keys.map(key => (
+              <option key={key} value={key}>
+                {key
+                  .replace(/_/g, " ")
+                  .replace("perc", "%")
+                  .replace("per", "/")
+                  .toUpperCase()}
+              </option>
+            ))}
+          </select>
+        </div>
         <div className="mb-3 row">
           <div className="mb-3 col">
             <h4 className="text-center">Hit Type</h4>
