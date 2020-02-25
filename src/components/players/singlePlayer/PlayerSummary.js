@@ -3,6 +3,7 @@ import BattingComponent from "./batting/BattingComponent";
 import StartingComponent from "./pitching/StartingComponent";
 import ReliefComponent from "./pitching/ReliefComponent";
 import Spinner from "../../layout/Spinner";
+import PlayerHittingChart from "./charts/PlayerHittingChart";
 
 import axios from "axios";
 
@@ -104,6 +105,7 @@ export default class PlayerSummary extends Component {
                 <BattingComponent data={playerHitting} />
               </div>
             )}
+            <PlayerHittingChart data={playerHitting} />
           </div>
         )}
       </div>
