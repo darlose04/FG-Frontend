@@ -105,6 +105,7 @@ export default class PlayerSummary extends Component {
                 <BattingComponent data={playerHitting} />
               </div>
             )}
+            <h3>Hitting Chart</h3>
             <PlayerHittingChart data={playerHitting} />
           </div>
         )}
