@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Navbar from "./components/layout/Navbar";
 import { Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
-import About from "./components/About";
+// import About from "./components/About";
 import Players from "./components/players/Players";
 import PlayerSummary from "./components/players/singlePlayer/PlayerSummary";
 import TeamStats from "./components/teams/TeamStats";
