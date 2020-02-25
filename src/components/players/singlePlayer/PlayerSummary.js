@@ -3,7 +3,6 @@ import BattingComponent from "./batting/BattingComponent";
 import StartingComponent from "./pitching/StartingComponent";
 import ReliefComponent from "./pitching/ReliefComponent";
 import Spinner from "../../layout/Spinner";
-import logos from "../../../logos";
 
 import axios from "axios";
 
