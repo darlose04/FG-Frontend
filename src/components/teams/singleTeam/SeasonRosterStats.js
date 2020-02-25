@@ -246,8 +246,9 @@ export default class SeasonRosterStats extends Component {
     } = this.state;
 
     const { record } = this.props;
-
-    let currentSeason = record.filter(item => item.season == this.props.season);
+    let currentSeason = record.filter(
+      item => item.season === Number(this.props.season)
+    );
 
     let displayRecord = currentSeason[0];
 
