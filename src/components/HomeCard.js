@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { MDBCardTitle } from "mdbreact";
 
 export default class HomeCard extends Component {
   render() {
