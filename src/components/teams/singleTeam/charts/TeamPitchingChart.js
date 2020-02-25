@@ -33,7 +33,7 @@ export default class TeamPitchingChart extends Component {
 
   render() {
     const { statsOne, statsTwo, statsThree } = this.state;
-    const { totalData, startingData, reliefData } = this.props;
+    const { totalData } = this.props;
     const objectKeys = Object.keys(totalData[0]);
     const keys = objectKeys.slice(3);
 
