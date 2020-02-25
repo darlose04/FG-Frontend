@@ -141,7 +141,7 @@ export default class TeamPage extends Component {
         losses: team.losses
       };
 
-      winLossRecord.push(winLoss);
+      return winLossRecord.push(winLoss);
     });
 
     this.setState({
