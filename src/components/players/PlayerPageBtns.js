@@ -29,8 +29,7 @@ export default class PlayerPageBtns extends Component {
       startBtn,
       showRelievers,
       reliefBtn,
-      season,
-      seasonSubmit
+      season
     } = this.props;
 
     return (
