@@ -257,7 +257,6 @@ export default class TeamPage extends Component {
     };
 
     const {
-      team,
       season,
       record,
       batting,
