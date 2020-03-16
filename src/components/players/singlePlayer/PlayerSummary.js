@@ -4,6 +4,7 @@ import StartingComponent from "./pitching/StartingComponent";
 import ReliefComponent from "./pitching/ReliefComponent";
 import Spinner from "../../layout/Spinner";
 import PlayerHittingChart from "./charts/PlayerHittingChart";
+import PlayerStartingChart from "./charts/PlayerStartingChart";
 import PlayerRelievingChart from "./charts/PlayerRelievingChart";
 
 import axios from "axios";
@@ -90,6 +91,8 @@ export default class PlayerSummary extends Component {
                   <div>
                     <h3>Starting Pitching</h3>
                     <StartingComponent data={playerStarting} />
+                    <h3>Starting Pitching Chart</h3>
+                    <PlayerStartingChart startingData={playerStarting} />
                   </div>
                 ) : (
                   <div></div>
