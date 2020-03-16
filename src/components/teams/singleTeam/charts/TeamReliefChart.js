@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
 
-export default class TeamPitchingChart extends Component {
+export default class TeamReliefChart extends Component {
   constructor(props) {
     super(props);
     this.state = {
